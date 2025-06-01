@@ -1,0 +1,3480 @@
+{
+  "namespace": "betmc_hud",
+
+  "betmc_inv_hud_toggle_layout@betmc_common.empty_image": {
+    "texture": "betmc_res/betmc_button/betmc_black",
+    "controls": [
+      {
+        "border@common_buttons.focus_border": {
+          "color": [0, 0, 0],
+          "layer": 2,
+          "alpha": 1
+        }
+      }
+    ]
+  },
+
+  "betmc_inv_hud_toggle_press@betmc_common.empty_image": {
+    "texture": "betmc_res/betmc_button/betmc_gray",
+    "controls": [
+      {
+        "border@common_buttons.focus_border": {
+          "color": [1, 1, 1],
+          "layer": 2,
+          "alpha": 1
+        }
+      }
+    ]
+  },
+
+  "betmc_hud_label@betmc_common.empty_label_font_custom": {
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "font_type": "$betmc_label_font_type",
+    "backup_font_type": "$betmc_label_font_type",
+    "$betmc_font_scale_factor|default": 0.75,
+    "font_scale_factor": "$betmc_font_scale_factor",
+    "$betmc_hud_text_offset|default": [2, -2],
+    "offset": "$betmc_hud_text_offset",
+    "$betmc_label_color|default": "$chat_text_color",
+    "color": "$betmc_label_color",
+    "shadow": false
+  },
+
+  "betmc_hud_label_02@betmc_common.empty_label_font_custom": {
+    "font_type": "$betmc_label_font_type",
+    "backup_font_type": "$betmc_label_font_type",
+    "$betmc_font_scale_factor|default": 0.75,
+    "font_scale_factor": "$betmc_font_scale_factor",
+    "$betmc_hud_text_offset|default": [2, -2],
+    "offset": "$betmc_hud_text_offset",
+    "$betmc_label_color|default": "$chat_text_color",
+    "color": "$betmc_label_color",
+    "shadow": false
+  },
+
+  "betmc_hud_light_text_button@betmc_button.betmc_light_text_button": {
+    "prevent_touch_input": true,
+    "$default_button_texture": "betmc_res/betmc_button/betmc_black",
+    "$hover_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$pressed_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$locked_button_texture": "betmc_res/betmc_button/betmc_black",
+    "$default_text_color": "$chat_text_color",
+    "$border_visible": true
+  },
+
+  "betmc_hud_no_content_button@betmc_button.betmc_light_text_button": {
+    "prevent_touch_input": true,
+    "$button_type_panel": "betmc_common.empty_panel",
+    "$default_button_texture": "",
+    "$hover_button_texture": "",
+    "$pressed_button_texture": "",
+    "$locked_button_texture": "",
+    "$default_text_color": "$chat_text_color",
+    "$border_visible": false
+  },
+
+  "betmc_hide_hud_button@betmc_hud.betmc_hud_light_text_button": {
+    "size": [20, 20],
+    "$pressed_button_name": "button.hide_gui_all",
+    "$button_text": "F1"
+  },
+
+  "betmc_show_hud_button@betmc_hud.betmc_hud_no_content_button": {
+    "size": ["100%", "100%"],
+    "$pressed_button_name": "button.hide_gui_all"
+  },
+
+  "betmc_item_renderer@betmc_config.betmc_main_config": {
+    "type": "custom",
+    "renderer": "inventory_item_renderer",
+    "size": [16, 16]
+  },
+
+  "betmc_chest_icon@betmc_hud.betmc_item_renderer": {
+    "property_bag": {
+      "#item_id_aux": 3538944
+    }
+  },
+
+  "betmc_inv_hud_toggle@betmc_common.empty_toggle": {
+    "button_mappings": [
+      {
+        "mapping_type": "pressed",
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.menu_select"
+      }
+    ],
+    "sound_name": "random.click",
+    "sound_volume": 1.0,
+    "sound_pitch": 1.0,
+    "size": [20, 20],
+    "layer": 20,
+    "unchecked_control": "uc",
+    "unchecked_hover_control": "uch",
+    "checked_control": "c",
+    "checked_hover_control": "ch",
+    "bindings": [
+      {
+        "binding_name": "#inventory_touch_button",
+        "binding_type": "global"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#inventory_touch_button and #toggle_state)",
+        "target_property_name": "#ts"
+      }
+    ],
+    "controls": [
+      { "uc@betmc_hud.betmc_inv_hud_toggle_layout": {} },
+      { "uch@betmc_hud.betmc_inv_hud_toggle_press": {} },
+      { "c@betmc_hud.betmc_inv_hud_toggle_layout": {} },
+      { "ch@betmc_hud.betmc_inv_hud_toggle_press": {} },
+      { "betmc_chest_icon@betmc_hud.betmc_chest_icon": { "size": [12, 12], "layer": 21 }}
+    ]
+  },
+
+  "betmc_exp_text_label@betmc_hud.betmc_hud_label_02": {
+    "text": "#level_number",
+    "$betmc_hud_text_offset": [0, -2],
+    "color": "$experience_text_color",
+    "anchor_from": "top_middle",
+    "anchor_to": "bottom_middle",
+    "shadow": true,
+    "bindings": [
+      {
+        "binding_name": "#level_number",
+        "binding_type": "global"
+      },
+      {
+        "binding_name": "#level_number_visible",
+        "binding_type": "global",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "betmc_item_text_label@betmc_hud.betmc_hud_label_02": {
+    "$text_binding|default": "#item_text",
+    "$betmc_hud_text_offset": [0, -1.1],
+    "max_size": [200, "default"],
+    "text_alignment": "center",
+    "layer": 31,
+    "color": "$text_color",
+    "text": "#text",
+    "alpha": "@hud.anim_item_name_text_alpha_in",
+    "enable_profanity_filter": false,
+    "bindings": [
+      {
+        "binding_name": "$text_binding",
+        "binding_name_override": "#text"
+      }
+    ]
+  },
+
+  "betmc_item_count_label@betmc_common.empty_label": {
+    "anchor_to": "bottom_right",
+    "anchor_from": "bottom_right",
+    "text": "#inventory_stack_count",
+    "font_type": "smooth",
+    "shadow": true,
+    "offset": [0, 1],
+    "layer": 7,
+    "bindings": [
+      {
+        "binding_name": "#inventory_stack_count",
+        "binding_type": "collection",
+        "binding_collection_name": "hotbar_items",
+        "binding_condition": "none"
+      }
+    ]
+  },
+
+  // BETMC ITEM TEXT CONTROL
+  "betmc_items_text_control@betmc_common.custom_empty_panel": {
+    "size": ["100%cm", "100%cm"],
+    "controls": [
+      {
+        "betmc_item_text_background@betmc_common.custom_empty_image": {
+          "ignored": "(not $betmc_show_text_background)",
+          "size": ["100%sm + 12px", "100%sm + 5px"],
+          "texture": "textures/ui/hud_tip_text_background",
+          "alpha": "@hud.anim_item_name_background_alpha_in"
+        }
+      },
+      {
+        "betmc_default_items_text_control@betmc_common.empty_panel": {
+          "ignored": "$betmc_hide_enchanted_text",
+          "size": ["100%cm", "100%cm"],
+          "controls": [
+            { "betmc_item_text_label@betmc_hud.betmc_item_text_label": {} }
+          ]
+        }
+      },
+      {
+        "betmc_java_items_text_control@betmc_common.empty_panel": {
+          "ignored": "(not $betmc_hide_enchanted_text)",
+          "clips_children": true,
+          "size": ["100%c", 10],
+          "controls": [
+            {
+              "betmc_item_text_label@betmc_hud.betmc_item_text_label": {
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  // BETMC F1 BUTTON AND INVENTORY HUD TOGGLE [ONLY MOBILE]
+  "betmc_hud_button_stack@betmc_common.betmc_stack_horizontal_with_controls": {
+    "$betmc_stack_horizontal_with_controls_size": ["100%cm", "100%cm"],
+    "$betmc_stack_horizontal_controls": [
+      { "betmc_hide_hud_button@betmc_hud.betmc_hide_hud_button": {} },
+      { "betmc_padding_1@betmc_common.empty_panel": { "size": [2, 0] } },
+      { "betmc_inv_hud_mobile_toggle@betmc_hud.betmc_inv_hud_toggle": {} }
+    ]
+  },
+
+  "betmc_show_hud_panel@betmc_common.empty_panel": { //For show hud
+    "controls": [
+      { "betmc_show_hud_content@betmc_hud.betmc_show_hud_content": {} }
+    ],
+    "bindings": [
+      {
+        "binding_name": "(not #hud_visible)",
+        "binding_name_override": "#visible",
+        "binding_type": "global"
+      },
+      {
+        "binding_name": "#hud_alpha",
+        "binding_name_override": "#alpha",
+        "binding_type": "global"
+      },
+      {
+        "binding_name": "#hud_propagate_alpha",
+        "binding_name_override": "#propagateAlpha",
+        "binding_type": "global"
+      }
+    ]
+  },
+
+  "betmc_show_hud_content@betmc_common.empty_panel": {
+    "ignored": "(not $touch)",
+    "size": [200, 22],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "controls": [
+      { "betmc_show_hud_button@betmc_hud.betmc_show_hud_button": {} },
+      {
+        "highlight_button_border@common_buttons.focus_border": {
+          "size": ["100%", "100%"],
+          "propagate_alpha": true,
+          "disable_anim_fast_forward": true,
+          "animation_reset_name": "button.hide_gui_all",
+          "$betmc_duration_offset": 2,
+          "anims": ["@betmc_anim.betmc_start_tooltip_alpha"],
+          "alpha": 1
+        }
+      },
+      {
+        "hotbar_show_hud_tooltip@betmc_common.empty_panel": {
+          "size": ["100%cm", "100%cm"],
+          "propagate_alpha": true,
+          "disable_anim_fast_forward": true,
+          "animation_reset_name": "button.hide_gui_all",
+          "anims": ["@betmc_anim.betmc_start_tooltip_offset"],
+          "layer": 10,
+          "alpha": 1,
+          "controls": [
+            {
+              "item_text_background@betmc_common.empty_image": {
+                "size": ["100%c + 12px", "100%c + 5px"],
+                "texture": "betmc_res/betmc_ui_textures/hud_tip_text_background",
+                "alpha": 0.45,
+                "controls": [
+                  {
+                    "item_text_label@betmc_hud.betmc_hud_label": {
+                      "$betmc_hud_text_offset": [0, -1],
+                      "text": "Bấm để hiển thị hud",
+                      "layer": 1
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#inventory_touch_button",
+              "binding_name_override": "#visible",
+              "binding_type": "global"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  // BETMC CCORC
+  "betmc_ccorc_panel@betmc_common.betmc_stack_vertical_with_controls": {
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "$betmc_stack_vertical_with_controls_size": [48, "100%"],
+    "$betmc_stack_vertical_controls": [
+      {
+        "betmc_padding_offset@betmc_common.empty_panel": {
+          "size": ["100%", 32],
+          "bindings": [
+            {
+              "binding_name": "#hud_visible_not_centered",
+              "binding_name_override": "#visible",
+              "binding_type": "global"
+            }
+          ]
+        }
+      },
+      { "betmc_ccorc_stack@betmc_hud.betmc_ccorc_stack": {} }
+    ]
+  },
+
+  "betmc_ccorc_stack@betmc_common.betmc_stack_horizontal_with_controls": {
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "$betmc_stack_horizontal_with_controls_size": [48, 16],
+    "$betmc_stack_horizontal_controls": [
+      {
+        "compass@betmc_hud.betmc_item_renderer": {
+          "property_bag": { "#item_id_aux": "($betmc_compass_id * 65536)" }
+        }
+      },
+      {
+        "recovery_compass@betmc_hud.betmc_item_renderer": {
+          "property_bag": { "#item_id_aux": "($betmc_recovery_compass_id * 65536)" }
+        }
+      },
+      {
+        "clock@betmc_hud.betmc_item_renderer": {
+          "property_bag": { "#item_id_aux": "($betmc_clock_id * 65536)" }
+        }
+      }
+    ]
+  },
+
+  // BETMC BOTTOM CHAT
+  "betmc_chat_panel@betmc_common.empty_panel": {
+    "clips_children": true,
+    "anchor_from": "bottom_left",
+    "anchor_to": "bottom_left",
+    "size": ["100%", "100%c"],
+    "max_size": ["100%", "50%"],
+    "offset": [0, -45],
+    "controls": [
+      {
+        "stack_panel@betmc_common.empty_stack_panel": {
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "factory": {
+            "name": "chat_item_factory",
+            "max_children_size": 50,
+            "control_ids": {
+              "chat_item": "chat_item@betmc_hud.chat_grid_item"
+            }
+          }
+        }
+      }
+    ]
+  },
+
+  "chat_grid_item@betmc_common.empty_panel": {
+    "layer": 40,
+    "size": ["100% - 2px", "100%c + 1px"],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "anims": [ "@betmc_anim.betmc_chat_grid_anim_stack", "@betmc_anim.betmc_chat_grid_anim_stack_start" ],
+    "bindings": [
+      {
+        "binding_name": "(not #on_new_death_screen)",
+        "binding_name_override": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "chat_background@betmc_common.empty_image": {
+          "texture": "betmc_res/betmc_ui_textures/betmc_black_textures",
+          "alpha": 0.4,
+          "size": ["100%", "100%c"],
+          "anims": ["@betmc_anim.betmc_chat_bg_anim_start"],
+          "controls": [
+            {
+              "chat_text@betmc_hud.chat_label": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [2, -1]
+              }
+            },
+            {
+              "betmc_chat_progress_time_out_panel@betmc_common.empty_panel": {
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [ "100%", 1 ],
+                "controls": [
+                  {
+                    "betmc_time_out_chat_bg@betmc_common.empty_image": {
+                      "anchor_from": "bottom_left",
+                      "anchor_to": "bottom_left",
+                      "size": "@betmc_anim.betmc_chat_timeout_bg_anim_wait",
+                      "texture": "betmc_res/betmc_ui_textures/betmc_white_textures",
+                      "fill": true,
+                      "layer": 27
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "chat_label@betmc_hud.betmc_hud_label": {
+    "size": ["100%", "default"],
+    "text": "#text",
+    "localize": false,
+    "color": "$chat_text_color",
+    "line_padding": "$chat_line_spacing",
+    "anims": ["@hud.anim_chat_txt_wait"],
+    "layer": 31,
+    "bindings": [
+      {
+        "binding_name": "#chat_text",
+        "binding_name_override": "#text",
+        "binding_type": "collection",
+        "binding_collection_name": "chat_text_grid",
+        "binding_condition": "once"
+      }
+    ]
+  },
+
+  // BETMC ROOT PANEL | (BASE CODE BY: ASAKI YUKI)
+  "betmc_hud_root_panel@betmc_common.empty_panel": {
+    "controls": [
+      { "betmc_mainhand_inventory_slot_collection_panel@betmc_hud.betmc_mainhand_inventory_slot_collection_panel": {} },
+      { "betmc_mainhand_hotbar_slot_collection_panel@betmc_hud.betmc_mainhand_hotbar_slot_collection_panel": {} },
+      { "betmc_mainhand_bow_and_crossbow_hotbar_slot_collection_panel@betmc_hud.betmc_mainhand_hotbar_slot_collection_panel": { "$betmc_hotbar_slot_collection_panel": "betmc_hud.betmc_mainhand_select_bow_and_crossbow_panel" }},
+      { "betmc_empty_inv_slot_content@betmc_hud.betmc_empty_inv_slot_content": {} },
+      { "betmc_ccorc_panel@betmc_hud.betmc_ccorc_panel": {} },
+      { "betmc_inventory_overlay_panel@betmc_hud.betmc_inventory_overlay_panel": {} }
+    ]
+  },
+
+  "betmc_mainhand_hotbar_slot_collection_panel@betmc_common.empty_collection_panel": { //FOR HOTBAR SLOT
+    "$betmc_hotbar_slot_collection_panel|default": "betmc_hud.betmc_mainhand_panel",
+    "collection_name": "hotbar_items",
+    "layer": 5,
+    "controls": [
+      { "slot_0@$betmc_hotbar_slot_collection_panel": { "collection_index": 0 }},
+      { "slot_1@$betmc_hotbar_slot_collection_panel": { "collection_index": 1 }},
+      { "slot_2@$betmc_hotbar_slot_collection_panel": { "collection_index": 2 }},
+      { "slot_3@$betmc_hotbar_slot_collection_panel": { "collection_index": 3 }},
+      { "slot_4@$betmc_hotbar_slot_collection_panel": { "collection_index": 4 }},
+      { "slot_5@$betmc_hotbar_slot_collection_panel": { "collection_index": 5 }},
+      { "slot_6@$betmc_hotbar_slot_collection_panel": { "collection_index": 6 }},
+      { "slot_7@$betmc_hotbar_slot_collection_panel": { "collection_index": 7 }},
+      { "slot_8@$betmc_hotbar_slot_collection_panel": { "collection_index": 8 }}
+    ]
+  },
+
+  "betmc_mainhand_inventory_slot_collection_panel@betmc_common.empty_collection_panel": { //FOR INVENTORY SLOT
+    "$betmc_inventory_slot_collection_panel|default": "betmc_hud.betmc_mainhand_total_item_inventory",
+    "collection_name": "hotbar_items",
+    "size": [0, 0],
+    "layer": 5,
+    "controls": [
+      {"inventory_slot_0@$betmc_inventory_slot_collection_panel": { "collection_index": 0 }}, //HOTBAR SLOT
+      {"inventory_slot_1@$betmc_inventory_slot_collection_panel": { "collection_index": 1 }},
+      {"inventory_slot_2@$betmc_inventory_slot_collection_panel": { "collection_index": 2 }},
+      {"inventory_slot_3@$betmc_inventory_slot_collection_panel": { "collection_index": 3 }},
+      {"inventory_slot_4@$betmc_inventory_slot_collection_panel": { "collection_index": 4 }},
+      {"inventory_slot_5@$betmc_inventory_slot_collection_panel": { "collection_index": 5 }},
+      {"inventory_slot_6@$betmc_inventory_slot_collection_panel": { "collection_index": 6 }},
+      {"inventory_slot_7@$betmc_inventory_slot_collection_panel": { "collection_index": 7 }},
+      {"inventory_slot_8@$betmc_inventory_slot_collection_panel": { "collection_index": 8 }},
+      {"inventory_slot_9@$betmc_inventory_slot_collection_panel": { "collection_index": 9 }}, //INVENTORY SLOT
+      {"inventory_slot_10@$betmc_inventory_slot_collection_panel": { "collection_index": 10 }},
+      {"inventory_slot_11@$betmc_inventory_slot_collection_panel": { "collection_index": 11 }},
+      {"inventory_slot_12@$betmc_inventory_slot_collection_panel": { "collection_index": 12 }},
+      {"inventory_slot_13@$betmc_inventory_slot_collection_panel": { "collection_index": 13 }},
+      {"inventory_slot_14@$betmc_inventory_slot_collection_panel": { "collection_index": 14 }},
+      {"inventory_slot_15@$betmc_inventory_slot_collection_panel": { "collection_index": 15 }},
+      {"inventory_slot_16@$betmc_inventory_slot_collection_panel": { "collection_index": 16 }},
+      {"inventory_slot_17@$betmc_inventory_slot_collection_panel": { "collection_index": 17 }},
+      {"inventory_slot_18@$betmc_inventory_slot_collection_panel": { "collection_index": 18 }},
+      {"inventory_slot_19@$betmc_inventory_slot_collection_panel": { "collection_index": 19 }},
+      {"inventory_slot_20@$betmc_inventory_slot_collection_panel": { "collection_index": 20 }},
+      {"inventory_slot_21@$betmc_inventory_slot_collection_panel": { "collection_index": 21 }},
+      {"inventory_slot_22@$betmc_inventory_slot_collection_panel": { "collection_index": 22 }},
+      {"inventory_slot_23@$betmc_inventory_slot_collection_panel": { "collection_index": 23 }},
+      {"inventory_slot_24@$betmc_inventory_slot_collection_panel": { "collection_index": 24 }},
+      {"inventory_slot_25@$betmc_inventory_slot_collection_panel": { "collection_index": 25 }},
+      {"inventory_slot_26@$betmc_inventory_slot_collection_panel": { "collection_index": 26 }},
+      {"inventory_slot_27@$betmc_inventory_slot_collection_panel": { "collection_index": 27 }},
+      {"inventory_slot_28@$betmc_inventory_slot_collection_panel": { "collection_index": 28 }},
+      {"inventory_slot_29@$betmc_inventory_slot_collection_panel": { "collection_index": 29 }},
+      {"inventory_slot_30@$betmc_inventory_slot_collection_panel": { "collection_index": 30 }},
+      {"inventory_slot_31@$betmc_inventory_slot_collection_panel": { "collection_index": 31 }},
+      {"inventory_slot_32@$betmc_inventory_slot_collection_panel": { "collection_index": 32 }},
+      {"inventory_slot_33@$betmc_inventory_slot_collection_panel": { "collection_index": 33 }},
+      {"inventory_slot_34@$betmc_inventory_slot_collection_panel": { "collection_index": 34 }},
+      {"inventory_slot_35@$betmc_inventory_slot_collection_panel": { "collection_index": 35 }}
+    ]
+  },
+
+  "betmc_mainhand_panel@betmc_common.custom_empty_panel": { //FOR HOTBAR SLOT BINDINGS
+    "bindings": [
+      {
+        "binding_collection_name": "hotbar_items",
+        "binding_name": "#slot_selected",
+        "binding_type": "collection"
+      },
+      {
+        "binding_collection_name": "hotbar_items",
+        "binding_name": "#item_id_aux",
+        "binding_type": "collection"
+      },
+      {
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_item_id_aux",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(not #betmc_item_id_aux)",
+        "target_property_name": "#betmc_slot_selected",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#slot_selected and #betmc_slot_selected)",
+        "target_property_name": "#visible",
+        "binding_type": "view"
+      }
+    ],
+    "controls": [
+      { "betmc_mainhand_stack_panel@betmc_hud.betmc_mainhand_stack_panel": {} },
+      { "betmc_mainhand_debug_stack_panel@betmc_hud.betmc_item_id_viewer_stack": {} }
+    ]
+  },
+
+  "betmc_mainhand_total_item_inventory@betmc_common.custom_empty_panel": { //FOR INVENTORY SLOT BINDINGS
+    "size": [0, 0],
+    "bindings": [
+      {
+        "binding_name": "#item_id_aux",
+        "binding_collection_name": "hotbar_items",
+        "binding_type": "collection"
+      },
+      {
+        "binding_name": "#inventory_stack_count",
+        "binding_collection_name": "hotbar_items",
+        "binding_type": "collection"
+      },
+      {
+        "source_property_name": "(#inventory_stack_count = '')",
+        "target_property_name": "#betmc_inventory_stack_count_0_tg",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#betmc_inventory_stack_count_0_tg + #inventory_stack_count - 'false')",
+        "target_property_name": "#betmc_inventory_stack_count_1_tg",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_item_id_aux_0_tg",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(not #betmc_item_id_aux_0_tg)",
+        "target_property_name": "#betmc_item_id_aux_1_tg",
+        "binding_type": "view"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((not (#inventory_stack_count * 1 > 1) * (not (#item_id_aux = -1) + 0)) + #inventory_stack_count * 1 )",
+        "target_property_name": "#betmc_item_stack_count"
+      },
+      {
+        "source_property_name": "(#betmc_inventory_stack_count_1_tg * 1 * #betmc_item_id_aux_1_tg)",
+        "target_property_name": "#IntItemStackCount",
+        "binding_collection_name": "hotbar_items",
+        "binding_type": "view"
+      }
+    ]
+  },
+  
+  "betmc_mainhand_stack_panel@betmc_common.horizontal_stack_panel": {
+    "size": ["100%cm", "100%cm"],
+    "offset": [95, -5],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_left",
+    "controls": [
+      {
+        "betmc_padding_mobile_panel@betmc_common.empty_panel": {
+          "size": [10, 0],
+          "bindings": [
+            {
+              "binding_name": "#inventory_touch_button",
+              "binding_name_override": "#visible",
+              "binding_type": "global"
+            }
+          ]
+        }
+      },
+      {
+        "betmc_hud_item_renderer@betmc_common.betmc_hud_item_renderer": {
+          "size": [16, 16],
+          "controls": [
+            { "betmc_item_count_label@betmc_hud.betmc_item_count_label": { "layer": 7 }}
+          ]
+        }
+      },
+      { "betmc_padding@betmc_common.empty_panel": { "size": [2, 2] }},
+      {
+        "betmc_mainhand_durability_and_total_item_panel@betmc_common.empty_panel": {
+          "size": ["100%c", "100%c"],
+          "controls": [
+            {
+              "betmc_mainhand_durability_and_total_item_stack@betmc_common.betmc_stack_vertical_with_controls": {
+                "$betmc_stack_vertical_with_controls_size": ["100%c", "100%cm"],
+                "$betmc_stack_vertical_controls": [
+                  { "betmc_total_item_count_label@betmc_hud.betmc_total_item_count_label": {} },
+                  { "betmc_mainhand_durability_label@betmc_hud.betmc_mainhand_durability_label": {} }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  //BETMC SHOW TOTAL ARROW COUNT WHEN HOLDING BOW AND CROSSBOW
+  "betmc_arrow_count@betmc_common.betmc_stack_horizontal_with_controls": {
+    "$betmc_stack_horizontal_with_controls_size": ["100%cm", "100%cm"],
+    "offset": [150, -5],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_left",
+    "$betmc_stack_horizontal_controls": [
+      {
+        "betmc_padding_mobile_panel@betmc_common.empty_panel": {
+          "size": [10, 0],
+          "bindings": [
+            {
+              "binding_name": "#inventory_touch_button",
+              "binding_name_override": "#visible",
+              "binding_type": "global"
+            }
+          ]
+        }
+      },
+      {
+        "betmc_arrow_item_renderer@betmc_hud.betmc_item_renderer": {
+          "property_bag": { "#item_id_aux": "($betmc_arrow_id * 65536)" }
+        }
+      },
+      { "betmc_padding@betmc_common.empty_panel": { "size": [2, 0] }},
+      {
+        "betmc_arrow_item_label_panel@betmc_common.empty_panel": {
+          "size": ["100%cm", "100%cm"],
+          "controls": [
+            { "betmc_mainhand_inventory_slot_collection_panel@betmc_hud.betmc_total_item_count_by_item_id_label": { "$betmc_item_id": "$betmc_arrow_id", "offset": [ 0, 4 ] }}
+          ]
+        }
+      }
+    ]
+  },
+
+  "betmc_mainhand_select_bow_and_crossbow_panel@betmc_common.custom_empty_panel": { //FOR HOLDING BOW AND CROSSBOW HOTBAR SLOT BINDINGS
+    "bindings": [
+      {
+        "binding_collection_name": "hotbar_items",
+        "binding_name": "#slot_selected",
+        "binding_type": "collection"
+      },
+      {
+        "binding_collection_name": "hotbar_items",
+        "binding_name": "#item_id_aux",
+        "binding_type": "collection"
+      },
+      {
+        "source_property_name": "((#item_id_aux / 65536 + 0 = $betmc_bow_id) or (#item_id_aux / 65536 + 0 = $betmc_crossbow_id))",
+        "target_property_name": "#betmc_item_id_check",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#betmc_item_id_check",
+        "target_property_name": "#betmc_slot_selected",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#slot_selected and #betmc_slot_selected)",
+        "target_property_name": "#visible",
+        "binding_type": "view"
+      }
+    ],
+    "controls": [
+      { "betmc_arrow_count@betmc_hud.betmc_arrow_count": {} }
+    ]
+  },
+
+  //MAINHAND ITEMS DURABILITY LABEL
+  "betmc_mainhand_durability_label@betmc_hud.betmc_hud_label": {
+    "$betmc_mainhand_durability_items_label|default": "('§z' + #betmc_current_durability_value + '/' + #betmc_total_durability_value)",
+    "$betmc_font_scale_factor": 0.65,
+    "text": "#text",
+    "layer": 5,
+    "shadow": true,
+    "bindings": [
+      {
+        "binding_name": "#item_durability_current_amount",
+        "binding_type": "collection",
+        "binding_collection_name": "hotbar_items"
+      },
+      {
+        "binding_name": "#item_durability_total_amount",
+        "binding_name_override": "#betmc_total_durability_00",
+        "binding_type": "collection",
+        "binding_collection_name": "hotbar_items"
+      },
+      {
+        "binding_name": "#slot_selected",
+        "binding_type": "collection",
+        "binding_collection_name": "hotbar_items"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#slot_selected and (not (#betmc_total_durability_00 = 0)))",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view", // BETMC CURRENT DURABILITY
+        "source_property_name": "(#item_durability_current_amount * ( 1 - ((#item_durability_current_amount < 0) * 2)))",
+        "target_property_name": "#betmc_current_durability_00"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(10000 * ((#betmc_current_durability_00 > 19999) + (#betmc_current_durability_00 > 29999) + (#betmc_current_durability_00 > 39999) + (#betmc_current_durability_00 > 49999) + (#betmc_current_durability_00 > 59999) + (#betmc_current_durability_00 > 69999) + (#betmc_current_durability_00 > 79999) + (#betmc_current_durability_00 > 89999) + (#betmc_current_durability_00 > 9999)))",
+        "target_property_name": "#betmc_current_durability_1"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_current_durability_00 - #betmc_current_durability_1)",
+        "target_property_name": "#betmc_current_durability_10"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(1000 * ((#betmc_current_durability_10 > 1999) + (#betmc_current_durability_10 > 2999) + (#betmc_current_durability_10 > 3999) + (#betmc_current_durability_10 > 4999) + (#betmc_current_durability_10 > 5999) + (#betmc_current_durability_10 > 6999) + (#betmc_current_durability_10 > 7999) + (#betmc_current_durability_10 > 8999) + (#betmc_current_durability_10 > 999)))",
+        "target_property_name": "#betmc_current_durability_2"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_current_durability_10 - #betmc_current_durability_2)",
+        "target_property_name": "#betmc_current_durability_20"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(100 * ((#betmc_current_durability_20 > 199) + (#betmc_current_durability_20 > 299) + (#betmc_current_durability_20 > 399) + (#betmc_current_durability_20 > 499) + (#betmc_current_durability_20 > 599) + (#betmc_current_durability_20 > 699) + (#betmc_current_durability_20 > 799) + (#betmc_current_durability_20 > 899) + (#betmc_current_durability_20 > 99)))",
+        "target_property_name": "#betmc_current_durability_3"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_current_durability_20 - #betmc_current_durability_3)",
+        "target_property_name": "#betmc_current_durability_30"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(10 * ((#betmc_current_durability_30 > 19) + (#betmc_current_durability_30 > 29) + (#betmc_current_durability_30 > 39) + (#betmc_current_durability_30 > 49) + (#betmc_current_durability_30 > 59) + (#betmc_current_durability_30 > 69) + (#betmc_current_durability_30 > 79) + (#betmc_current_durability_30 > 89) + (#betmc_current_durability_30 > 9)))",
+        "target_property_name": "#betmc_current_durability_4"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_current_durability_30 - #betmc_current_durability_4)",
+        "target_property_name": "#betmc_current_durability_40"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#betmc_current_durability_40 > 1) + (#betmc_current_durability_40 > 2) + (#betmc_current_durability_40 > 3) + (#betmc_current_durability_40 > 4) + (#betmc_current_durability_40 > 5) + (#betmc_current_durability_40 > 6) + (#betmc_current_durability_40 > 7) + (#betmc_current_durability_40 > 8) + (#betmc_current_durability_40 > 0))",
+        "target_property_name": "#betmc_current_durability_5"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#betmc_current_durability_1 + #betmc_current_durability_2 + #betmc_current_durability_3 + #betmc_current_durability_4 + #betmc_current_durability_5) * ( 1 - ((#item_durability_current_amount < 0) * 2)))",
+        "target_property_name": "#betmc_current_durability_value"
+      },
+      {
+        "binding_type": "view", // BETMC TOTAL DURABILITY
+        "source_property_name": "(10000 * ((#betmc_total_durability_00 > 19999) + (#betmc_total_durability_00 > 29999) + (#betmc_total_durability_00 > 39999) + (#betmc_total_durability_00 > 49999) + (#betmc_total_durability_00 > 59999) + (#betmc_total_durability_00 > 69999) + (#betmc_total_durability_00 > 79999) + (#betmc_total_durability_00 > 89999) + (#betmc_total_durability_00 > 9999)))",
+        "target_property_name": "#betmc_total_durability_1"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_total_durability_00 - #betmc_total_durability_1)",
+        "target_property_name": "#betmc_total_durability_10"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(1000 * ((#betmc_total_durability_10 > 1999) + (#betmc_total_durability_10 > 2999) + (#betmc_total_durability_10 > 3999) + (#betmc_total_durability_10 > 4999) + (#betmc_total_durability_10 > 5999) + (#betmc_total_durability_10 > 6999) + (#betmc_total_durability_10 > 7999) + (#betmc_total_durability_10 > 8999) + (#betmc_total_durability_10 > 999)))",
+        "target_property_name": "#betmc_total_durability_2"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_total_durability_10 - #betmc_total_durability_2)",
+        "target_property_name": "#betmc_total_durability_20"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(100 * ((#betmc_total_durability_20 > 199) + (#betmc_total_durability_20 > 299) + (#betmc_total_durability_20 > 399) + (#betmc_total_durability_20 > 499) + (#betmc_total_durability_20 > 599) + (#betmc_total_durability_20 > 699) + (#betmc_total_durability_20 > 799) + (#betmc_total_durability_20 > 899) + (#betmc_total_durability_20 > 99)))",
+        "target_property_name": "#betmc_total_durability_3"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_total_durability_20 - #betmc_total_durability_3)",
+        "target_property_name": "#betmc_total_durability_30"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(10 * ((#betmc_total_durability_30 > 19) + (#betmc_total_durability_30 > 29) + (#betmc_total_durability_30 > 39) + (#betmc_total_durability_30 > 49) + (#betmc_total_durability_30 > 59) + (#betmc_total_durability_30 > 69) + (#betmc_total_durability_30 > 79) + (#betmc_total_durability_30 > 89) + (#betmc_total_durability_30 > 9)))",
+        "target_property_name": "#betmc_total_durability_4"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_total_durability_30 - #betmc_total_durability_4)",
+        "target_property_name": "#betmc_total_durability_40"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#betmc_total_durability_40 > 1) + (#betmc_total_durability_40 > 2) + (#betmc_total_durability_40 > 3) + (#betmc_total_durability_40 > 4) + (#betmc_total_durability_40 > 5) + (#betmc_total_durability_40 > 6) + (#betmc_total_durability_40 > 7) + (#betmc_total_durability_40 > 8) + (#betmc_total_durability_40 > 0))",
+        "target_property_name": "#betmc_total_durability_5"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_total_durability_1 + #betmc_total_durability_2 + #betmc_total_durability_3 + #betmc_total_durability_4 + #betmc_total_durability_5)",
+        "target_property_name": "#betmc_total_durability_value"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "$betmc_mainhand_durability_items_label",
+        "target_property_name": "#text"
+      }
+    ]
+  },
+
+  //MAINHAND TOTAL ITEMS COUNT LABEL
+  "betmc_total_item_count_label@betmc_hud.betmc_hud_label": {
+    "$betmc_mainhand_total_items_label|default": "(('x' + (#totalHoldItemCount) + '/' + (#totalHoldSlotCount) + ' slot'))",
+    "$betmc_font_scale_factor": 0.65,
+    "text": "#text",
+    "layer": 5,
+    "shadow": true,
+    "bindings": [
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_0",
+        "source_control_name": "inventory_slot_0",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_0",
+        "source_control_name": "inventory_slot_0",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_0)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_0",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_0 * #ItemStackCount_0)",
+        "target_property_name": "#holdItemCount_0",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_1",
+        "source_control_name": "inventory_slot_1",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_1",
+        "source_control_name": "inventory_slot_1",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_1)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_1",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_1 * #ItemStackCount_1)",
+        "target_property_name": "#holdItemCount_1",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_2",
+        "source_control_name": "inventory_slot_2",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_2",
+        "source_control_name": "inventory_slot_2",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_2)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_2",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_2 * #ItemStackCount_2)",
+        "target_property_name": "#holdItemCount_2",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_3",
+        "source_control_name": "inventory_slot_3",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_3",
+        "source_control_name": "inventory_slot_3",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_3)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_3",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_3 * #ItemStackCount_3)",
+        "target_property_name": "#holdItemCount_3",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_4",
+        "source_control_name": "inventory_slot_4",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_4",
+        "source_control_name": "inventory_slot_4",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_4)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_4",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_4 * #ItemStackCount_4)",
+        "target_property_name": "#holdItemCount_4",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_5",
+        "source_control_name": "inventory_slot_5",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_5",
+        "source_control_name": "inventory_slot_5",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_5)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_5",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_5 * #ItemStackCount_5)",
+        "target_property_name": "#holdItemCount_5",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_6",
+        "source_control_name": "inventory_slot_6",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_6",
+        "source_control_name": "inventory_slot_6",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_6)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_6",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_6 * #ItemStackCount_6)",
+        "target_property_name": "#holdItemCount_6",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_7",
+        "source_control_name": "inventory_slot_7",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_7",
+        "source_control_name": "inventory_slot_7",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_7)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_7",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_7 * #ItemStackCount_7)",
+        "target_property_name": "#holdItemCount_7",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_8",
+        "source_control_name": "inventory_slot_8",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_8",
+        "source_control_name": "inventory_slot_8",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_8)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_8",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_8 * #ItemStackCount_8)",
+        "target_property_name": "#holdItemCount_8",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_9",
+        "source_control_name": "inventory_slot_9",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_9",
+        "source_control_name": "inventory_slot_9",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_9)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_9",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_9 * #ItemStackCount_9)",
+        "target_property_name": "#holdItemCount_9",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_10",
+        "source_control_name": "inventory_slot_10",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_10",
+        "source_control_name": "inventory_slot_10",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_10)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_10",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_10 * #ItemStackCount_10)",
+        "target_property_name": "#holdItemCount_10",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_11",
+        "source_control_name": "inventory_slot_11",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_11",
+        "source_control_name": "inventory_slot_11",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_11)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_11",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_11 * #ItemStackCount_11)",
+        "target_property_name": "#holdItemCount_11",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_12",
+        "source_control_name": "inventory_slot_12",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_12",
+        "source_control_name": "inventory_slot_12",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_12)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_12",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_12 * #ItemStackCount_12)",
+        "target_property_name": "#holdItemCount_12",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_13",
+        "source_control_name": "inventory_slot_13",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_13",
+        "source_control_name": "inventory_slot_13",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_13)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_13",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_13 * #ItemStackCount_13)",
+        "target_property_name": "#holdItemCount_13",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_14",
+        "source_control_name": "inventory_slot_14",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_14",
+        "source_control_name": "inventory_slot_14",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_14)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_14",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_14 * #ItemStackCount_14)",
+        "target_property_name": "#holdItemCount_14",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_15",
+        "source_control_name": "inventory_slot_15",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_15",
+        "source_control_name": "inventory_slot_15",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_15)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_15",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_15 * #ItemStackCount_15)",
+        "target_property_name": "#holdItemCount_15",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_16",
+        "source_control_name": "inventory_slot_16",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_16",
+        "source_control_name": "inventory_slot_16",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_16)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_16",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_16 * #ItemStackCount_16)",
+        "target_property_name": "#holdItemCount_16",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_17",
+        "source_control_name": "inventory_slot_17",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_17",
+        "source_control_name": "inventory_slot_17",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_17)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_17",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_17 * #ItemStackCount_17)",
+        "target_property_name": "#holdItemCount_17",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_18",
+        "source_control_name": "inventory_slot_18",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_18",
+        "source_control_name": "inventory_slot_18",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_18)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_18",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_18 * #ItemStackCount_18)",
+        "target_property_name": "#holdItemCount_18",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_19",
+        "source_control_name": "inventory_slot_19",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_19",
+        "source_control_name": "inventory_slot_19",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_19)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_19",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_19 * #ItemStackCount_19)",
+        "target_property_name": "#holdItemCount_19",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_20",
+        "source_control_name": "inventory_slot_20",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_20",
+        "source_control_name": "inventory_slot_20",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_20)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_20",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_20 * #ItemStackCount_20)",
+        "target_property_name": "#holdItemCount_20",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_21",
+        "source_control_name": "inventory_slot_21",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_21",
+        "source_control_name": "inventory_slot_21",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_21)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_21",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_21 * #ItemStackCount_21)",
+        "target_property_name": "#holdItemCount_21",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_22",
+        "source_control_name": "inventory_slot_22",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_22",
+        "source_control_name": "inventory_slot_22",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_22)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_22",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_22 * #ItemStackCount_22)",
+        "target_property_name": "#holdItemCount_22",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_23",
+        "source_control_name": "inventory_slot_23",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_23",
+        "source_control_name": "inventory_slot_23",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_23)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_23",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_23 * #ItemStackCount_23)",
+        "target_property_name": "#holdItemCount_23",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_24",
+        "source_control_name": "inventory_slot_24",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_24",
+        "source_control_name": "inventory_slot_24",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_24)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_24",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_24 * #ItemStackCount_24)",
+        "target_property_name": "#holdItemCount_24",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_25",
+        "source_control_name": "inventory_slot_25",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_25",
+        "source_control_name": "inventory_slot_25",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_25)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_25",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_25 * #ItemStackCount_25)",
+        "target_property_name": "#holdItemCount_25",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_26",
+        "source_control_name": "inventory_slot_26",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_26",
+        "source_control_name": "inventory_slot_26",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_26)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_26",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_26 * #ItemStackCount_26)",
+        "target_property_name": "#holdItemCount_26",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_27",
+        "source_control_name": "inventory_slot_27",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_27",
+        "source_control_name": "inventory_slot_27",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_27)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_27",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_27 * #ItemStackCount_27)",
+        "target_property_name": "#holdItemCount_27",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_28",
+        "source_control_name": "inventory_slot_28",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_28",
+        "source_control_name": "inventory_slot_28",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_28)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_28",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_28 * #ItemStackCount_28)",
+        "target_property_name": "#holdItemCount_28",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_29",
+        "source_control_name": "inventory_slot_29",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_29",
+        "source_control_name": "inventory_slot_29",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_29)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_29",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_29 * #ItemStackCount_29)",
+        "target_property_name": "#holdItemCount_29",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_30",
+        "source_control_name": "inventory_slot_30",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_30",
+        "source_control_name": "inventory_slot_30",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_30)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_30",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_30 * #ItemStackCount_30)",
+        "target_property_name": "#holdItemCount_30",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_31",
+        "source_control_name": "inventory_slot_31",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_31",
+        "source_control_name": "inventory_slot_31",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_31)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_31",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_31 * #ItemStackCount_31)",
+        "target_property_name": "#holdItemCount_31",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_32",
+        "source_control_name": "inventory_slot_32",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_32",
+        "source_control_name": "inventory_slot_32",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_32)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_32",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_32 * #ItemStackCount_32)",
+        "target_property_name": "#holdItemCount_32",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_33",
+        "source_control_name": "inventory_slot_33",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_33",
+        "source_control_name": "inventory_slot_33",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_33)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_33",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_33 * #ItemStackCount_33)",
+        "target_property_name": "#holdItemCount_33",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_34",
+        "source_control_name": "inventory_slot_34",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_34",
+        "source_control_name": "inventory_slot_34",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_34)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_34",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_34 * #ItemStackCount_34)",
+        "target_property_name": "#holdItemCount_34",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#slotAuxID_35",
+        "source_control_name": "inventory_slot_35",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "#IntItemStackCount",
+        "target_property_name": "#ItemStackCount_35",
+        "source_control_name": "inventory_slot_35",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(('betmc' + (#slotAuxID_35)) = ('betmc' + (#item_id_aux)))",
+        "target_property_name": "#isHoldItem_35",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_35 * #ItemStackCount_35)",
+        "target_property_name": "#holdItemCount_35",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#holdItemCount_0+#holdItemCount_1+#holdItemCount_2+#holdItemCount_3+#holdItemCount_4+#holdItemCount_5+#holdItemCount_6+#holdItemCount_7+#holdItemCount_8+#holdItemCount_9+#holdItemCount_10+#holdItemCount_11+#holdItemCount_12+#holdItemCount_13+#holdItemCount_14+#holdItemCount_15+#holdItemCount_16+#holdItemCount_17+#holdItemCount_18+#holdItemCount_19+#holdItemCount_20+#holdItemCount_21+#holdItemCount_22+#holdItemCount_23+#holdItemCount_24+#holdItemCount_25+#holdItemCount_26+#holdItemCount_27+#holdItemCount_28+#holdItemCount_29+#holdItemCount_30+#holdItemCount_31+#holdItemCount_32+#holdItemCount_33+#holdItemCount_34+#holdItemCount_35)",
+        "target_property_name": "#totalHoldItemCount",
+        "binding_type": "view"
+      },
+      {
+        "source_property_name": "(#isHoldItem_0+#isHoldItem_1+#isHoldItem_2+#isHoldItem_3+#isHoldItem_4+#isHoldItem_5+#isHoldItem_6+#isHoldItem_7+#isHoldItem_8+#isHoldItem_9+#isHoldItem_10+#isHoldItem_11+#isHoldItem_12+#isHoldItem_13+#isHoldItem_14+#isHoldItem_15+#isHoldItem_16+#isHoldItem_17+#isHoldItem_18+#isHoldItem_19+#isHoldItem_20+#isHoldItem_21+#isHoldItem_22+#isHoldItem_23+#isHoldItem_24+#isHoldItem_25+#isHoldItem_26+#isHoldItem_27+#isHoldItem_28+#isHoldItem_29+#isHoldItem_30+#isHoldItem_31+#isHoldItem_32+#isHoldItem_33+#isHoldItem_34+#isHoldItem_35)",
+        "target_property_name": "#totalHoldSlotCount",
+        "binding_type": "view"
+      },
+      {
+        "binding_name": "#item_id_aux",
+        "binding_collection_name": "hotbar_items",
+        "binding_type": "collection"
+      },
+      {
+        "source_property_name": "$betmc_mainhand_total_items_label",
+        "target_property_name": "#text",
+        "binding_type": "view"
+      }
+    ]
+  },
+
+  //MAINHAND TOTAL ITEMS COUNT LABEL BY ITEM ID
+  "betmc_total_item_count_by_item_id_label@betmc_hud.betmc_hud_label": {
+    "$betmc_font_scale_factor": 0.65,
+    "text": "#text",
+    "layer": 5,
+    "shadow": true,
+    "property_bag": {
+      "#betmc_item_id": "$betmc_item_id"
+    },
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_0",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_0"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_0",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_0"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_1",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_1"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_1",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_1"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_2",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_2"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_2",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_2"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_3",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_3"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_3",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_3"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_4",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_4"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_4",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_4"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_5",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_5"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_5",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_5"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_6",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_6"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_6",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_6"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_7",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_7"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_7",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_7"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_8",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_8"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_8",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_8"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_9",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_9"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_9",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_9"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_10",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_10"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_10",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_10"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_11",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_11"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_11",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_11"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_12",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_12"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_12",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_12"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_13",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_13"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_13",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_13"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_14",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_14"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_14",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_14"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_15",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_15"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_15",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_15"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_16",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_16"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_16",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_16"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_17",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_17"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_17",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_17"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_18",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_18"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_18",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_18"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_19",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_19"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_19",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_19"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_20",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_20"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_20",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_20"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_21",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_21"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_21",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_21"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_22",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_22"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_22",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_22"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_23",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_23"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_23",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_23"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_24",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_24"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_24",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_24"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_25",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_25"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_25",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_25"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_26",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_26"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_26",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_26"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_27",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_27"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_27",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_27"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_28",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_28"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_28",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_28"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_29",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_29"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_29",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_29"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_30",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_30"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_30",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_30"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_31",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_31"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_31",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_31"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_32",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_32"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_32",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_32"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_33",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_33"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_33",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_33"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_34",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_34"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_34",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_34"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_35",
+        "source_property_name": "#item_id_aux",
+        "target_property_name": "#betmc_item_slot_35"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "inventory_slot_35",
+        "source_property_name": "#betmc_item_stack_count",
+        "target_property_name": "#betmc_item_count_slot_35"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(§zx + (((#betmc_item_id = #betmc_item_slot_0 / 65536 + 0) * #betmc_item_count_slot_0) + ((#betmc_item_id = #betmc_item_slot_1 / 65536 + 0) * #betmc_item_count_slot_1) + ((#betmc_item_id = #betmc_item_slot_2 / 65536 + 0) * #betmc_item_count_slot_2) + ((#betmc_item_id = #betmc_item_slot_3 / 65536 + 0) * #betmc_item_count_slot_3) + ((#betmc_item_id = #betmc_item_slot_4 / 65536 + 0) * #betmc_item_count_slot_4) + ((#betmc_item_id = #betmc_item_slot_5 / 65536 + 0) * #betmc_item_count_slot_5) + ((#betmc_item_id = #betmc_item_slot_6 / 65536 + 0) * #betmc_item_count_slot_6) + ((#betmc_item_id = #betmc_item_slot_7 / 65536 + 0) * #betmc_item_count_slot_7) + ((#betmc_item_id = #betmc_item_slot_8 / 65536 + 0) * #betmc_item_count_slot_8) + ((#betmc_item_id = #betmc_item_slot_9 / 65536 + 0) * #betmc_item_count_slot_9) + ((#betmc_item_id = #betmc_item_slot_10 / 65536 + 0) * #betmc_item_count_slot_10) + ((#betmc_item_id = #betmc_item_slot_11 / 65536 + 0) * #betmc_item_count_slot_11) + ((#betmc_item_id = #betmc_item_slot_12 / 65536 + 0) * #betmc_item_count_slot_12) + ((#betmc_item_id = #betmc_item_slot_13 / 65536 + 0) * #betmc_item_count_slot_13) + ((#betmc_item_id = #betmc_item_slot_14 / 65536 + 0) * #betmc_item_count_slot_14) + ((#betmc_item_id = #betmc_item_slot_15 / 65536 + 0) * #betmc_item_count_slot_15) + ((#betmc_item_id = #betmc_item_slot_16 / 65536 + 0) * #betmc_item_count_slot_16) + ((#betmc_item_id = #betmc_item_slot_17 / 65536 + 0) * #betmc_item_count_slot_17) + ((#betmc_item_id = #betmc_item_slot_18 / 65536 + 0) * #betmc_item_count_slot_18) + ((#betmc_item_id = #betmc_item_slot_19 / 65536 + 0) * #betmc_item_count_slot_19) + ((#betmc_item_id = #betmc_item_slot_20 / 65536 + 0) * #betmc_item_count_slot_20) + ((#betmc_item_id = #betmc_item_slot_21 / 65536 + 0) * #betmc_item_count_slot_21) + ((#betmc_item_id = #betmc_item_slot_22 / 65536 + 0) * #betmc_item_count_slot_22) + ((#betmc_item_id = #betmc_item_slot_23 / 65536 + 0) * #betmc_item_count_slot_23) + ((#betmc_item_id = #betmc_item_slot_24 / 65536 + 0) * #betmc_item_count_slot_24) + ((#betmc_item_id = #betmc_item_slot_25 / 65536 + 0) * #betmc_item_count_slot_25) + ((#betmc_item_id = #betmc_item_slot_26 / 65536 + 0) * #betmc_item_count_slot_26) + ((#betmc_item_id = #betmc_item_slot_27 / 65536 + 0) * #betmc_item_count_slot_27) + ((#betmc_item_id = #betmc_item_slot_28 / 65536 + 0) * #betmc_item_count_slot_28) + ((#betmc_item_id = #betmc_item_slot_29 / 65536 + 0) * #betmc_item_count_slot_29) + ((#betmc_item_id = #betmc_item_slot_30 / 65536 + 0) * #betmc_item_count_slot_30) + ((#betmc_item_id = #betmc_item_slot_31 / 65536 + 0) * #betmc_item_count_slot_31) + ((#betmc_item_id = #betmc_item_slot_32 / 65536 + 0) * #betmc_item_count_slot_32) + ((#betmc_item_id = #betmc_item_slot_33 / 65536 + 0) * #betmc_item_count_slot_33) + ((#betmc_item_id = #betmc_item_slot_34 / 65536 + 0) * #betmc_item_count_slot_34) + ((#betmc_item_id = #betmc_item_slot_35 / 65536 + 0) * #betmc_item_count_slot_35)))",
+        "target_property_name": "#text"
+      }
+    ]
+  },
+
+  //BETMC DISPLAY PLAYER CHUNK POSITION (BASE CODE BY: ASAKI YUKI)
+  "betmc_player_position_panel@betmc_common.empty_panel": {
+    "size": ["100%cm", "100%cm"],
+    "bindings": [
+      {
+        "binding_name": "#player_position_visible",
+        "binding_name_override": "#visible",
+        "binding_condition": "always",
+        "binding_type": "global"
+      }
+    ],
+    "controls": [
+      { "betmc_player_position_stack@betmc_hud.betmc_player_position_stack": {} }
+    ]
+  },
+
+  "betmc_player_position_stack@betmc_common.betmc_stack_vertical_with_controls": {
+    "$betmc_stack_vertical_with_controls_size": ["100%cm", "100%c"],
+    "$betmc_stack_vertical_controls": [
+      {
+        "player_position_text@betmc_hud.betmc_hud_label": {
+          "enable_profanity_filter": false,
+          "text": "#text",
+          "shadow": true,
+          "bindings": [
+            {
+              "binding_name": "#player_position_text",
+              "binding_condition": "always",
+              "binding_type": "global"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(': ' + #player_position_text - ('%.1s' * #player_position_text + ': ') - ('%.2s' * #player_position_text + ': ') - ('%.3s' * #player_position_text + ': ') - ('%.4s' * #player_position_text + ': ') - ('%.5s' * #player_position_text + ': ') - ('%.6s' * #player_position_text + ': ') - ('%.7s' * #player_position_text + ': ') - ('%.8s' * #player_position_text + ': ') - ('%.9s' * #player_position_text + ': ') - ('%.10s' * #player_position_text + ': ') - ('%.11s' * #player_position_text + ': ') - ('%.12s' * #player_position_text + ': ') - ('%.13s' * #player_position_text + ': ') - ('%.14s' * #player_position_text + ': ') - ('%.15s' * #player_position_text + ': ') - ('%.16s' * #player_position_text + ': ') - ('%.17s' * #player_position_text + ': ') - ('%.18s' * #player_position_text + ': ') - ('%.19s' * #player_position_text + ': ') - ('%.20s' * #player_position_text + ': ') - ('%.21s' * #player_position_text + ': ') - ('%.22s' * #player_position_text + ': ') - ('%.23s' * #player_position_text + ': ') - ('%.24s' * #player_position_text + ': ') - ('%.25s' * #player_position_text + ': ') - ('%.26s' * #player_position_text + ': ') - ('%.27s' * #player_position_text + ': ') - ('%.28s' * #player_position_text + ': ') - ('%.29s' * #player_position_text + ': ') - ('%.30s' * #player_position_text + ': ') - ('%.31s' * #player_position_text + ': ') - ('%.32s' * #player_position_text + ': '))",
+              "target_property_name": "#position_text"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#position_text - ': ')",
+              "target_property_name": "#coor_x"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#position_text - (': ' + #coor_x + ', '))",
+              "target_property_name": "#coor_y"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#position_text - (': ' + #coor_x + ', ' + #coor_y + ', '))",
+              "target_property_name": "#coor_z"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "#player_position_text",
+              "target_property_name": "#text"
+            }
+          ]
+        }
+      },
+      {
+        "player_chunk_position_text@betmc_hud.betmc_hud_label": {
+          "ignored": "(not $betmc_enable_chunk_position)",
+          "enable_profanity_filter": false,
+          "text": "#text",
+          "shadow": true,
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "player_position_text",
+              "source_property_name": "#coor_x",
+              "target_property_name": "#coor_x"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "player_position_text",
+              "source_property_name": "#coor_y",
+              "target_property_name": "#coor_y"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "player_position_text",
+              "source_property_name": "#coor_z",
+              "target_property_name": "#coor_z"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#coor_x / 16 - (#coor_x < 0))",
+              "target_property_name": "#chunk_coor_x"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#coor_y / 16 - (#coor_y < 0))",
+              "target_property_name": "#chunk_coor_y"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#coor_z / 16 - (#coor_z < 0))",
+              "target_property_name": "#chunk_coor_z"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#coor_x - #chunk_coor_x * 16)",
+              "target_property_name": "#in_chunk_coor_x"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#coor_y - #chunk_coor_y * 16)",
+              "target_property_name": "#in_chunk_coor_y"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#coor_z - #chunk_coor_z * 16)",
+              "target_property_name": "#in_chunk_coor_z"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "('Chunk: ' + (#in_chunk_coor_x < 16) * #in_chunk_coor_x + ', ' + (#in_chunk_coor_y < 16) * #in_chunk_coor_y + ', ' + (#in_chunk_coor_z < 16) * #in_chunk_coor_z + ' in ' + #chunk_coor_x + ', ' + #chunk_coor_y + ', ' + #chunk_coor_z)",
+              "target_property_name": "#text"
+            }
+          ]
+        }
+      },
+      {
+        "nether_position_text@betmc_hud.betmc_hud_label": {
+          "ignored": "(not $betmc_enable_nether_position)",
+          "enable_profanity_filter": false,
+          "text": "#text",
+          "shadow": true,
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "player_position_text",
+              "source_property_name": "#coor_x",
+              "target_property_name": "#coor_x"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "player_position_text",
+              "source_property_name": "#coor_y",
+              "target_property_name": "#coor_y"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "player_position_text",
+              "source_property_name": "#coor_z",
+              "target_property_name": "#coor_z"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "('Nether: ' + #coor_x / 8 + ', ' + '?' + ', ' + #coor_z / 8 + ' [In Overworld]' )",
+              "target_property_name": "#text"
+            }
+          ]
+        }
+      },
+      {
+        "overworld_position_text@betmc_hud.betmc_hud_label": {
+          "ignored": "(not $betmc_enable_overworld_position)",
+          "enable_profanity_filter": false,
+          "text": "#text",
+          "shadow": true,
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "player_position_text",
+              "source_property_name": "#coor_x",
+              "target_property_name": "#coor_x"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "player_position_text",
+              "source_property_name": "#coor_y",
+              "target_property_name": "#coor_y"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "player_position_text",
+              "source_property_name": "#coor_z",
+              "target_property_name": "#coor_z"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "('Overworld: ' + #coor_x * 8 + ', ' + '?' + ', ' + #coor_z * 8 + ' [In Nether]' )",
+              "target_property_name": "#text"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "betmc_number_of_days_played@betmc_hud.betmc_hud_label": {
+    "enable_profanity_filter": false,
+    "text": "#text",
+    "shadow": true,
+    "bindings": [
+      {
+        "binding_name": "#number_of_days_played_text",
+        "binding_name_override": "#text",
+        "binding_condition": "always_when_visible",
+        "binding_type": "global"
+      },
+      {
+        "binding_name": "#number_of_days_played_visible",
+        "binding_name_override": "#visible",
+        "binding_condition": "always",
+        "binding_type": "global"
+      }
+    ]
+  },
+
+  // BETMC EMPTY INVENTORY SLOT (BASE CODE BY: ASAKI YUKI)
+  "betmc_empty_inv_slot_content@betmc_common.vertical_stack_panel": {
+    "size": ["100%c", "100%c"],
+    "anchor_from": "bottom_left",
+    "anchor_to": "bottom_left",
+    "offset": [2, -2],
+    "controls": [
+      { "betmc_empty_inv_slot_label@betmc_hud.betmc_empty_inv_slot_label": {} },
+      { "betmc_exp_point_caculator@betmc_hud.betmc_exp_point_caculator": {} }
+    ]
+  },
+
+  "betmc_empty_inv_slot_label@betmc_hud.betmc_hud_label": {
+    "text": "#text",
+    "layer": 5,
+    "shadow": true,
+    "bindings": [
+      {
+        "binding_type": "view", // FOR HOTBAR
+        "source_control_name": "betmc_hotbar_slot_1",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_hotbar_slot_1_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_hotbar_slot_2",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_hotbar_slot_2_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_hotbar_slot_3",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_hotbar_slot_3_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_hotbar_slot_4",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_hotbar_slot_4_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_hotbar_slot_5",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_hotbar_slot_5_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_hotbar_slot_6",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_hotbar_slot_6_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_hotbar_slot_7",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_hotbar_slot_7_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_hotbar_slot_8",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_hotbar_slot_8_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_hotbar_slot_9",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_hotbar_slot_9_tg"
+      },
+      {
+        "binding_type": "view", // FOR INVENTORY
+        "source_control_name": "betmc_inventory_slot_1",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_1_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_2",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_2_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_3",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_3_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_4",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_4_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_5",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_5_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_6",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_6_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_7",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_7_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_8",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_8_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_9",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_9_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_10",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_10_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_11",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_11_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_12",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_12_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_13",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_13_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_14",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_14_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_15",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_15_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_16",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_16_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_17",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_17_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_18",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_18_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_19",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_19_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_20",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_20_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_21",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_21_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_22",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_22_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_23",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_23_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_24",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_24_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_25",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_25_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_26",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_26_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inventory_slot_27",
+        "source_property_name": "(#item_id_aux = -1)",
+        "target_property_name": "#betmc_inv_slot_27_tg"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_hotbar_slot_1_tg + #betmc_hotbar_slot_2_tg + #betmc_hotbar_slot_3_tg + #betmc_hotbar_slot_4_tg + #betmc_hotbar_slot_5_tg + #betmc_hotbar_slot_6_tg + #betmc_hotbar_slot_7_tg + #betmc_hotbar_slot_8_tg + #betmc_hotbar_slot_9_tg + #betmc_inv_slot_1_tg + #betmc_inv_slot_2_tg + #betmc_inv_slot_3_tg + #betmc_inv_slot_4_tg + #betmc_inv_slot_5_tg + #betmc_inv_slot_6_tg + #betmc_inv_slot_7_tg + #betmc_inv_slot_8_tg + #betmc_inv_slot_9_tg + #betmc_inv_slot_10_tg + #betmc_inv_slot_11_tg + #betmc_inv_slot_12_tg + #betmc_inv_slot_13_tg + #betmc_inv_slot_14_tg + #betmc_inv_slot_15_tg + #betmc_inv_slot_16_tg + #betmc_inv_slot_17_tg + #betmc_inv_slot_18_tg + #betmc_inv_slot_19_tg + #betmc_inv_slot_20_tg + #betmc_inv_slot_21_tg + #betmc_inv_slot_22_tg + #betmc_inv_slot_23_tg + #betmc_inv_slot_24_tg + #betmc_inv_slot_25_tg + #betmc_inv_slot_26_tg + #betmc_inv_slot_27_tg)",
+        "target_property_name": "#betmc_total_empty_slot"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "('§z' + 'Slot Available: ' + #betmc_total_empty_slot + '/36')",
+        "target_property_name": "#text"
+      }
+    ]
+  },
+
+  // BETMC EXP PERCENT | (BASE CODE BY: ASAKI YUKI)
+  "betmc_exp_percent_panel@betmc_common.empty_panel": {
+    "size": [0, 0],
+    "offset": [-10, 0],
+    "anchor_from": "left_middle",
+    "anchor_to": "left_middle",
+    "controls": [
+      {
+        "betmc_exp_percent_label@betmc_hud.betmc_exp_percent_label": {
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle"
+        }
+      }
+    ]
+  },
+
+  "betmc_exp_percent_label@betmc_hud.betmc_hud_label": {
+    "$betmc_progress_text_offset": [2, -3],
+    "$betmc_label_color": "$experience_text_color",
+    "text": "#text",
+    "shadow": true,
+    "layer": 5,
+    "bindings": [
+      {
+        "binding_name": "#exp_progress"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(1000 - #exp_progress * 1000)",
+        "target_property_name": "#betmc_exp_amount_0"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#betmc_exp_amount_0 > 99) * 100 + (#betmc_exp_amount_0 > 199) * 100 + (#betmc_exp_amount_0 > 299) * 100 + (#betmc_exp_amount_0 > 399) * 100 + (#betmc_exp_amount_0 > 499) * 100 + (#betmc_exp_amount_0 > 599) * 100 + (#betmc_exp_amount_0 > 699) * 100 + (#betmc_exp_amount_0 > 799) * 100 + (#betmc_exp_amount_0 > 899) * 100 + (#betmc_exp_amount_0 > 999) * 10)",
+        "target_property_name": "#betmc_exp_amount_1"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_exp_amount_1 + (#betmc_exp_amount_0 - #betmc_exp_amount_1 > 9) * 10 + (#betmc_exp_amount_0 - #betmc_exp_amount_1 > 19) * 10 + (#betmc_exp_amount_0 - #betmc_exp_amount_1 > 29) * 10 + (#betmc_exp_amount_0 - #betmc_exp_amount_1 > 39) * 10 + (#betmc_exp_amount_0 - #betmc_exp_amount_1 > 49) * 10 + (#betmc_exp_amount_0 - #betmc_exp_amount_1 > 59) * 10 + (#betmc_exp_amount_0 - #betmc_exp_amount_1 > 69) * 10 + (#betmc_exp_amount_0 - #betmc_exp_amount_1 > 79) * 10 + (#betmc_exp_amount_0 - #betmc_exp_amount_1 > 89) * 10)",
+        "target_property_name": "#betmc_exp_amount_2"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#betmc_exp_amount_0 - #betmc_exp_amount_2 > 0) + (#betmc_exp_amount_0 - #betmc_exp_amount_2 > 1) + (#betmc_exp_amount_0 - #betmc_exp_amount_2 > 2) + (#betmc_exp_amount_0 - #betmc_exp_amount_2 > 3) + (#betmc_exp_amount_0 - #betmc_exp_amount_2 > 4) + (#betmc_exp_amount_0 - #betmc_exp_amount_2 > 5) + (#betmc_exp_amount_0 - #betmc_exp_amount_2 > 6) + (#betmc_exp_amount_0 - #betmc_exp_amount_2 > 7) + (#betmc_exp_amount_0 - #betmc_exp_amount_2 > 8))",
+        "target_property_name": "#betmc_exp_decimal"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "('§z' + #betmc_exp_amount_2 / 10 + '.' + #betmc_exp_decimal + '%%')",
+        "target_property_name": "#text"
+      }
+    ]
+  },
+
+  // BETMC EXP POINT CACULATOR | (BASE CODE BY: ASAKI YUKI)
+  "betmc_exp_point_caculator@betmc_hud.betmc_hud_label": {
+    "$betmc_hud_text_offset": [0, -10],
+    "text": "#text",
+    "shadow": true,
+    "color": "$experience_text_color",
+    "bindings": [
+      {
+        "binding_type": "global",
+        "binding_name": "#level_number"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#level_number * 1)",
+        "target_property_name": "#betmc_lv_int"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((2 * #betmc_lv_int + 7) * (#betmc_lv_int < 16))",
+        "target_property_name": "#betmc_nl_1"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((5 * #betmc_lv_int - 38) * ((#betmc_lv_int < 31) and (#betmc_lv_int > 15)))",
+        "target_property_name": "#betmc_nl_2"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((9 * #betmc_lv_int - 158) * (#betmc_lv_int > 30))",
+        "target_property_name": "#betmc_nl_3"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_nl_1 + #betmc_nl_2 + #betmc_nl_3)",
+        "target_property_name": "#betmc_exp_require"
+      },
+      {
+        "binding_type": "global",
+        "binding_name": "#exp_progress"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#betmc_exp_require * 100 + 10) * (1 - #exp_progress))",
+        "target_property_name": "#betmc_epc"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(10000000 * ((#betmc_epc > 19999999) + (#betmc_epc > 9999999)))",
+        "target_property_name": "#betmc_cep_1"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_epc - #betmc_cep_1)",
+        "target_property_name": "#betmc_cep_01"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(1000000 * ((#betmc_cep_01 > 1999999) + (#betmc_cep_01 > 2999999) + (#betmc_cep_01 > 3999999) + (#betmc_cep_01 > 4999999) + (#betmc_cep_01 > 5999999) + (#betmc_cep_01 > 6999999) + (#betmc_cep_01 > 7999999) + (#betmc_cep_01 > 8999999) + (#betmc_cep_01 > 999999)))",
+        "target_property_name": "#betmc_cep_2"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_cep_01 - #betmc_cep_2)",
+        "target_property_name": "#betmc_cep_02"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(100000 * ((#betmc_cep_02 > 199999) + (#betmc_cep_02 > 299999) + (#betmc_cep_02 > 399999) + (#betmc_cep_02 > 499999) + (#betmc_cep_02 > 599999) + (#betmc_cep_02 > 699999) + (#betmc_cep_02 > 799999) + (#betmc_cep_02 > 899999) + (#betmc_cep_02 > 99999)))",
+        "target_property_name": "#betmc_cep_3"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_cep_02 - #betmc_cep_3)",
+        "target_property_name": "#betmc_cep_03"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(10000 * ((#betmc_cep_03 > 19999) + (#betmc_cep_03 > 29999) + (#betmc_cep_03 > 39999) + (#betmc_cep_03 > 49999) + (#betmc_cep_03 > 59999) + (#betmc_cep_03 > 69999) + (#betmc_cep_03 > 79999) + (#betmc_cep_03 > 89999) + (#betmc_cep_03 > 9999)))",
+        "target_property_name": "#betmc_cep_4"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_cep_03 - #betmc_cep_4)",
+        "target_property_name": "#betmc_cep_04"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(1000 * ((#betmc_cep_04 > 1999) + (#betmc_cep_04 > 2999) + (#betmc_cep_04 > 3999) + (#betmc_cep_04 > 4999) + (#betmc_cep_04 > 5999) + (#betmc_cep_04 > 6999) + (#betmc_cep_04 > 7999) + (#betmc_cep_04 > 8999) + (#betmc_cep_04 > 999)))",
+        "target_property_name": "#betmc_cep_5"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_cep_04 - #betmc_cep_5)",
+        "target_property_name": "#betmc_cep_05"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(100 * ((#betmc_cep_05 > 199) + (#betmc_cep_05 > 299) + (#betmc_cep_05 > 399) + (#betmc_cep_05 > 499) + (#betmc_cep_05 > 599) + (#betmc_cep_05 > 699) + (#betmc_cep_05 > 799) + (#betmc_cep_05 > 899) + (#betmc_cep_05 > 99)))",
+        "target_property_name": "#betmc_cep_6"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#betmc_cep_1 + #betmc_cep_2 + #betmc_cep_3 + #betmc_cep_4 + #betmc_cep_5 + #betmc_cep_6) / 100)",
+        "target_property_name": "#betmc_current_point"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_exp_percent_label",
+        "source_property_name": "('§z' + #betmc_exp_amount_2 / 10 + '.' + #betmc_exp_decimal + '%%')",
+        "target_property_name": "#betmc_exp_percent_label"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "('§z' + 'Level: ' + #level_number + ' | ' + #betmc_exp_percent_label + ' | ' + '[' + #betmc_current_point + '/' + #betmc_exp_require + ']')",
+        "target_property_name": "#text"
+      }
+    ]
+  },
+
+  // BETMC BOSS BAR PERCENT | (BASE CODE BY: ASAKI ZUKI)
+  "betmc_boss_name_panel@betmc_common.empty_panel": {
+    "offset": [0, -1],
+    "controls": [
+      { "betmc_boss_name_stack@betmc_hud.betmc_boss_name_stack": {} }
+    ]
+  },
+
+  "betmc_boss_name_stack@betmc_common.horizontal_stack_panel": {
+    "size": ["100%c", "100%cm"],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "controls": [
+      { "betmc_boss_name_label@betmc_hud.betmc_boss_name_label": {} },
+      { "betmc_padding@betmc_common.empty_panel": { "size": [2, 0] } },
+      { "betmc_boss_percent_label@betmc_hud.betmc_boss_percent_label": {} }
+    ]
+  },
+
+  "betmc_boss_name_label@betmc_hud.betmc_hud_label_02": {
+    "text": "#bossName",
+    "layer": 5,
+    "bindings": [
+      {
+        "binding_name": "#bossName",
+        "binding_type": "collection",
+        "binding_collection_name": "boss_bars"
+      }
+    ]
+  },
+
+  "betmc_boss_percent_label@betmc_hud.betmc_hud_label_02": {
+    "$betmc_progress_text_offset": [2, -3],
+    "text": "#text",
+    "layer": 5,
+    "bindings": [
+      {
+        "binding_name": "#bossName",
+        "binding_type": "collection",
+        "binding_collection_name": "boss_bars"
+      },
+      {
+        "binding_name": "#progress_percentage",
+        "binding_type": "collection",
+        "binding_collection_name": "boss_bars"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(1000 - #progress_percentage * 1000)",
+        "target_property_name": "#betmc_boss_amount_0"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#betmc_boss_amount_0 > 99) * 100 + (#betmc_boss_amount_0 > 199) * 100 + (#betmc_boss_amount_0 > 299) * 100 + (#betmc_boss_amount_0 > 399) * 100 + (#betmc_boss_amount_0 > 499) * 100 + (#betmc_boss_amount_0 > 599) * 100 + (#betmc_boss_amount_0 > 699) * 100 + (#betmc_boss_amount_0 > 799) * 100 + (#betmc_boss_amount_0 > 899) * 100 + (#betmc_boss_amount_0 > 999) * 10)",
+        "target_property_name": "#betmc_boss_amount_1"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#betmc_boss_amount_1 + (#betmc_boss_amount_0 - #betmc_boss_amount_1 > 9) * 10 + (#betmc_boss_amount_0 - #betmc_boss_amount_1 > 19) * 10 + (#betmc_boss_amount_0 - #betmc_boss_amount_1 > 29) * 10 + (#betmc_boss_amount_0 - #betmc_boss_amount_1 > 39) * 10 + (#betmc_boss_amount_0 - #betmc_boss_amount_1 > 49) * 10 + (#betmc_boss_amount_0 - #betmc_boss_amount_1 > 59) * 10 + (#betmc_boss_amount_0 - #betmc_boss_amount_1 > 69) * 10 + (#betmc_boss_amount_0 - #betmc_boss_amount_1 > 79) * 10 + (#betmc_boss_amount_0 - #betmc_boss_amount_1 > 89) * 10)",
+        "target_property_name": "#betmc_boss_amount_2"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#betmc_boss_amount_0 - #betmc_boss_amount_2 > 0) + (#betmc_boss_amount_0 - #betmc_boss_amount_2 > 1) + (#betmc_boss_amount_0 - #betmc_boss_amount_2 > 2) + (#betmc_boss_amount_0 - #betmc_boss_amount_2 > 3) + (#betmc_boss_amount_0 - #betmc_boss_amount_2 > 4) + (#betmc_boss_amount_0 - #betmc_boss_amount_2 > 5) + (#betmc_boss_amount_0 - #betmc_boss_amount_2 > 6) + (#betmc_boss_amount_0 - #betmc_boss_amount_2 > 7) + (#betmc_boss_amount_0 - #betmc_boss_amount_2 > 8))",
+        "target_property_name": "#betmc_boss_decimal"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "('§z' + '[' + #betmc_boss_amount_2 / 10 + '.' + #betmc_boss_decimal + '%%' + ']')",
+        "target_property_name": "#text"
+      }
+    ]
+  },
+
+  // BETMC MAINHAND ITEM ID
+  "betmc_item_id_aux_text@betmc_common.empty_label": { //Item ID Aux
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "enable_profanity_filter": false,
+    "color": "$chat_text_color",
+    "text": "#text",
+    "font_type": "smooth",
+    "shadow": true,
+    "layer": 1,
+    "bindings": [
+      {
+        "binding_name": "#item_id_aux",
+        "binding_type": "collection",
+        "binding_collection_name": "hotbar_items"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "('§z' + #item_id_aux)",
+        "target_property_name": "#text"
+      }
+    ]
+  },
+
+  "betmc_item_id_text": { //Item ID Number : Item Data Value [OLD]
+    "type": "label",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "enable_profanity_filter": false,
+    "color": "$chat_text_color",
+    "text": "#text",
+    "font_type": "smooth",
+    "shadow": true,
+    "layer": 1,
+    "bindings": [
+      {
+        "binding_name": "#item_id_aux",
+        "binding_type": "collection",
+        "binding_collection_name": "hotbar_items"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "('§z' + (#item_id_aux / 65536) + ':' + (#item_id_aux - ((#item_id_aux / 65536) * 65536)))",
+        "target_property_name": "#text"
+      }
+    ]
+  },
+
+  "betmc_item_id_viewer_stack@betmc_common.betmc_stack_vertical_with_controls": {
+    "ignored": "(not $betmc_enable_item_id)",
+    "$betmc_stack_vertical_with_controls_size": ["100%cm", "100%c"],
+    "anchor_from": "bottom_right",
+    "anchor_to": "bottom_right",
+    "$betmc_stack_vertical_controls": [
+      { "betmc_item_id_aux_text@betmc_hud.betmc_item_id_aux_text": {} },
+      { "betmc_item_id_text@betmc_hud.betmc_item_id_text": {} }
+    ]
+  },
+
+  // BETMC INVENTORY HUD OVERLAY
+  "betmc_inventory_overlay_panel@betmc_common.empty_panel": {
+    "layer": 20,
+    "controls": [
+      {
+        "betmc_inventory_overlay_grid@betmc_hud.betmc_inventory_overlay_grid": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "betmc_inv_hud_pc_toggle",
+              "source_property_name": "#ts",
+              "target_property_name": "#pc_toggle"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "betmc_inv_hud_mobile_toggle",
+              "source_property_name": "#ts",
+              "target_property_name": "#mobile_toggle"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#pc_toggle or #mobile_toggle)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "betmc_inv_hud_pc_toggle@betmc_common.empty_toggle": { //FOR PC TOGGLE [PRESS TAB]
+          "size": [0, 0],
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "always_listen_to_input": true,
+          "button_mappings": [
+            {
+              "from_button_id": "button.scoreboard",
+              "to_button_id": "button.menu_select",
+              "mapping_type": "global"
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#inventory_touch_button",
+              "binding_type": "global"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((not #inventory_touch_button) and #toggle_state)",
+              "target_property_name": "#ts"
+            }
+          ]
+        }
+      },
+      {
+        "betmc_panel_bypass_scale@betmc_common.empty_panel": { //FOR MOBILE TOGGLE
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "size": [104, 20],
+          "offset": [-140, -2.2],
+          "layer": 20,
+          "controls": [
+            {
+              "inventory_hud_mobile_button@betmc_common.empty_input_panel": {
+                "prevent_touch_input": true,
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "bindings": [
+                  {
+                    "binding_name": "#inventory_touch_button",
+                    "binding_name_override": "#visible",
+                    "binding_type": "global"
+                  }
+                ],
+                "controls": [
+                  { "betmc_hud_button_stack@betmc_hud.betmc_hud_button_stack": {} }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "betmc_hotbar_slot@betmc_common.empty_panel": {
+    "size": [18, 0],
+    "bindings": [
+      {
+        "binding_name": "#item_id_aux",
+        "binding_type": "collection",
+        "binding_collection_name": "hotbar_items",
+        "binding_condition": "none"
+      },
+      {
+        "binding_name": "#item_durability_total_amount",
+        "binding_type": "collection",
+        "binding_collection_name": "hotbar_items"
+      },
+      {
+        "binding_name": "#item_durability_current_amount",
+        "binding_type": "collection",
+        "binding_collection_name": "hotbar_items"
+      },
+      {
+        "binding_name": "#slot_selected",
+        "binding_type": "collection",
+        "binding_collection_name": "hotbar_items"
+      }
+    ]
+  },
+
+  "betmc_item_slot@betmc_common.empty_panel": {
+    "size": [18, 18],
+    "$betmc_slot_name|default": "betmc_inventory_slot_1",
+    "controls": [
+      {
+        "betmc_slot_texture@betmc_common.empty_image": {
+          "size": [17.5, 17.5],
+          "texture": "betmc_res/betmc_ui_textures/hud_tip_text_background",
+          "alpha": 0.5,
+          "controls": [
+            {
+              "$betmc_slot_name@betmc_common.empty_custom": {
+                "size": [16, 16],
+                "renderer": "inventory_item_renderer",
+                "bindings": [
+                  {
+                    "binding_type": "collection_details",
+                    "binding_collection_name": "hotbar_items"
+                  },
+                  {
+                    "binding_name": "#item_id_aux",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items",
+                    "binding_condition": "none"
+                  },
+                  {
+                    "binding_name": "#charged_item",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items",
+                    "binding_condition": "none"
+                  },
+                  {
+                    "binding_name": "#item_custom_color",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items",
+                    "binding_condition": "none"
+                  },
+                  {
+                    "binding_name": "#item_pickup_time",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items",
+                    "binding_condition": "none"
+                  },
+                  {
+                    "binding_name": "#show_item_pickup",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items",
+                    "binding_condition": "none"
+                  },
+                  {
+                    "binding_name": "#armor_trim_material",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items",
+                    "binding_condition": "none"
+                  },
+                  {
+                    "binding_name": "#banner_patterns",
+                    "binding_condition": "visible",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items"
+                  },
+                  {
+                    "binding_name": "#banner_colors",
+                    "binding_condition": "visible",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items"
+                  },
+                  {
+                    "binding_name": "#banner_type",
+                    "binding_condition": "visible",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items"
+                  },
+                  {
+                    "binding_name": "#decorated_pot_sherds",
+                    "binding_condition": "visible",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items"
+                  },
+                  {
+                    "binding_type": "collection",
+                    "binding_name": "#show_item",
+                    "binding_name_override": "#visible",
+                    "binding_collection_name": "hotbar_items",
+                    "binding_condition": "none"
+                  },
+                  {
+                    "binding_name": "#inactive_item",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items",
+                    "binding_name_override": "#disabled_filter_visible",
+                    "binding_condition": "none"
+                  },
+                  {
+                    "binding_name": "#shield_is_active",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items"
+                  },
+                  {
+                    "binding_name": "#shield_base_color",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items"
+                  },
+                  {
+                    "binding_name": "#shield_base_color_hovered",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items"
+                  },
+                  {
+                    "binding_name": "#item_lodestone_tracking_handle",
+                    "binding_condition": "visible",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items"
+                  },
+                  {
+                    "binding_name": "#group_item_group_name",
+                    "binding_condition": "visible",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items"
+                  }
+                ]
+              }
+            },
+            {
+              "betmc_item_count@betmc_common.empty_label": {
+                "anchor_to": "bottom_right",
+                "anchor_from": "bottom_right",
+                "text": "#inventory_stack_count",
+                "font_type": "smooth",
+                "shadow": true,
+                "offset": [0, 1],
+                "layer": 7,
+                "bindings": [
+                  {
+                    "binding_name": "#inventory_stack_count",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items",
+                    "binding_condition": "none"
+                  }
+                ]
+              }
+            },
+            {
+              "durability_bar@betmc_common.empty_custom": {
+                "size": [12, 1],
+                "offset": [0, 5],
+                "renderer": "progress_bar_renderer",
+                "layer": 10,
+                "property_bag": {
+                  "drop_shadow": true,
+                  "is_durability": true,
+                  "round_value": true
+                },
+                "bindings": [
+                  {
+                    "binding_name": "#item_durability_visible",
+                    "binding_name_override": "#touch_progress_bar_visible",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items"
+                  },
+                  {
+                    "binding_name": "#item_durability_total_amount",
+                    "binding_name_override": "#progress_bar_total_amount",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items"
+                  },
+                  {
+                    "binding_name": "#item_durability_current_amount",
+                    "binding_name_override": "#progress_bar_current_amount",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items"
+                  }
+                ]
+              }
+            },
+            {
+              "storage_bar@betmc_common.empty_custom": {
+                "size": [12, 1],
+                "offset": [0, 5],
+                "renderer": "progress_bar_renderer",
+                "primary_color": [0.4, 0.4, 1.0, 1.0],
+                "layer": 10,
+                "property_bag": { "drop_shadow": true, "is_storage_bar": true },
+                "bindings": [
+                  {
+                    "binding_name": "#item_storage_visible",
+                    "binding_name_override": "#progress_bar_visible",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items"
+                  },
+                  {
+                    "binding_name": "#item_storage_total_amount",
+                    "binding_name_override": "#progress_bar_total_amount",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items"
+                  },
+                  {
+                    "binding_name": "#item_storage_current_amount",
+                    "binding_name_override": "#progress_bar_current_amount",
+                    "binding_type": "collection",
+                    "binding_collection_name": "hotbar_items"
+                  }
+                ]
+              }
+            },
+            {
+              "container_item_lock_overlay@betmc_common.empty_panel": {
+                "controls": [
+                  {
+                    "container_item_lock_yellow@common.container_item_lock_yellow": {
+                      "bindings": [
+                        {
+                          "binding_name": "#item_lock_in_inventory",
+                          "binding_name_override": "#visible",
+                          "binding_type": "collection",
+                          "binding_collection_name": "hotbar_items"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "container_item_lock_red@common.container_item_lock_red": {
+                      "bindings": [
+                        {
+                          "binding_name": "#item_lock_in_slot",
+                          "binding_name_override": "#visible",
+                          "binding_type": "collection",
+                          "binding_collection_name": "hotbar_items"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "betmc_inventory_overlay_grid@betmc_common.empty_grid": {
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "size": [162, 72],
+    "grid_dimensions": [9, 4],
+    "collection_name": "hotbar_items",
+    "offset": [0, -60],
+    "layer": 15,
+    "controls": [
+      {
+        "betmc_hotbar_slot_1@betmc_hud.betmc_hotbar_slot": { //FOR HOTBAR SLOT
+          "grid_position": [0, 0]
+        }
+      },
+      {
+        "betmc_hotbar_slot_2@betmc_hud.betmc_hotbar_slot": {
+          "grid_position": [1, 0]
+        }
+      },
+      {
+        "betmc_hotbar_slot_3@betmc_hud.betmc_hotbar_slot": {
+          "grid_position": [2, 0]
+        }
+      },
+      {
+        "betmc_hotbar_slot_4@betmc_hud.betmc_hotbar_slot": {
+          "grid_position": [3, 0]
+        }
+      },
+      {
+        "betmc_hotbar_slot_5@betmc_hud.betmc_hotbar_slot": {
+          "grid_position": [4, 0]
+        }
+      },
+      {
+        "betmc_hotbar_slot_6@betmc_hud.betmc_hotbar_slot": {
+          "grid_position": [5, 0]
+        }
+      },
+      {
+        "betmc_hotbar_slot_7@betmc_hud.betmc_hotbar_slot": {
+          "grid_position": [6, 0]
+        }
+      },
+      {
+        "betmc_hotbar_slot_8@betmc_hud.betmc_hotbar_slot": {
+          "grid_position": [7, 0]
+        }
+      },
+      {
+        "betmc_hotbar_slot_9@betmc_hud.betmc_hotbar_slot": {
+          "grid_position": [8, 0]
+        }
+      },
+      {
+        "betmc_inv_slot_1@betmc_hud.betmc_item_slot": { //FOR INVENTORY SLOT
+          "$betmc_slot_name": "betmc_inventory_slot_1",
+          "grid_position": [0, 1]
+        }
+      },
+      {
+        "betmc_inv_slot_2@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_2",
+          "grid_position": [1, 1]
+        }
+      },
+      {
+        "betmc_inv_slot_3@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_3",
+          "grid_position": [2, 1]
+        }
+      },
+      {
+        "betmc_inv_slot_4@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_4",
+          "grid_position": [3, 1]
+        }
+      },
+      {
+        "betmc_inv_slot_5@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_5",
+          "grid_position": [4, 1]
+        }
+      },
+      {
+        "betmc_inv_slot_6@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_6",
+          "grid_position": [5, 1]
+        }
+      },
+      {
+        "betmc_inv_slot_7@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_7",
+          "grid_position": [6, 1]
+        }
+      },
+      {
+        "betmc_inv_slot_8@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_8",
+          "grid_position": [7, 1]
+        }
+      },
+      {
+        "betmc_inv_slot_9@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_9",
+          "grid_position": [8, 1]
+        }
+      },
+      {
+        "betmc_inv_slot_10@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_10",
+          "grid_position": [0, 2]
+        }
+      },
+      {
+        "betmc_inv_slot_11@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_11",
+          "grid_position": [1, 2]
+        }
+      },
+      {
+        "betmc_inv_slot_12@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_12",
+          "grid_position": [2, 2]
+        }
+      },
+      {
+        "betmc_inv_slot_13@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_13",
+          "grid_position": [3, 2]
+        }
+      },
+      {
+        "betmc_inv_slot_14@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_14",
+          "grid_position": [4, 2]
+        }
+      },
+      {
+        "betmc_inv_slot_15@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_15",
+          "grid_position": [5, 2]
+        }
+      },
+      {
+        "betmc_inv_slot_16@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_16",
+          "grid_position": [6, 2]
+        }
+      },
+      {
+        "betmc_inv_slot_17@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_17",
+          "grid_position": [7, 2]
+        }
+      },
+      {
+        "betmc_inv_slot_18@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_18",
+          "grid_position": [8, 2]
+        }
+      },
+      {
+        "betmc_inv_slot_19@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_19",
+          "grid_position": [0, 3]
+        }
+      },
+      {
+        "betmc_inv_slot_20@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_20",
+          "grid_position": [1, 3]
+        }
+      },
+      {
+        "betmc_inv_slot_21@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_21",
+          "grid_position": [2, 3]
+        }
+      },
+      {
+        "betmc_inv_slot_22@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_22",
+          "grid_position": [3, 3]
+        }
+      },
+      {
+        "betmc_inv_slot_23@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_23",
+          "grid_position": [4, 3]
+        }
+      },
+      {
+        "betmc_inv_slot_24@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_24",
+          "grid_position": [5, 3]
+        }
+      },
+      {
+        "betmc_inv_slot_25@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_25",
+          "grid_position": [6, 3]
+        }
+      },
+      {
+        "betmc_inv_slot_26@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_26",
+          "grid_position": [7, 3]
+        }
+      },
+      {
+        "betmc_inv_slot_27@betmc_hud.betmc_item_slot": {
+          "$betmc_slot_name": "betmc_inventory_slot_27",
+          "grid_position": [8, 3]
+        }
+      }
+    ]
+  }
+}

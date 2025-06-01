@@ -1,0 +1,30 @@
+{
+  "toggle_content": { //FIX SCALE ISSUE
+    "size": [ 220, "100%cm" ]
+  },
+
+  "toggle_content/padding_3": { //FIX SCALE ISSUE
+    "size": [ "100%c", 0 ]
+  },
+
+  "toggle_content/trade_item_holder": { //FIX SCALE ISSUE
+    "size": [ 85, "100%cm" ]
+  },
+
+  "toggle_content/sell_item_holder": { //FIX SCALE ISSUE
+    "size": [ "100%c + 50px", "100%c" ],
+    "max_size": [ "100%", "100%cm" ]
+  },
+
+  "arrow_holder/arrow_image": { //REMOVE BINDINGS
+    "bindings": [
+      { "binding_type": "collection_details" }
+    ]
+  },
+
+  "arrow_holder": {
+    "modifications": [ //REMOVE LOCK IMAGE
+      { "control_name": "lock_image", "operation": "remove" }
+    ]
+  }
+}

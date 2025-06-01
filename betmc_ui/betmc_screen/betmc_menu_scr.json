@@ -1,0 +1,129 @@
+{
+  "namespace": "betmc_menu",
+
+  "betmc_menu_button_04@betmc_settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "betmc_mucic_button_toggle",
+    "$button_text": "MUSIC PLAYER"
+  },
+
+  "betmc_menu_button_00@betmc_settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "betmc_info_button_toggle",
+    "$button_text": "CREATOR INFO"
+  },
+
+  "betmc_menu_button_01@betmc_settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "betmc_feature_button_toggle",
+    "$button_text": "FEATURE"
+  },
+
+  "betmc_menu_button_02@betmc_settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "betmc_credit_button_toggle",
+    "$button_text": "CREDIT"
+  },
+
+  "betmc_menu_button_03@betmc_settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "betmc_changelog_button_toggle",
+    "$button_text": "CHANGELOG"
+  },
+
+  "selector_stack_panel@betmc_common.vertical_stack_panel": {
+    "$betmc_enable_music_ui_pack|default": false,
+    "$default_selector_toggle_index": 0,
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "controls": [
+      {
+        "betmc_header_text_0@betmc_menu_common.betmc_menu_header": {
+          "ignored": "(not $betmc_enable_music_ui_pack)",
+          "$betmc_header_text": "BETMC OTHER MEMU"
+        }
+      },
+      {
+        "betmc_menu_button_04@betmc_menu.betmc_menu_button_04": {
+          "ignored": "(not $betmc_enable_music_ui_pack)",
+          "$toggle_group_forced_index": 4
+        }
+      },
+      { "betmc_padding@betmc_common.empty_panel": { "ignored": "(not $betmc_enable_music_ui_pack)", "size": [ 0, 3 ] }},
+      {
+        "betmc_header_text_1@betmc_menu_common.betmc_menu_header": {
+          "$betmc_header_text": "BETMC UI INFOMATION"
+        }
+      },
+      {
+        "betmc_menu_button_00@betmc_menu.betmc_menu_button_00": {
+          "$toggle_group_forced_index": 0
+        }
+      },
+      {
+        "betmc_menu_button_01@betmc_menu.betmc_menu_button_01": {
+          "$toggle_group_forced_index": 1
+        }
+      },
+      {
+        "betmc_menu_button_02@betmc_menu.betmc_menu_button_02": {
+          "$toggle_group_forced_index": 2
+        }
+      },
+      {
+        "betmc_menu_button_03@betmc_menu.betmc_menu_button_03": {
+          "$toggle_group_forced_index": 3
+        }
+      }
+    ]
+  },
+
+  "section_content_panels@betmc_common.empty_panel": {
+    "$betmc_enable_music_ui_pack|default": false,
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ "100% - 4px", "100%c + 4px" ],
+    "offset": [ 2, 0 ],
+    "controls": [
+      {
+        "betmc_menu_controls_sections@betmc_common.empty_stack_panel": {
+          "controls": [
+            {
+              "betmcui_music_player_0@betmc_music.betmcui_music_player_0": {
+                "ignored": "(not $betmc_enable_music_ui_pack)",
+                "visible": false
+              }
+            },
+            {
+              "betmcui_info_0@betmc_info.betmcui_info_0": {
+                "visible": false
+              }
+            },
+            {
+              "betmcui_features_0@betmc_features.betmcui_features_0": {
+                "visible": false
+              }
+            },
+            {
+              "betmcui_credit_0@betmc_credit.betmcui_credit_0": {
+                "visible": false
+              }
+            },
+            {
+              "betmcui_changelog_0@betmc_changelog.betmcui_changelog_0": {
+                "visible": false
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "betmc_menu_content@betmc_common.empty_panel": {
+    "controls": [
+      {
+        "betmc_menu_content_dialog@betmc_dialog.betmc_dialog_no_button": {
+          "$text_name": "BETMC MENU",
+          "$child_control": "betmc_menu_common.betmc_menu_dialog_content",
+          "size": [ "90%", "80%" ]
+        }
+      }
+    ]
+  }
+}

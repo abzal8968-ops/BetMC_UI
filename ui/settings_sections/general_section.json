@@ -1,0 +1,446 @@
+{
+  "namespace": "general_section",
+
+  "accessibility_section/darkness_slider_label_spacer_pre": {
+    "ignored": true
+  },
+
+  "accessibility_section/darkness_slider_label_wrapper": {
+    "ignored": true
+  },
+
+  "accessibility_section/darkness_slider_label_spacer_post": {
+    "ignored": true
+  },
+
+  "accessibility_section/glint_strength_slider_label_spacer_pre": {
+    "ignored": true
+  },
+
+  "accessibility_section/glint_strength_slider_label_wrapper": {
+    "ignored": true
+  },
+
+  "accessibility_section/glint_strength_slider_label_spacer_post": {
+    "ignored": true
+  },
+
+  "accessibility_section/glint_speed_slider_label_spacer_pre": {
+    "ignored": true
+  },
+
+  "accessibility_section/glint_speed_slider_label_wrapper": {
+    "ignored": true
+  },
+
+  "accessibility_section/glint_speed_slider_label_spacer_post": {
+    "ignored": true
+  },
+
+  "accessibility_section/chat_message_duration_options_panel/chat_message_duration_label_wrapper": {
+    "ignored": true
+  },
+
+  "accessibility_section/chat_message_duration_options_panel/chat_message_duration_info_label_wrapper": {
+    "ignored": true
+  },
+
+  "accessibility_section/chat_message_duration_options_panel/chat_message_duration_dropdown_spacer_pre": {
+    "ignored": true
+  },
+
+  "accessibility_section/toast_notification_duration_options_panel/toast_notification_duration_label_wrapper": {
+    "ignored": true
+  },
+
+  "accessibility_section/toast_notification_duration_options_panel/toast_notification_duration_info_label_wrapper": {
+    "ignored": true
+  },
+
+  "accessibility_section/toast_notification_duration_options_panel/toast_notification_duration_dropdown_spacer_pre": {
+    "ignored": true
+  },
+
+  "accessibility_section/darkness_slider": {
+    "$has_option_description": true,
+    "$option_description": "options.darknessEffectModifier.message"
+  },
+
+  "accessibility_section/glint_strength_slider": {
+    "$has_option_description": true,
+    "$option_description": "options.glintStrength.message"
+  },
+
+  "accessibility_section/glint_speed_slider": {
+    "$has_option_description": true,
+    "$option_description": "options.glintspeed.message"
+  },
+
+  "accessibility_section/chat_message_duration_options_panel/chat_message_duration_dropdown": {
+    "$has_option_description": true,
+    "$option_label": "options.notificationDuration.Chat",
+    "$option_description": "options.notificationDuration.ChatDuration"
+  },
+
+  "accessibility_section/toast_notification_duration_options_panel/toast_notification_duration_dropdown": {
+    "$has_option_description": true,
+    "$option_label": "options.notificationDuration.Toast",
+    "$option_description": "options.notificationDuration.ToastMessage"
+  },
+
+  "accessibility_section": {
+    "modifications": [
+      {
+        "control_name": "option_toggle0",
+        "operation": "replace",
+        "value": [
+          { "betmc_accessibility_toggle_stack@betmc_general_section.betmc_accessibility_toggle_stack": {} }
+        ]
+      },
+      {
+        "control_name": "glint_speed_slider",
+        "operation": "insert_after",
+        "value": [
+          { "betmc_gui_scale_slider@betmc_general_section.betmc_gui_scale_slider": {} }
+        ]
+      },
+      {
+        "control_name": "option_toggle1",
+        "operation": "remove"
+      },
+      {
+        "control_name": "option_toggle2",
+        "operation": "remove"
+      },
+      {
+        "control_name": "option_toggle3",
+        "operation": "remove"
+      },
+      {
+        "control_name": "camera_shake_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "gui_accessibility_scaling_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "gui_scale_slider",
+        "operation": "remove"
+      }
+    ]
+  },
+
+  "general_tab_section/dividerTermsCreditsAttribution": {
+    "size": [ "100%", "100%c + 14px" ]
+  },
+
+  "general_tab_section/build_info_label_panel/paddingVersionLabel": {
+    "ignored": true
+  },
+
+  "general_tab_section": {
+    "modifications": [
+      {
+        "control_name": "network_label_header",
+        "operation": "replace",
+        "value": [
+          { "betmc_network_label@settings_common.option_group_label": { "$text": "options.networkSettings" }}
+        ]
+      },
+      {
+        "control_name": "paddingCrossPlatform",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingCellularData",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingWebSockets",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingAutoUpdate",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingAutoUpdateToggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingGameTipsFeature",
+        "operation": "remove"
+      },
+      {
+        "control_name": "tutorial_restart_button",
+        "operation": "insert_after",
+        "value": [
+          { "betmc_general_tab_padding_00@betmc_common.empty_panel": { "size": [ 0, 2 ] }}
+        ]
+      },
+      {
+        "control_name": "paddingTrustedSkins",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingLinkEduSupport",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingDividerTermsCreditsAttribution",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingDividerTermsCreditsAttributionAfter",
+        "operation": "remove"
+      },
+      {
+        "control_name": "credits_button",
+        "operation": "insert_after",
+        "value": [
+          { "betmc_general_tab_padding_01@betmc_common.empty_panel": { "size": [ 0, 2 ] }},
+          { "betmc_general_tab_button_stack@betmc_general_section.betmc_general_tab_button_stack": {} }
+        ]
+      },
+      {
+        "control_name": "paddingTrustedSkins",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingFilterProfanity",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingDividerSustainability",
+        "operation": "remove"
+      },
+      {
+        "control_name": "ecomode_label_header",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingEcoMode",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingAttribution",
+        "operation": "remove"
+      },
+      {
+        "control_name": "attribution_link_button",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingfeedback",
+        "operation": "remove"
+      },
+      {
+        "control_name": "feedback_link_button",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingLicenses",
+        "operation": "remove"
+      },
+      {
+        "control_name": "dividerLicenses",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingLicensesAfter",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingLicensesHeader",
+        "operation": "remove"
+      },
+      {
+        "control_name": "licenses_label_header",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingLicensedContent",
+        "operation": "remove"
+      },
+      {
+        "control_name": "licensed_content_link_button",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingFontLicense",
+        "operation": "remove"
+      },
+      {
+        "control_name": "font_license_popup_button",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingSectionDividerContentLog",
+        "operation": "replace",
+        "value": [
+          { "betmc_general_tab_padding_02@betmc_common.empty_panel": { "size": [ "100%", 8 ] }},
+          { "betmc_section_divider_panel_00@betmc_general_section.betmc_section_divider_panel": {} }
+        ]
+      },
+      {
+        "control_name": "build_info_label_panel",
+        "operation": "replace",
+        "value": [
+          { "betmc_build_info_label_stack@betmc_general_section.betmc_build_info_label_stack": {} }
+        ]
+      }
+    ]
+  },
+
+  "account_section/paddingInfoLabels": {
+    "$spatialPatternsPadding": [ "100%", 4 ]
+  },
+
+  "account_section/device_id_label": {
+    "font_type": "smooth"
+  },
+
+  "account_section/MinecraftAccount_id_label": {
+    "font_type": "smooth"
+  },
+
+  "account_section": {
+    "modifications": [
+      {
+        "control_name": "gamertag_controls",
+        "operation": "replace",
+        "value": [
+          { "betmc_signin_controls_stack@betmc_general_section.betmc_signin_controls_stack": {} },
+          { "betmc_account_buttons_stack@betmc_general_section.betmc_account_buttons_stack": {} }
+        ]
+      },
+      {
+        "control_name": "paddingNameControls",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingSignInControls",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingGamerTagControls",
+        "operation": "remove"
+      },
+      {
+        "control_name": "name_controls",
+        "operation": "remove"
+      },
+      {
+        "control_name": "signin_controls",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingDeleteAccount",
+        "operation": "remove"
+      },
+      {
+        "control_name": "delete_account",
+        "operation": "remove"
+      },
+      {
+        "control_name": "paddingUseRemoteConnect",
+        "operation": "remove"
+      }
+    ]
+  },
+
+  "creator_toggles_panel/creator_setting_button": {
+    "size": [ "100%", 20 ]
+  },
+
+  "content_log_panel/content_log_buttons": {
+    "size": [ "100%", 20 ]
+  },
+  
+  "video_section/setup_safe_zone": {
+    "size": [ "100%", 22 ]
+  },
+
+  "video_section/fancy_leaves_toggle": {
+    "ignored": false
+  },
+
+  "video_section/advanced_graphics_options_panel": {
+    "modifications": [
+      {
+        "control_name": "advanced_graphics_options_button",
+        "operation": "remove"
+      },
+      {
+        "control_name": "graphics_quality_preset_mode_dropdown_content",
+        "operation": "remove"
+      }
+    ]
+  },
+  
+  "video_section": {
+    "modifications": [
+      {
+        "control_name": "ui_profile_dropdown",
+        "operation": "insert_after",
+        "value": [
+          {
+            "vsync_dropdown@settings_common.option_dropdown": {
+              "$option_label": "options.vsync",
+              "$dropdown_content": "general_section.vysnc_dropdown_content",
+              "$dropdown_area": "content_area",
+              "$dropdown_name": "vsync_dropdown",
+              "$options_dropdown_toggle_label_binding": "#vsync_dropdown_toggle_label",
+              "$option_enabled_binding_name": "#vsync_dropdown_enabled",
+              "$dropdown_scroll_content_size": [ "100%", "200%" ]
+            }
+          }
+        ]
+      },
+      {
+        "control_name": "advanced_graphics_options_panel",
+        "operation": "insert_after",
+        "value": [
+          {
+            "betmc_advanced_graphics_dropdown_options@betmc_general_section.betmc_advanced_graphics_dropdown_options": {
+              "bindings": [
+                {
+                  "binding_name": "#advanced_graphics_options_button_visible",
+                  "binding_name_override": "#visible"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  
+  "msaa_slider@settings_common.option_slider": {
+    "$option_label": "#msaa_slider_label",
+    "$slider_name": "msaa",
+    "$slider_value_binding_name": "#msaa",
+    "$slider_tts_text_value": "#msaa_text_value",
+    "$option_enabled_binding_name": "#msaa_enabled",
+    "$slider_steps_binding_name": "#msaa_steps",
+    "$label_bindings": [
+      {
+        "binding_name": "$option_label"
+      }
+    ]
+  },
+  
+  "video_section/texel_anti_aliasing_toggle": {
+    "modifications": [
+      {
+        "array_name": "bindings",
+        "operation": "remove",
+        "where": {
+          "binding_name": "#show_texel_aa",
+          "binding_name_override": "(not #visible)"
+        }
+      }
+    ]
+  }
+}

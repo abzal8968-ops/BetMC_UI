@@ -1,0 +1,335 @@
+{
+  "namespace": "betmc_inventory",
+
+  "betmc_right_tab_toggle@betmc_tab_toggle.tab_right": {
+    "size": [ 28, 25 ],
+    "$toggle_reset_on_focus_lost": false,
+    "$radio_toggle_group": true,
+    "$border_visible": false,
+    "$toggle_name": "betmc_container_mode",
+    "$toggle_group_default_selected": 0,
+    "$toggle_tts_type_priority": 1001,
+    "$toggle_tts_index_priority": 1002
+  },
+
+  "betmc_inv_mode_toggle@betmc_toggle.light_text_toggle": {
+    "size": [ "100%", 15 ],
+    "$toggle_name": "betmc_inv_sw_mode",
+    "$radio_toggle_group": true,
+    "$border_visible": true
+  },
+
+  "betmc_inv_x1_mode@betmc_inventory.betmc_inv_mode_toggle": {
+    "$button_text": "Mode: All",
+    "$toggle_view_binding_name": "betmc_inv_x1_mode",
+    "$toggle_group_forced_index": 0,
+    "$toggle_default_state": true
+  },
+
+  "betmc_inv_all_mode@betmc_inventory.betmc_inv_mode_toggle": {
+    "$button_text": "Mode: x1",
+    "$toggle_view_binding_name": "betmc_inv_all_mode",
+    "$toggle_group_forced_index": 10
+  },
+
+  "betmc_quickcraft_icon@betmc_hud.betmc_item_renderer": {
+    "size": [ 13, 13 ],
+    "property_bag": {
+      "#item_id_aux": 22282240
+    }
+  },
+
+  "betmc_inv_mode_icon_toggle_content@betmc_common.empty_panel": {
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "betmc_chest_icon@betmc_hud.betmc_item_renderer": {
+          "size": [ 14, 14 ],
+          "property_bag": { "#item_id_aux": 3538944 }
+        }
+      },
+      {
+        "betmc_inv_icon_image@betmc_common.empty_image": {
+          "$betmc_inv_mode_type_icon|default": "betmc_res/betmc_button/betmc_transparent",
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right",
+          "size": "$betmc_inv_icon_size",
+          "$betmc_inv_icon_size|default": [ 12, 12 ],
+          "color": "$experience_text_color",
+          "texture": "$betmc_inv_mode_type_icon",
+          "layer": 10
+        }
+      }
+    ]
+  },
+
+  
+  "betmc_quickcraft_button@common_buttons.light_content_button": {
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ 18, 18 ],
+    "$button_content": "betmc_inventory.betmc_quickcraft_icon",
+    "property_bag": {
+      "#collection_name": "crafting_output_items",
+      "#collection_index": 0
+    },
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.crafting_output_tertiary",
+        "mapping_type": "pressed"
+      }
+    ]
+  },
+  
+  "betmc_inventory_container_slot@crafting.inventory_container_slot_button": {
+    "$betmc_inv_mode_button_mapping|default": "button.container_auto_place",
+    "$betmc_view_bindings_name|default": "move_items_toggle",
+    "visible": false,
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "$betmc_view_bindings_name",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "collection_details",
+        "binding_collection_name": "$item_collection_name",
+        "binding_condition": "once"
+      }
+    ],
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "$betmc_inv_mode_button_mapping",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "$betmc_inv_mode_button_mapping",
+        "mapping_type": "pressed"
+      }
+    ]
+  },
+
+  "betmc_default_items@betmc_inventory.betmc_right_tab_toggle": {
+    "$tab_content": "betmc_inventory.betmc_inv_mode_icon_toggle_content",
+    "$tab_view_binding_name": "default_items_toggle"
+  },
+
+  "betmc_move_items@betmc_inventory.betmc_right_tab_toggle": {
+    "$betmc_inv_mode_type_icon": "betmc_res/betmc_icon/betmc_auto_move",
+    "$tab_content": "betmc_inventory.betmc_inv_mode_icon_toggle_content",
+    "$tab_view_binding_name": "move_items_toggle"
+  },
+
+  "betmc_drop_items@betmc_inventory.betmc_right_tab_toggle": {
+    "$betmc_inv_mode_type_icon": "betmc_res/betmc_icon/betmc_chat_down_arrow",
+    "$tab_content": "betmc_inventory.betmc_inv_mode_icon_toggle_content",
+    "$betmc_inv_icon_size": [ 11, 11 ],
+    "$tab_view_binding_name": "drop_items_toggle"
+  },
+
+  "betmc_destroy_items@betmc_inventory.betmc_right_tab_toggle": {
+    "$betmc_inv_mode_type_icon": "betmc_res/betmc_icon/betmc_delete",
+    "$tab_content": "betmc_inventory.betmc_inv_mode_icon_toggle_content",
+    "$betmc_inv_icon_size": [ 11, 11 ],
+    "$tab_view_binding_name": "destroy_items_toggle"
+  },
+
+  "betmc_inv_mode_toggle_content@betmc_common.empty_panel": {
+    "size": [ 60, 15 ],
+    "offset": [ 0, -1 ],
+    "controls": [
+      {
+        "x1_mode@betmc_inventory.betmc_inv_x1_mode": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "betmc_inv_x1_mode",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "all_mode@betmc_inventory.betmc_inv_all_mode": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "betmc_inv_all_mode",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "betmc_inv_slot_button@betmc_common.empty_panel": {
+    "$betmc_not_inv|default": true,
+    "controls": [
+      {
+        "default@betmc_common.empty_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "default_items_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "item_button_ref@$button_ref": {
+                "tts_ignore_count": true,
+                "tts_skip_message": true,
+                "tts_inherit_siblings": true,
+                "layer": 5
+              }
+            }
+          ]
+        }
+      },
+      {
+        "on_all_mode@betmc_common.empty_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "betmc_inv_all_mode",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "betmc_quick_move@betmc_inventory.betmc_inventory_container_slot": {}
+            },
+            {
+              "betmc_quick_drop@betmc_inventory.betmc_inventory_container_slot": {
+                "$betmc_view_bindings_name": "drop_items_toggle",
+                "$betmc_inv_mode_button_mapping": "button.drop_all"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "on_x1_mode@betmc_common.empty_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "betmc_inv_x1_mode",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "betmc_quick_move@betmc_inventory.betmc_inventory_container_slot": {
+                "$betmc_inv_mode_button_mapping": "button.container_auto_place_one"
+              }
+            },
+            {
+              "betmc_quick_drop@betmc_inventory.betmc_inventory_container_slot": {
+                "$betmc_view_bindings_name": "drop_items_toggle",
+                "$betmc_inv_mode_button_mapping": "button.drop_one"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "betmc_quick_destroy@betmc_inventory.betmc_inventory_container_slot": {
+          "$betmc_view_bindings_name": "destroy_items_toggle",
+          "$betmc_inv_mode_button_mapping": "button.container_auto_destroy"
+        }
+      }
+    ]
+  },
+
+  "betmc_inv_mode_toggle_stack@betmc_common.empty_panel": {
+    "controls": [
+      {
+        "betmc_inv_mode_panel@betmc_common.empty_panel": {
+          "$betmc_not_inv|default": true,
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "size": [ "100%cm", "100%c" ],
+          "controls": [
+            {
+              "betmc_inv_mode_stack@betmc_common.empty_stack_panel": {
+                "anchor_from": "top_right",
+                "anchor_to": "top_left",
+                "size": [ "100%cm", "100%c" ],
+                "offset": [ -6.8, 0 ],
+                "layer": 1,
+                "controls": [
+                  {
+                    "betmc_default_items@betmc_inventory.betmc_default_items": {
+                      "$toggle_group_forced_index": 0,
+                      "$toggle_default_state": true
+                    }
+                  },
+                  {
+                    "betmc_move_items@betmc_inventory.betmc_move_items": {
+                      "$toggle_group_forced_index": 1
+                    }
+                  },
+                  {
+                    "betmc_drop_items@betmc_inventory.betmc_drop_items": {
+                      "$toggle_group_forced_index": 2
+                    }
+                  },
+                  {
+                    "betmc_destroy_items@betmc_inventory.betmc_destroy_items": {
+                      "ignored": "$betmc_not_inv",
+                      "$toggle_group_forced_index": 3,
+                      "bindings": [
+                        {
+                          "binding_type": "global",
+                          "binding_name": "#is_creative_mode",
+                          "binding_name_override": "#visible"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "container_quick_mode_all@betmc_common.empty_panel": {
+          "size": [ "100%cm", "100%cm" ],
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right",
+          "$betmc_sw_mode_offset|default":  [ -7, -81 ],
+          "offset": "$betmc_sw_mode_offset",
+          "layer": 5,
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "default_items_toggle",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#enabled"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "destroy_items_toggle",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            { "betmc_inv_mode_toggle_content@betmc_inventory.betmc_inv_mode_toggle_content": {} }
+          ]
+        }
+      }
+    ]
+  }
+}

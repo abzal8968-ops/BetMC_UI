@@ -1,0 +1,300 @@
+{
+  "namespace": "settings_common",
+
+  "action_button": {
+    "$default_button_texture": "betmc_res/betmc_button/betmc_black",
+    "$hover_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$pressed_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$locked_button_texture": "betmc_res/betmc_button/betmc_black",
+    "$default_text_color": "$chat_text_color",
+    "$border_visible": true,
+    "size": [ "100%", 20 ]
+  },
+
+  "action_button_dark_text": {
+    "$default_button_texture": "betmc_res/betmc_button/betmc_black",
+    "$hover_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$pressed_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$locked_button_texture": "betmc_res/betmc_button/betmc_black",
+    "$default_text_color": "$chat_text_color",
+    "$border_visible": true,
+    "size": [ "100%", 20 ]
+  },
+
+  "link_button": {
+    "$default_button_texture": "betmc_res/betmc_button/betmc_black",
+    "$hover_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$pressed_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$locked_button_texture": "betmc_res/betmc_button/betmc_black",
+    "$default_text_color": "$chat_text_color",
+    "$border_visible": true,
+    "size": [ "100%", 20 ]
+  },
+
+  "option_dropdown": {
+    "$control_name": "betmc_settings_common.betmc_dropdown_toggle_style"
+  },
+
+  "option_dropdown_no_scroll": {
+    "$control_name": "betmc_settings_common.betmc_dropdown_toggle_style"
+  },
+
+  "option_radio_dropdown_group": {
+    "size": [ "100% - 6px", "100%c + 1px" ],
+    "offset": [ 0, 0 ]
+  },
+
+  "option_text_edit_control": {
+    "$option_text_edit_control_size|default": [ "100%", "20px" ]
+  },
+
+  "option_text_edit_control_with_button": {
+    "size": [ "100%", "20px" ]
+  },
+
+  "option_text_edit_control_with_text_button": {
+    "$option_text_edit_control_with_button_size|default": [ "100%", "20px" ]
+  },
+
+  "option_group_label@betmc_common.custom_empty_panel": {
+    "size": [ "100%", "100%c + 9px" ],
+    "$text|default": "unset $text",
+    "$text_bindings|default": [],
+    "$font_type|default": "$betmc_label_font_type",
+    "$font_scale_factor|default": 0.75,
+    "controls": [
+      {
+        "text@betmc_settings_common.betmc_group_option_label": {
+          "text": "$text",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      }
+    ]
+  },
+
+  "option_generic_core/one_line_layout": {
+    "$label_offset|default": [ 34, 2 ],
+    "modifications": [
+      {
+        "control_name": "option_descriptive_text",
+        "operation": "replace",
+        "value": [
+          {
+            "option_descriptive_replace@betmc_settings_common.betmc_option_label": {
+              "ignored": "(not $has_option_description)",
+              "min_size": [ 0, 0 ],
+              "anchor_from": "bottom_left",
+              "anchor_to": "bottom_left",
+              "text": "$option_description",
+              "color": "$option_description_text_color"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "option_generic_core/one_line_layout/option_label_subpanel_01": {
+    "$label_offset|default": [ 34, 2 ],
+    "modifications": [
+      {
+        "control_name": "option_label",
+        "operation": "replace",
+        "value": [
+          {
+            "option_label_replace@betmc_settings_common.betmc_option_label": {
+              "anchor_from": "top_left",
+              "anchor_to": "top_left",
+              "text": "$option_label",
+              "color": "$main_header_text_color",
+              "bindings": "$label_bindings"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "option_generic_core/two_line_layout": {
+    "modifications": [
+      {
+        "control_name": "option_descriptive_text_0",
+        "operation": "replace",
+        "value": [
+          {
+            "option_descriptive_0_replace@betmc_settings_common.betmc_option_label": {
+              "ignored": "(not $has_option_description)",
+              "size": [ "90%", "default" ],
+              "min_size": [ 0, 0 ],
+              "color": "$option_description_text_color",
+              "text": "$option_description",
+              "anchor_from": "bottom_left",
+              "anchor_to": "bottom_left"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "option_generic_core/two_line_layout/option_label_panel/option_label_subpanel_01": {
+    "modifications": [
+      {
+        "control_name": "option_label",
+        "operation": "replace",
+        "value": [
+          {
+            "option_label_replace@betmc_settings_common.betmc_option_label": {
+              "size": [ "100%", "default" ],
+              "text": "$option_label",
+              "bindings": "$label_bindings"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "default_options_dropdown_toggle_button_state_content/label_panel": {
+    "modifications": [
+      {
+        "control_name": "label",
+        "operation": "replace",
+        "value": [
+          {
+            "betmc_options_dropdown_replace@betmc_settings_common.betmc_options_dropdown_label": {
+              "layer": 1,
+              "$options_dropdown_label_color_binding_type|default": "none",
+              "$options_dropdown_label_color_binding|default": "",
+              "anchor_from": "left_middle",
+              "anchor_to": "left_middle",
+              "size": [ "100%", "default" ],
+              "max_size": [ "100%", "100%" ],
+              "text": "$options_dropdown_toggle_label_binding",
+              "alpha": "$content_alpha",
+              "$options_dropdown_toggle_label_binding_type|default": "global",
+              "$options_dropdown_toggle_label_binding_collection_name|default": "",
+              "$options_dropdown_label_bindings|default": [
+                {
+                  "binding_name": "$options_dropdown_toggle_label_binding",
+                  "binding_condition": "none",
+                  "binding_type": "$options_dropdown_toggle_label_binding_type",
+                  "binding_collection_name": "$options_dropdown_toggle_label_binding_collection_name"
+                },
+                {
+                  "binding_name": "$options_dropdown_label_color_binding",
+                  "binding_type": "$options_dropdown_label_color_binding_type",
+                  "binding_name_override": "#color"
+                }
+              ],
+              "bindings": "$options_dropdown_label_bindings"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "radio_visuals_unchecked": {
+    "$radio_texture": "betmc_res/betmc_icon/betmc_radio_button_unchecked"
+  },
+
+  "radio_visuals_checked": {
+    "$radio_texture": "betmc_res/betmc_icon/betmc_radio_button_checked"
+  },
+
+  "radio_visuals_unchecked_locked": {
+    "$radio_texture": "betmc_res/betmc_icon/betmc_radio_button_unchecked"
+  },
+
+  "radio_visuals_checked_locked": {
+    "$radio_texture": "betmc_res/betmc_icon/betmc_radio_button_checked"
+  },
+
+  "radio_visuals_unchecked_hover": {
+    "$radio_texture": "betmc_res/betmc_icon/betmc_radio_button_unchecked",
+    "$radio_image_color": [ 1.0, 1.0, 0.333 ]
+  },
+
+  "radio_visuals_checked_hover": {
+    "$radio_texture": "betmc_res/betmc_icon/betmc_radio_button_checked",
+    "$radio_image_color": [ 1.0, 1.0, 0.333 ]
+  },
+
+  "radio_visuals/accessibility_selection_highlight": {
+    "$selection_highlight_size|default": [ "100% + 4px", "100%" ],
+    "alpha": 0.5
+  },
+
+  "radio_visuals/radio_image": {
+    "$radio_image_color|default": [ 1.0, 1.0, 1,0 ],
+    "color": "$radio_image_color"
+  },
+
+  "radio_visuals": {
+    "variables": [
+      {
+        "requires": "$hovered",
+        "$highlight_image": "textures/ui/dropDownHoverBG"
+      }
+    ],
+    "modifications": [
+      {
+        "control_name": "radio_label",
+        "operation": "replace",
+        "value": [
+          {
+            "radio_label_replace@betmc_settings_common.betmc_radio_visuals_label": {
+              "ignored": "($no_label)",
+              "size": [ "100% - 16px", "default" ],
+              "anchor_from": "left_middle",
+              "anchor_to": "left_middle",
+              "text": "$radio_label_text",
+              "bindings": "$radio_label_bindings",
+              "layer": 2
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "dynamic_dialog_screen@common.base_screen": {
+    "type": "screen",
+    "cache_screen": true,
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.menu_tab_left",
+        "to_button_id": "button.menu_tab_left",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_tab_right",
+        "to_button_id": "button.menu_tab_right",
+        "mapping_type": "global",
+        "scope": "view"
+      }
+    ],
+    "variables": [
+      {
+        "requires": "($is_realm_slot or $realm_no_world_edit)",
+        "$screen_background_control": "realms_slots.realms_background"
+      }
+    ],
+    "$screen_content": "betmc_settings_common.betmc_settings_content",
+    "$header_safezone_control": "betmc_common.empty_image",
+    "$header_bar_control": "betmc_common.empty_image",
+    "$is_full_screen_layout": true
+  },
+
+  "screen_base@settings_common.dynamic_dialog_screen": {
+    "$dialog_content": "betmc_settings_common.dialog_content"
+  }
+}

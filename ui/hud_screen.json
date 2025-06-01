@@ -1,0 +1,160 @@
+{
+  "vignette_renderer": {
+    "ignored": true
+  },
+
+  "progress_bar_nub": {
+    "alpha": 0
+  },
+
+  "anim_item_name_background_alpha_in": {
+    "to": 0.4
+  },
+
+  "anim_item_name_background_alpha_out": {
+    "from": 0.4,
+    "duration": 0.6
+  },
+
+  "anim_item_name_text_alpha_out": {
+    "duration": 0.6
+  },
+
+  "item_name_text": {
+    "bindings": [
+      {
+        "binding_name": "#item_name_text_offset",
+        "binding_name_override": "#offset"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inv_hud_pc_toggle",
+        "source_property_name": "#ts",
+        "target_property_name": "#pc_toggle"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_inv_hud_mobile_toggle",
+        "source_property_name": "#ts",
+        "target_property_name": "#mobile_toggle"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(not (#pc_toggle or #mobile_toggle))",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "item_name_text_root/item_text_aligner": {
+    "modifications": [
+      {
+        "control_name": "item_text_control",
+        "operation": "replace",
+        "value": [
+          { "betmc_items_text_control@betmc_hud.betmc_items_text_control": {} }
+        ]
+      }
+    ]
+  },
+
+  "exp_progress_bar_and_hotbar/resizing_xp_bar_with_hotbar/empty_progress_bar/full_progress_bar/progress_bar_nub": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          { "betmc_exp_percent_panel@betmc_hud.betmc_exp_percent_panel": {} }
+        ]
+      }
+    ]
+  },
+
+  "exp_progress_bar_and_hotbar/resizing_xp_bar_with_hotbar": {
+    "modifications": [
+      {
+        "control_name": "progress_text_label",
+        "operation": "replace",
+        "value": [
+          { "betmc_exp_text_label@betmc_hud.betmc_exp_text_label": {} }
+        ]
+      }
+    ]
+  },
+
+  "root_panel/chat_stack": {
+    "modifications": [
+      {
+        "control_name": "chat_panel",
+        "operation": "remove"
+      },
+      {
+        "control_name": "player_position",
+        "operation": "replace",
+        "value": [
+          { "betmc_player_position_panel@betmc_hud.betmc_player_position_panel": {} }
+        ]
+      },
+      {
+        "control_name": "number_of_days_played",
+        "operation": "replace",
+        "value": [
+          { "betmc_number_of_days_played@betmc_hud.betmc_number_of_days_played": {} }
+        ]
+       }
+    ]
+  },
+
+  "boss_health_panel": {
+    "modifications": [
+      {
+        "control_name": "boss_name",
+        "operation": "remove"
+      },
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          { "betmc_boss_name_panel@betmc_hud.betmc_boss_name_panel": {} }
+        ]
+      }
+    ]
+  },
+
+  "gui_hotbar_grid_item/hotbar_parent/item_count": {
+    "font_type": "smooth"
+  },
+
+  "layout_customization_sub_panel/background/sub_panel_content": {
+    "grid_item_template": "hud.layout_customization_option"
+  },
+
+  "root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          { "betmc_hud_root_panel@betmc_hud.betmc_hud_root_panel": {} },
+          { "betmc_chat_panel@betmc_hud.betmc_chat_panel": { "size": [ "35%", "100%c" ] }}
+        ]
+      }
+    ]
+  },
+
+  "hud_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          { "betmc_show_hud_panel@betmc_hud.betmc_show_hud_panel": {} }
+        ]
+      }
+    ]
+  },
+            
+  "hud_screen": {
+    "$use_loading_bars": false
+  }
+}

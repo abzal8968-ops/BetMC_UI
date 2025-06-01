@@ -1,0 +1,32 @@
+{
+  "namespace": "betmc_background",
+
+  "betmc_animation_background_frame@betmc_common.empty_panel": {
+  },
+  
+  "betmc_setting_static_background@betmc_common.betmc_setting_scr_background": {
+    "ignored": "(not $is_pregame)",
+    "$betmc_scr_backround_path|default": "betmc_background/betmc_background_static"
+  },
+
+  "betmc_static_background_not_use_gradient@betmc_common.betmc_scr_bg_not_use_gradient": {
+    "$betmc_scr_backround_path|default": "betmc_background/betmc_background_static"
+  },
+
+  "betmc_static_background@betmc_common.betmc_scr_background": {
+    "$betmc_scr_backround_path|default": "betmc_background/betmc_background_static"
+  },
+
+  "betmc_animation_bg_path@betmc_common.empty_image": {
+    "texture": "('betmc_background/betmc_background_frame/' + $betmc_image_frame + '_frame')",
+    "fill": true
+  },
+
+  "betmc_animation_bg_anim@betmc_config.betmc_main_config": {
+    "anim_type": "offset",
+    "easing": "linear",
+    "duration": "$betmc_frame_duration",
+    "from": "$betmc_animation_bg_offset",
+    "to": "$betmc_animation_bg_offset"
+  }
+}

@@ -1,0 +1,7 @@
+{
+	"namespace": "permissions",
+	"permission_level_radio": {
+		"size": [ "100% + 5px", "100%c" ],
+	  "offset": [ -3, 0 ]
+	}
+}

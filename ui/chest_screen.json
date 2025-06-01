@@ -1,0 +1,51 @@
+{
+  "small_chest_panel/root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "betmc_inv_mode_toggle_stack@betmc_inventory.betmc_inv_mode_toggle_stack": {
+              "$betmc_sw_mode_offset":  [ -22, -146 ]
+            }
+          },
+          { "betmc_chest_action@betmc_chest.betmc_chest_stealer_panel": {} }
+        ]
+      }
+    ]
+  },
+
+  "large_chest_panel/root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "betmc_inv_mode_toggle_stack@betmc_inventory.betmc_inv_mode_toggle_stack": {
+              "$betmc_sw_mode_offset":  [ -22, -200 ]
+            }
+          },
+          {
+            "betmc_chest_action@betmc_chest.betmc_chest_stealer_panel": {
+              "$betmc_grid_dimensions": [ 54, 1 ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "small_chest_panel": {
+    "$betmc_button_ref": [
+      { "betmc_inv_slot_button@betmc_inventory.betmc_inv_slot_button": {} }
+    ]
+  },
+
+  "large_chest_panel": {
+    "$betmc_button_ref": [
+      { "betmc_inv_slot_button@betmc_inventory.betmc_inv_slot_button": {} }
+    ]
+  }
+}

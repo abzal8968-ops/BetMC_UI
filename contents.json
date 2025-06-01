@@ -1,0 +1,455 @@
+{
+   "content" : [
+      {
+         "path" : ".vscode/settings.json"
+      },
+      {
+         "path" : "LICENSE"
+      },
+      {
+         "path" : "betmc_background/betmc_background_static.png"
+      },
+      {
+         "path" : "betmc_config/config.json"
+      },
+      {
+         "path" : "betmc_res/betmc_button/betmc_black.json"
+      },
+      {
+         "path" : "betmc_res/betmc_button/betmc_black.png"
+      },
+      {
+         "path" : "betmc_res/betmc_button/betmc_gray.json"
+      },
+      {
+         "path" : "betmc_res/betmc_button/betmc_gray.png"
+      },
+      {
+         "path" : "betmc_res/betmc_button/betmc_green.json"
+      },
+      {
+         "path" : "betmc_res/betmc_button/betmc_green.png"
+      },
+      {
+         "path" : "betmc_res/betmc_button/betmc_pink.json"
+      },
+      {
+         "path" : "betmc_res/betmc_button/betmc_pink.png"
+      },
+      {
+         "path" : "betmc_res/betmc_button/betmc_red.json"
+      },
+      {
+         "path" : "betmc_res/betmc_button/betmc_red.png"
+      },
+      {
+         "path" : "betmc_res/betmc_button/betmc_transparent.json"
+      },
+      {
+         "path" : "betmc_res/betmc_button/betmc_transparent.png"
+      },
+      {
+         "path" : "betmc_res/betmc_credit_user/asaki_yuki.png"
+      },
+      {
+         "path" : "betmc_res/betmc_credit_user/betmc_2411.png"
+      },
+      {
+         "path" : "betmc_res/betmc_credit_user/tlgm_2308.png"
+      },
+      {
+         "path" : "betmc_res/betmc_font/ComicRelief-Bold.ttf"
+      },
+      {
+         "path" : "betmc_res/betmc_font/NotoSans-Bold.ttf"
+      },
+      {
+         "path" : "betmc_res/betmc_font/Nunito-Bold.ttf"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_achievement.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_auto_move.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_back.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_chat_down_arrow.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_chat_left_arrow.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_chat_right_arrow.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_chat_up_arrow.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_delete.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_down_chevron.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_dressing_room.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_exit.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_left_chevron.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_maketplace.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_menu.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_notifications.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_place_hotbar_to_chest.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_place_inv_to_chest.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_place_to_inv.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_play.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_radio_button_checked.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_radio_button_unchecked.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_right_chevron.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_screenshot.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_send.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_setting.png"
+      },
+      {
+         "path" : "betmc_res/betmc_icon/betmc_user_online.png"
+      },
+      {
+         "path" : "betmc_res/betmc_ui_textures/betmc_black_textures.json"
+      },
+      {
+         "path" : "betmc_res/betmc_ui_textures/betmc_black_textures.png"
+      },
+      {
+         "path" : "betmc_res/betmc_ui_textures/betmc_dropdown_content_bg.json"
+      },
+      {
+         "path" : "betmc_res/betmc_ui_textures/betmc_dropdown_content_bg.png"
+      },
+      {
+         "path" : "betmc_res/betmc_ui_textures/betmc_focus_border_white.json"
+      },
+      {
+         "path" : "betmc_res/betmc_ui_textures/betmc_focus_border_white.png"
+      },
+      {
+         "path" : "betmc_res/betmc_ui_textures/betmc_inventory_icon.png"
+      },
+      {
+         "path" : "betmc_res/betmc_ui_textures/betmc_white_textures.json"
+      },
+      {
+         "path" : "betmc_res/betmc_ui_textures/betmc_white_textures.png"
+      },
+      {
+         "path" : "betmc_res/betmc_ui_textures/hud_tip_text_background.json"
+      },
+      {
+         "path" : "betmc_res/betmc_ui_textures/hud_tip_text_background.png"
+      },
+      {
+         "path" : "betmc_res/betmc_ui_textures/pause_screen_border.json"
+      },
+      {
+         "path" : "betmc_res/betmc_ui_textures/pause_screen_border.png"
+      },
+      {
+         "path" : "betmc_ui/betmc_common/betmc_anim.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_common/betmc_bg_common.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_common/betmc_button.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_common/betmc_dialog.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_common/betmc_menu_common.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_common/betmc_tab_toggle.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_common/betmc_toggle.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_common/betmc_ui_common.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_add_external_server_scr.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_chat_scr.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_chat_settings_menu_scr.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_chest_scr.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_history_content_log_scr.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_host_options_scr.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_hud_scr.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_inventory_scr.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_menu_scr.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_pause_scr.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_play_scr.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_progress_scr.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_setting_scr.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_settings_sections/betmc_changelogs.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_settings_sections/betmc_general_section.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_settings_sections/betmc_music_player.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_settings_sections/betmc_pack_credit.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_settings_sections/betmc_pack_features.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_settings_sections/betmc_pack_info.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_settings_sections/betmc_setting_common.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_settings_sections/betmc_world_section.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_start_scr.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_storage_management.json"
+      },
+      {
+         "path" : "betmc_ui/betmc_screen/betmc_world_template_scr.json"
+      },
+      {
+         "path" : "biomes_client.json"
+      },
+      {
+         "path" : "contents.json"
+      },
+      {
+         "path" : "fogs/basalt_deltas_fog_setting.json"
+      },
+      {
+         "path" : "fogs/crimson_forest_fog_setting.json"
+      },
+      {
+         "path" : "fogs/default_fog_setting.json"
+      },
+      {
+         "path" : "fogs/hell_fog_setting.json"
+      },
+      {
+         "path" : "fogs/soulsand_valley_fog_setting.json"
+      },
+      {
+         "path" : "fogs/swampland_fog_setting.json"
+      },
+      {
+         "path" : "fogs/swampland_mutated_fog_setting.json"
+      },
+      {
+         "path" : "fogs/warped_forest_fog_setting.json"
+      },
+      {
+         "path" : "font/font_metadata.json"
+      },
+      {
+         "path" : "manifest.json"
+      },
+      {
+         "path" : "pack_icon.png"
+      },
+      {
+         "path" : "particles/block_destruct.json"
+      },
+      {
+         "path" : "particles/dragon_death_explosion.json"
+      },
+      {
+         "path" : "particles/huge_explosion_lab_misc.json"
+      },
+      {
+         "path" : "particles/huge_explosion_level.json"
+      },
+      {
+         "path" : "particles/splashpotionspell.json"
+      },
+      {
+         "path" : "sounds/sound_definitions.json"
+      },
+      {
+         "path" : "textures/environment/weather.png"
+      },
+      {
+         "path" : "textures/misc/pumpkinblur.png"
+      },
+      {
+         "path" : "textures/terrain_texture.json"
+      },
+      {
+         "path" : "textures/textures_list.json"
+      },
+      {
+         "path" : "textures/ui/panorama_0.png"
+      },
+      {
+         "path" : "textures/ui/panorama_1.png"
+      },
+      {
+         "path" : "textures/ui/panorama_2.png"
+      },
+      {
+         "path" : "textures/ui/panorama_3.png"
+      },
+      {
+         "path" : "textures/ui/panorama_4.png"
+      },
+      {
+         "path" : "textures/ui/panorama_5.png"
+      },
+      {
+         "path" : "textures/ui/spyglass_scope.png"
+      },
+      {
+         "path" : "ui/_ui_defs.json"
+      },
+      {
+         "path" : "ui/add_external_server_screen.json"
+      },
+      {
+         "path" : "ui/chat_screen.json"
+      },
+      {
+         "path" : "ui/chat_settings_menu_screen.json"
+      },
+      {
+         "path" : "ui/chest_screen.json"
+      },
+      {
+         "path" : "ui/content_log_history_screen.json"
+      },
+      {
+         "path" : "ui/host_options_screen.json"
+      },
+      {
+         "path" : "ui/hud_screen.json"
+      },
+      {
+         "path" : "ui/inventory_screen.json"
+      },
+      {
+         "path" : "ui/pause_screen.json"
+      },
+      {
+         "path" : "ui/permissions_screen.json"
+      },
+      {
+         "path" : "ui/play_screen.json"
+      },
+      {
+         "path" : "ui/progress_screen.json"
+      },
+      {
+         "path" : "ui/scoreboards.json"
+      },
+      {
+         "path" : "ui/settings_screen.json"
+      },
+      {
+         "path" : "ui/settings_sections/general_section.json"
+      },
+      {
+         "path" : "ui/settings_sections/settings_common.json"
+      },
+      {
+         "path" : "ui/settings_sections/world_section.json"
+      },
+      {
+         "path" : "ui/start_screen.json"
+      },
+      {
+         "path" : "ui/storage_management.json"
+      },
+      {
+         "path" : "ui/structure_editor_screen.json"
+      },
+      {
+         "path" : "ui/tabbed_upsell_screen.json"
+      },
+      {
+         "path" : "ui/trade_2_screen.json"
+      },
+      {
+         "path" : "ui/trade_2_screen_pocket.json"
+      },
+      {
+         "path" : "ui/ui_common.json"
+      },
+      {
+         "path" : "ui/win10_trial_conversion_screen.json"
+      },
+      {
+         "path" : "ui/world_templates_screen.json"
+      }
+   ],
+   "version" : 1
+}

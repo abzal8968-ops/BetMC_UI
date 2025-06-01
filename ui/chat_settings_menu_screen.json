@@ -1,0 +1,19 @@
+{
+  "colors_dropdown_base": {
+    "$radio_content_control": "betmc_chat_settings.colored_icon_panel",
+    "$options_dropdown_toggle_prelabel_content": "betmc_common.empty_panel"
+  },
+
+  "chat_settings_scrolling_content/chat_settings_content_area": {
+    "modifications": [
+      {
+        "control_name": "typeface_dropdown",
+        "operation": "remove"
+      },
+      {
+        "control_name": "font_size",
+        "operation": "remove"
+      }
+    ]
+  }
+}
