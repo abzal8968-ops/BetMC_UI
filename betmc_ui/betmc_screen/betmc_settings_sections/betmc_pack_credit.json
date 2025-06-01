@@ -1,0 +1,60 @@
+{
+  "namespace": "betmc_credit",
+
+  "betmcui_credit_0@betmc_common.empty_stack_panel": {
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ "100%", "100%c" ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_credit_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "betmc_credit_user_info@betmc_menu_common.betmc_menu_header": {
+          "$betmc_header_text": "CREDIT USER INFO"
+        }
+      },
+      {
+        "asaki_yuki@betmc_menu_common.betmc_credit_user_panel": {
+          "$betmc_credit_user_image": "betmc_res/betmc_credit_user/asaki_yuki",
+          "$betmc_credit_label_controls": [
+            { "asaki_yuki_name@betmc_menu_common.betmc_menu_label": { "text": "Asaki Yuki", "$betmc_font_scale_factor": 1.0 }},
+            { "asaki_yuki_fb@betmc_menu_common.betmc_menu_label": { "text": "FB: https://www.facebook.com/asakizuki" }},
+            { "asaki_yuki_yt@betmc_menu_common.betmc_menu_label": { "text": "YouTube: https://www.youtube.com/@AsakiZuki" }},
+            { "asaki_yuki_github@betmc_menu_common.betmc_menu_label": { "text": "GitHub: https://github.com/AsakiYuki" }},
+            { "asaki_yuki_dis@betmc_menu_common.betmc_menu_label": { "text": "Discord profile: https://discord.com/users/952155510428278833/" }}
+          ]
+        }
+      },
+      {
+        "tlgm_2308@betmc_menu_common.betmc_credit_user_panel": {
+          "$betmc_credit_user_image": "betmc_res/betmc_credit_user/tlgm_2308",
+          "$betmc_credit_label_controls": [
+            { "tlgm_2308_name@betmc_menu_common.betmc_menu_label": { "text": "TLGM2308", "$betmc_font_scale_factor": 1.0 }},
+            { "tlgm_2308_yt@betmc_menu_common.betmc_menu_label": { "text": "YouTube: https://www.youtube.com/@TLGM2308" }},
+            { "tlgm_2308_x@betmc_menu_common.betmc_menu_label": { "text": "X: https://x.com/tlgm2308" }},
+            { "tlgm_2308_mcpedl@betmc_menu_common.betmc_menu_label": { "text": "MCPEDL: https://mcpedl.com/user/real_tlgm/" }},
+            { "tlgm_2308_curseforge@betmc_menu_common.betmc_menu_label": { "text": "CurseForge: https://curseforge.com/members/tlgm2308/" }}
+          ]
+        }
+      },
+      {
+        "betmc_padding@betmc_common.empty_panel": {
+          "size": [ 0, 4 ]
+        }
+      },
+      {
+        "betmc_credit_user_info@betmc_menu_common.betmc_menu_header": {
+          "$betmc_header_text": "What feature did I take away from the above user?"
+        }
+      },
+      { "betmc_info_0@betmc_menu_common.betmc_sex_text": { "text": "Chunk postion, Durability item, Exp, Boss bar, Progress precent, Chest steal item, Total mainhand item count base code by: Asaki Yuki" }},
+      { "betmc_info_1@betmc_menu_common.betmc_sex_text": { "text": "Custom dialogs, Animation chat base code by: TLGM2308" }}
+    ]
+  }
+}

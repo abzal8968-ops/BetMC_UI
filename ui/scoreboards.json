@@ -1,0 +1,31 @@
+{
+  "namespace": "scoreboard",
+
+  "scoreboard_sidebar_score": {
+    "font_type": "smooth"
+  },
+
+  "scoreboard_sidebar_player": {
+    "font_type": "smooth"
+  },
+
+  "scoreboard_sidebar/main/displayed_objective": {
+    "font_type": "smooth"
+  },
+
+  "list_objective_label": {
+    "font_type": "smooth"
+  },
+
+  "player_rank_panel/player_rank_bg/player_rank": {
+    "font_type": "smooth"
+  },
+
+  "player_name": {
+    "font_type": "smooth"
+  },
+
+  "player_score": {
+    "font_type": "smooth"
+  }
+}

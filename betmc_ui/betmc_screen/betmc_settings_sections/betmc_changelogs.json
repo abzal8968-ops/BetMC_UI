@@ -1,0 +1,95 @@
+{
+  "namespace": "betmc_changelog",
+
+  "betmcui_changelog_0@betmc_common.empty_stack_panel": {
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ "100%", "100%c" ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_changelog_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "v1_0_0-b4@betmc_menu_common.betmc_changelog_version_toggle": {
+          "$betmc_changelog_version": "v1.0.0-beta 4",
+          "$betmc_details_label_controls": [
+            { "betmc_date@betmc_menu_common.betmc_menu_label": { "text": "2025/02/18 | 01:32 GMT+7" }},
+            { "betmc_feature_label_0@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Released the beta-4 version" }},
+            { "betmc_feature_label_10@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Optimize the performance of Total Items Counter" }},
+            { "betmc_feature_label_11@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Added a feature to display Arrow counter when holding Bows and Crossbows on the HUD screen" }},
+            { "betmc_feature_label_1@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Removed the F8 button on the HUD screen (because it's useless)" }},
+            { "betmc_feature_label_15@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Remove color_map (a few people have told me, it's too dazzling)" }},
+            { "betmc_feature_label_2@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Added a toggle to show/hide skins on the start screen" }},
+            { "betmc_feature_label_3@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Made transparent through binoculars and when wearing pumpkin" }},
+            { "betmc_feature_label_4@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Added hiding enchant text line in HUD screen (Enable in config.json)" }},
+            { "betmc_feature_label_5@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Change the wallpaper to Minecraft (If you want an Anime wallpaper, you need to install the Animation BG resource pack)" }},
+            { "betmc_feature_label_16@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Update the Clock, Compass, Recovery Compass HUD items ID" }},
+            { "betmc_feature_label_6@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Added the feature Unlocker Traders Village" }},
+            { "betmc_feature_label_14@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Added the feature Exp Caculator [Base code by: Asaki Yuki]" }},
+            { "betmc_feature_label_7@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Show the world folder (world ID) in the world list (Disable in config.json)" }},
+            { "betmc_feature_label_13@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Show online players and network status in the server list" }},
+            { "betmc_feature_label_8@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Minor bug fixes on the play screen" }},
+            { "betmc_feature_label_9@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Fixed a minor bug in the settings screen in Minecraft version 1.21.60" }},
+            { "betmc_feature_label_9@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Fixed some features with offset errors in the HUD screen when switching the keyboard to touch" }},
+            { "betmc_feature_label_12@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Fixed a minor bug in the pause screen in minecraft version 1.21.60" }}
+          ]
+        }
+      },
+      {
+        "v1_0_0-b3@betmc_menu_common.betmc_changelog_version_toggle": {
+          "$betmc_changelog_version": "v1.0.0-beta 3",
+          "$betmc_details_label_controls": [
+            { "betmc_date@betmc_menu_common.betmc_menu_label": { "text": "2024/10/15 | 04:38 GMT+7" }},
+            { "betmc_feature_label_0@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Released the beta-3 version" }},
+            { "betmc_feature_label_1@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Fixed bug in world template screen when clicking create world" }},
+            { "betmc_feature_label_2@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Fix item id compass, clock, compass recovery changed to other item" }},
+            { "betmc_feature_label_3@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Fixed the display of Item ID, Item ID Aux label" }},
+            { "betmc_feature_label_4@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Changed font to Noto-Sans" }},
+            { "betmc_feature_label_5@betmc_menu_common.betmc_details_label":{ "$betmc_text": "New Dropdown Settings" }},
+            { "betmc_feature_label_6@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Redesign Accessibility, General, Accounts sections in the most compact way" }},
+            { "betmc_feature_label_9@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Hidden settings background while in pregame" }},
+            { "betmc_feature_label_7@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Added Gametag and login button at start screen" }},
+            { "betmc_feature_label_8@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Added item steal button feature in chest (Thanks to Asaki Yuki for the source code)" }},
+            { "betmc_feature_label_10@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Added Empty Inventory Slot display" }},
+            { "betmc_feature_label_11@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Added Total Mainhand Item In Inventory (Thanks to Asaki Yuki for the source code)" }}
+          ]
+        }
+      },
+      {
+        "v1_0_0-b2@betmc_menu_common.betmc_changelog_version_toggle": {
+          "$betmc_changelog_version": "v1.0.0-beta 2",
+          "$betmc_details_label_controls": [
+            { "betmc_date@betmc_menu_common.betmc_menu_label": { "text": "2024/07/10 | 21:13 GMT+7" }},
+            { "betmc_feature_label_0@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Released the beta-2 version" }},
+            { "betmc_feature_label_1@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Make the water surface transparent down to 35%%." }},
+            { "betmc_feature_label_2@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Cleared fog while underwater and lava" }},
+            { "betmc_feature_label_3@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Leaves, vines and grass blocks have been fresher than usual" }},
+            { "betmc_feature_label_4@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Added quick crafting button (only support for [classic ui])" }},
+            { "betmc_feature_label_5@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Added inventory and chest mode [Auto move items, Auto drop items, Destroy item in creative mode]  (only support for [classic ui])" }},
+            { "betmc_feature_label_6@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Background animation has been split from the main resource pack, creating its own background resource pack" }},
+            { "betmc_feature_label_9@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Inventory hud has been changed to a new style (base code by: Asaki Yuki)" }},
+            { "betmc_feature_label_7@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Inventory hud is now supported for mobile devices (Toggle show/hide)" }},
+            { "betmc_feature_label_8@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Added F1, F8 buttons for mobile devices" }},
+            { "betmc_feature_label_10@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Force show export worlds button for mobile devices (in world setting)" }},
+            { "betmc_feature_label_11@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Force show custom version world for all devices (in world setting)" }},
+            { "betmc_feature_label_12@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Force show vsync button for all devices (in game settings)" }}
+          ]
+        }
+      },
+      {
+        "v1_0_0-b1@betmc_menu_common.betmc_changelog_version_toggle": {
+          "$betmc_changelog_version": "v1.0.0-beta 1",
+          "$betmc_details_label_controls": [
+            { "betmc_date@betmc_menu_common.betmc_menu_label": { "text": "2024/06/16 | 03:36 GMT+7" }},
+            { "betmc_feature_label_0@betmc_menu_common.betmc_details_label":{ "$betmc_text": "Released the first beta version" }}
+          ]
+        }
+      }
+    ]
+  }
+}

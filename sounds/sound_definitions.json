@@ -1,0 +1,45 @@
+{
+  "custom.music.0": {
+    "category": "ui",
+    "sounds": [
+      {
+        "name": "betmc_res/betmc_music/betmc_music_0",
+        "stream": true,
+        "load_on_low_memory": true
+      }
+    ]
+  },
+
+  "custom.music.1": {
+    "category": "ui",
+    "sounds": [
+      {
+        "name": "betmc_res/betmc_music/betmc_music_1",
+        "stream": true,
+        "load_on_low_memory": true
+      }
+    ]
+  },
+
+  "custom.music.2": {
+    "category": "ui",
+    "sounds": [
+      {
+        "name": "betmc_res/betmc_music/betmc_music_2",
+        "stream": true,
+        "load_on_low_memory": true
+      }
+    ]
+  },
+
+  "custom.music.3": {
+    "category": "ui",
+    "sounds": [
+      {
+        "name": "betmc_res/betmc_music/betmc_music_3",
+        "stream": true,
+        "load_on_low_memory": true
+      }
+    ]
+  }
+}

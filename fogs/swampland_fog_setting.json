@@ -1,0 +1,16 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:fog_settings": {
+    "description": {
+      "identifier": "betmc_swampland:fog_swampland"
+    },
+    "distance": {
+      "water": {
+        "fog_start": 66535000000,
+        "fog_end": 66535000000,
+        "fog_color": "#4c6559",
+        "render_distance_type": "fixed"
+      }
+    }
+  }
+}

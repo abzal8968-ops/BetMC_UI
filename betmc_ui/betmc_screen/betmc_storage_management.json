@@ -1,0 +1,186 @@
+{
+  "namespace": "betmc_storage_management",
+
+  "betmc_storage_management_light_text_button@betmc_button.betmc_light_text_button": {
+    "$default_button_texture": "betmc_res/betmc_button/betmc_black",
+    "$hover_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$pressed_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$locked_button_texture": "betmc_res/betmc_button/betmc_black",
+    "$default_text_color": "$chat_text_color",
+    "$border_visible": true
+  },
+
+  
+  "betmc_clear_download_button@betmc_storage_management.betmc_storage_management_light_text_button": {
+    "$pressed_button_name": "dev_clear_download_cache_button",
+    "$button_text": "options.dev_clearDownloadeCache"
+  },
+
+  "clear_cache_button@betmc_storage_management.betmc_storage_management_light_text_button": {
+    "$pressed_button_name": "button.clear_cache",
+    "$button_text": "$clear_cache_button_text"
+  },
+
+  "clear_screenshots_cache_button@betmc_storage_management.betmc_storage_management_light_text_button": {
+    "$pressed_button_name": "button.clear_screenshots_cache",
+    "$button_text": "$clear_screenshots_cache_button_text"
+  },
+
+  "delete_local_screenshots_button@betmc_storage_management.betmc_storage_management_light_text_button": {
+    "$pressed_button_name": "button.delete_local_screenshots",
+    "$button_text": "$delete_local_screenshots_button_text"
+  },
+
+  "betmc_delete_button@betmc_storage_management.betmc_storage_management_light_text_button": {
+    "$pressed_button_name": "button.deleteResources",
+    "$button_text": "storageManager.multiselectDelete",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "bindings": [
+      {
+        "binding_type": "global",
+        "binding_condition": "always",
+        "binding_name": "#delete_button_enabled",
+        "binding_name_override": "#enabled"
+      }
+    ]
+  },
+
+  "betmc_share_button@betmc_storage_management.betmc_storage_management_light_text_button": {
+    "ignored": true,
+    "$pressed_button_name": "button.shareResources",
+    "$button_text": "storageManager.multiselectShare",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "bindings": [
+      {
+        "binding_type": "global",
+        "binding_condition": "always",
+        "binding_name": "#share_button_enabled",
+        "binding_name_override": "#enabled"
+      }
+    ]
+  },
+
+  "betmc_clear_cache_button_panel@betmc_common.empty_panel": {
+    "size": ["100% - 4px", "100%c"],
+    "controls": [
+      {
+        "betmc_clear_cache_button_stack_panel@betmc_common.betmc_stack_vertical_with_controls": {
+          "$betmc_stack_vertical_with_controls_size": [ "100% - 2px", "100%c + 1px" ],
+          "$betmc_stack_vertical_controls": [
+            {
+              "betmc_clear_cache_button_stack_panel_1@betmc_common.betmc_stack_horizontal_with_controls": {
+                "$betmc_stack_horizontal_with_controls_size": [ "100%", "100%cm" ],
+                "ignored": "$education_edition",
+                "$betmc_stack_horizontal_controls": [
+                  {
+                    "clear_cache_button_panel@betmc_common.empty_panel": {
+                      "size": ["fill", "100%cm"],
+                      "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+                      "$focus_override_up": "FOCUS_OVERRIDE_STOP",
+                      "$clear_cache_button_text|default": "#none",
+                      "controls": [
+                        { "betmc_clear_cache_button@betmc_storage_management.clear_cache_button": { "size": ["100%", 20] }}
+                      ]
+                    }
+                  },
+                  { "betmc_storage_management_padding_0@betmc_common.empty_panel": { "size": [ 2, 0 ] }},
+                  {
+                    "delete_local_screenshots_button_panel@betmc_common.empty_panel": {
+                      "size": ["50% - 1px", "100%cm"],
+                      "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+                      "$clear_download_button_text|default": "#none",
+                      "controls": [
+                        { "betmc_clear_download_button@betmc_storage_management.betmc_clear_download_button": { "size": ["100%", 20] }}
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            { "betmc_storage_management_padding_1@betmc_common.empty_panel": { "size": [ 0, 2 ] }},
+            {
+              "betmc_clear_cache_button_stack_panel_2@betmc_common.betmc_stack_horizontal_with_controls": {
+                "$betmc_stack_horizontal_with_controls_size": [ "100%", "100%cm" ],
+                "ignored": "$education_edition",
+                "$betmc_stack_horizontal_controls": [
+                  {
+                    "clear_screenshots_cache_button_panel@betmc_common.empty_panel": {
+                      "size": ["fill", "100%cm"],
+                      "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+                      "$clear_screenshots_cache_button_text|default": "#none",
+                      "controls": [
+                        { "betmc_clear_screenshots_cache_button@betmc_storage_management.clear_screenshots_cache_button": { "size": ["100%", 20] }}
+                      ],
+                      "bindings": [
+                        {
+                          "binding_name": "#screenshots_showcase_enabled",
+                          "binding_name_override": "#visible"
+                        }
+                      ]
+                    }
+                  },
+                  { "betmc_storage_management_padding_2@betmc_common.empty_panel": { "size": [ 2, 0 ] }},
+                  {
+                    "delete_local_screenshots_button_panel@betmc_common.empty_panel": {
+                      "size": ["50% - 1px", "100%cm"],
+                      "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+                      "$delete_local_screenshots_button_text|default": "#none",
+                      "controls": [
+                        { "betmc_delete_local_screenshots_button@betmc_storage_management.delete_local_screenshots_button": { "size": ["100%", 20] }}
+                      ],
+                      "bindings": [
+                        {
+                          "binding_name": "#screenshots_gallery_enabled",
+                          "binding_name_override": "#visible"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "betmc_files_location_and_clear_cache_stacks@betmc_common.betmc_stack_vertical_with_controls": {
+    "$betmc_stack_vertical_with_controls_size": [ "100% - 2px", "100%c + 2px" ],
+    "$betmc_stack_vertical_controls": [
+      {
+        "file_storage_dropdown@settings_common.option_dropdown": {
+          "$option_label": "options.filelocation.title",
+          "ignored": "($education_edition or ($is_holographic and $is_reality_mode))",
+          "visible": "($storage_location_switch_enabled and not $gear_vr)",
+          "$dropdown_content": "general_section.file_storage_location_content",
+          "$dropdown_area": "content_area",
+          "$dropdown_name": "file_storage_location",
+          "$option_enabled_binding_name": "#file_storage_location_enabled",
+          "$options_dropdown_toggle_label_binding": "#file_storage_location_toggle_label",
+          "$dropdown_scroll_content_size": [ "100%", "200%" ]
+        }
+      },
+      {
+        "file_storage_dropdown_edu@settings_common.option_dropdown": {
+          "$option_label": "options.filelocation.title.edu",
+          "ignored": "((not $education_edition) or ($is_holographic and $is_reality_mode))",
+          "visible": "($storage_location_switch_enabled and not $gear_vr)",
+          "$dropdown_content": "general_section.file_storage_location_content",
+          "$dropdown_area": "content_area",
+          "$dropdown_name": "file_storage_location",
+          "$option_enabled_binding_name": "#file_storage_location_enabled",
+          "$options_dropdown_toggle_label_binding": "#file_storage_location_toggle_label",
+          "$dropdown_scroll_content_size": [ "100%", "200%" ]
+        }
+      },
+      {
+        "betmc_clear_cache_dropdown@betmc_settings_common.betmc_dropdown_toggle_style_custom": {
+          "$betmc_dropdown_label_custom": "Clear Cache",
+          "$betmc_dropdown_name_custom": "clear_cache_dropdown",
+          "$betmc_dropdown_custom_content": "betmc_storage_management.betmc_clear_cache_button_panel"
+        }
+      }
+    ]
+  }
+}

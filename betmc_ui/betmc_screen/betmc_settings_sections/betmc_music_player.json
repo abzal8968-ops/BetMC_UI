@@ -1,0 +1,221 @@
+{
+  "namespace": "betmc_music",
+
+  "betmc_music_action_button@betmc_button.betmc_light_text_button": {
+    "$default_button_texture": "betmc_res/betmc_button/betmc_black",
+    "$hover_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$pressed_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$locked_button_texture": "betmc_res/betmc_button/betmc_black",
+    "$default_text_color": "$chat_text_color",
+    "$border_visible": true,
+    "size": [ "100%", "100%" ]
+  },
+
+  "betmc_music_icon@betmc_common.empty_panel": {
+    "$betmc_thumbnail_music|default": "",
+    "$betmc_thumbnail_size|default": [ 34, 34 ],
+    "size": [ 38, 34 ],
+    "anchor_from": "left_middle",
+    "anchor_to": "left_middle",
+    "offset": [ 2, 0 ],
+    "controls": [
+      { "music_button_icon@betmc_common.empty_image": { "texture": "$betmc_thumbnail_music", "size": "$betmc_thumbnail_size", "layer": 12 }},
+      { "border_white@common.focus_border_white": { "size": "$betmc_thumbnail_size", "layer": 13 }}
+    ]
+  },
+
+  "betmc_music_button_stack@betmc_common.betmc_stack_horizontal_with_controls": {
+    "$betmc_sound_name|default": "chịch.lồn",
+    "$betmc_speed_music|default": 1.0,
+    "$betmc_volume_music|default": 1.0,
+    "$betmc_button_size|default": [ 45, 17 ],
+    "$betmc_stack_horizontal_with_controls_size": [ "100%cm", "100%cm" ],
+    "$betmc_stack_horizontal_controls": [
+      {
+        "play_button@betmc_music.betmc_music_action_button": {
+          "size": "$betmc_button_size",
+          "$pressed_button_name": "$betmc_sound_name",
+          "$button_text": "PLAY",
+          "sound_name": "$betmc_sound_name",
+          "sound_volume": "$betmc_volume_music",
+          "sound_pitch": "$betmc_speed_music",
+          "layer": 12
+        }
+      },
+      { "betmc_padding@betmc_common.empty_panel": { "size": [ 2, 0 ] }},
+      {
+        "stop_button@betmc_music.betmc_music_action_button": {
+          "size": "$betmc_button_size",
+          "$pressed_button_name": "($betmc_sound_name + '_stop')",
+          "$button_text": "STOP",
+          "sound_name": "$betmc_sound_name",
+          "sound_volume": 0.0000000000001,
+          "sound_pitch": 0.0,
+          "layer": 12
+        }
+      }
+    ]
+  },
+
+  "betmc_button_and_music_name@betmc_common.betmc_stack_vertical_with_controls": {
+    "$betmc_title_music|default": "APP SEX GAY 69",
+    "$betmc_stack_vertical_with_controls_size": [ "100%c", "100%c" ],
+    "$betmc_stack_vertical_controls": [
+      {
+        "betmc_music_label_panel@betmc_common.empty_panel": {
+          "size": [ "100%cm", "100%cm" ],
+          "controls": [
+            {
+              "betmc_music_label@betmc_menu_common.betmc_menu_label": {
+                "$betmc_font_scale_factor": 1.0,
+                "$betmc_menu_label_offset": [ 0, -1 ],
+                "text_alignment": "left",
+                "text": "$betmc_title_music",
+                "color": "$0_color_format"
+              }
+            }
+          ]
+        }
+      },
+      { "betmc_padding@betmc_common.empty_panel": { "size": [ 0, 2 ] }},
+      {
+        "betmc_music_label_panel@betmc_common.empty_panel": {
+          "size": [ "100%cm", "100%cm" ],
+          "controls": [
+            { "betmc_music_button_chịch_chấm_lồn@betmc_music.betmc_music_button_stack": { "offset": [ 0, 1 ] }}
+          ]
+        }
+      }
+    ]
+  },
+
+  "betmc_music_content_stack@betmc_common.betmc_stack_horizontal_with_controls": {
+    "$betmc_stack_horizontal_with_controls_size": [ "100%", "100%cm" ],
+    "$betmc_stack_horizontal_controls": [
+      { "betmc_music_icon@betmc_music.betmc_music_icon": {} },
+      { "betmc_padding@betmc_common.empty_panel": { "size": [ 4, 0 ] }},
+      { "betmc_button_and_music_name@betmc_music.betmc_button_and_music_name": {} }
+    ]
+  },
+
+  "music_template_button@betmc_common.empty_panel": {
+    "size": [ "100%", 40 ],
+    "layer": 1,
+    "controls": [
+      {
+        "background@betmc_common.empty_image": {
+          "texture": "textures/ui/White",
+          "size": [ "100%", 38 ],
+          "alpha": 0.5,
+          "layer": 1,
+          "controls": [
+            { "betmc_music_content_stack@betmc_music.betmc_music_content_stack": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "betmcui_music_player_0@betmc_common.empty_stack_panel": {
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "betmc_mucic_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "betmc_music_00@betmc_music.music_template_button": {
+          "$betmc_thumbnail_music": "textures/betmc_textures/betmc_music_thumbnail/betmc_custom_music_00",
+          "$betmc_title_music": "NST TH - NEW MDM M1 TET 2022 MIX FULL 2H",
+          "$betmc_sound_name": "custom.music.0",
+          "$betmc_speed_music": 1.13
+        }
+      },
+      {
+        "betmc_music_01@betmc_music.music_template_button": {
+          "$betmc_thumbnail_music": "textures/betmc_textures/betmc_music_thumbnail/betmc_custom_music_00",
+          "$betmc_title_music": "Anh Ba Mọi Đen Quảng Cáo App Sex Gay 69",
+          "$betmc_sound_name": "custom.music.1"
+        }
+      },
+      {
+        "betmc_music_02@betmc_music.music_template_button": {
+          "$betmc_thumbnail_music": "textures/betmc_textures/betmc_music_thumbnail/betmc_custom_music_00",
+          "$betmc_title_music": "If (Từ Vi) - Nam Milo",
+          "$betmc_sound_name": "custom.music.2",
+          "$betmc_speed_music": 1.13
+        }
+      },
+      {
+        "betmc_music_03@betmc_music.music_template_button": {
+          "$betmc_thumbnail_music": "textures/betmc_textures/betmc_music_thumbnail/betmc_custom_music_00",
+          "$betmc_title_music": "Girl So Sexy 2020 - Key Remix (Style Thái Hoàng)",
+          "$betmc_sound_name": "custom.music.3",
+          "$betmc_speed_music": 1.13
+        }
+      },
+      {
+        "betmc_music_04@betmc_music.music_template_button": {
+          "$betmc_thumbnail_music": "textures/betmc_textures/betmc_music_thumbnail/betmc_custom_music_00",
+          "$betmc_title_music": "NST TH - NEW MDM M1 TET 2022 MIX FULL 2H",
+          "$betmc_sound_name": "custom.music.1"
+        }
+      },
+      {
+        "betmc_music_05@betmc_music.music_template_button": {
+          "$betmc_thumbnail_music": "textures/betmc_textures/betmc_music_thumbnail/betmc_custom_music_00",
+          "$betmc_title_music": "NST TH - NEW MDM M1 TET 2022 MIX FULL 2H",
+          "$betmc_sound_name": "custom.music.1"
+        }
+      },
+      {
+        "betmc_music_06@betmc_music.music_template_button": {
+          "$betmc_thumbnail_music": "textures/betmc_textures/betmc_music_thumbnail/betmc_custom_music_00",
+          "$betmc_title_music": "NST TH - NEW MDM M1 TET 2022 MIX FULL 2H",
+          "$betmc_sound_name": "custom.music.1"
+        }
+      },
+      {
+        "betmc_music_07@betmc_music.music_template_button": {
+          "$betmc_thumbnail_music": "textures/betmc_textures/betmc_music_thumbnail/betmc_custom_music_00",
+          "$betmc_title_music": "NST TH - NEW MDM M1 TET 2022 MIX FULL 2H",
+          "$betmc_sound_name": "custom.music.1"
+        }
+      },
+      {
+        "betmc_music_08@betmc_music.music_template_button": {
+          "$betmc_thumbnail_music": "textures/betmc_textures/betmc_music_thumbnail/betmc_custom_music_00",
+          "$betmc_title_music": "NST TH - NEW MDM M1 TET 2022 MIX FULL 2H",
+          "$betmc_sound_name": "custom.music.1"
+        }
+      },
+      {
+        "betmc_music_09@betmc_music.music_template_button": {
+          "$betmc_thumbnail_music": "textures/betmc_textures/betmc_music_thumbnail/betmc_custom_music_00",
+          "$betmc_title_music": "NST TH - NEW MDM M1 TET 2022 MIX FULL 2H",
+          "$betmc_sound_name": "custom.music.1"
+        }
+      },
+      {
+        "betmc_music_10@betmc_music.music_template_button": {
+          "$betmc_thumbnail_music": "textures/betmc_textures/betmc_music_thumbnail/betmc_custom_music_00",
+          "$betmc_title_music": "NST TH - NEW MDM M1 TET 2022 MIX FULL 2H",
+          "$betmc_sound_name": "custom.music.1"
+        }
+      },
+      {
+        "betmc_music_11@betmc_music.music_template_button": {
+          "$betmc_thumbnail_music": "textures/betmc_textures/betmc_music_thumbnail/betmc_custom_music_00",
+          "$betmc_title_music": "NST TH - NEW MDM M1 TET 2022 MIX FULL 2H",
+          "$betmc_sound_name": "custom.music.1"
+        }
+      }
+    ]
+  }
+}

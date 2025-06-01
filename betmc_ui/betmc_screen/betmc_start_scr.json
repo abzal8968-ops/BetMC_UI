@@ -1,0 +1,511 @@
+{
+  "namespace": "betmc_start",
+
+  "inbox_icon@betmc_common.empty_image": {
+    "texture": "betmc_res/betmc_icon/betmc_notifications",
+    "size": [ 10, 10 ],
+    "layer": 3
+  },
+
+  "betmc_start_toggle_image@betmc_common.empty_image": {
+    "$button_icon_offset|default": [ 0, 0 ],
+    "$button_color|default": [ 1.0, 1.0, 1.0 ],
+    "$button_arrow_texture|default": "betmc_res/betmc_icon/betmc_left_chevron",
+    "offset": "$button_icon_offset",
+    "texture": "$button_arrow_texture",
+    "color": "$button_color",
+    "size": [ 10, 10 ],
+    "layer": 5
+  },
+
+  "betmc_minecraft_copyright@betmc_common.empty_label_font_custom": {
+    "color": "$main_header_text_color",
+    "layer": 2,
+    "text": "menu.copyright",
+    "shadow": true,
+    "font_type": "$betmc_start_label_font_type",
+    "font_scale_factor": 0.85
+  },
+
+  "betmc_pack_version@betmc_common.empty_label_font_custom": {
+    "color": "$main_header_text_color",
+    "layer": 2,
+    "text": "BetMC UI v1-beta 4",
+    "shadow": true,
+    "font_type": "$betmc_start_label_font_type",
+    "font_scale_factor": 0.85
+  },
+
+  "betmc_mc_version@betmc_common.empty_label_font_custom": {
+    "text": "#text",
+    "font_type": "$betmc_start_label_font_type",
+    "font_scale_factor": 0.85,
+    "localize": false,
+    "shadow": true,
+    "layer": 2,
+    "$betmc_version_type|default": "NULL",
+    "variables": [
+      {
+        "requires": "(not $pre_release)",
+        "$betmc_version_type": "Release"
+      },
+      {
+        "requires": "$pre_release",
+        "$betmc_version_type": "Beta/Preview"
+      },
+      {
+        "requires": "(not $is_publish)",
+        "$betmc_version_type": "Development"
+      },
+      {
+        "requires": "$trial",
+        "$betmc_version_type": "Trial"
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#development_version"
+      },
+      {
+        "binding_name": "#version"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "('Version: §z' + #version + '§z | ' + ('Build: §z' + #development_version) + '§z | ' + $betmc_version_type)",
+        "target_property_name": "#text"
+      }
+    ]
+  },
+
+  "betmc_main_button@betmc_button.betmc_light_text_button": {
+    "$button_type_panel": "betmc_button.betmc_button_icon_with_label",
+    "$default_button_texture": "betmc_res/betmc_button/betmc_transparent",
+    "$hover_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$pressed_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$locked_button_texture": "betmc_res/betmc_button/betmc_transparent",
+    "$default_text_color": "$chat_text_color",
+    "$border_visible": false,
+    "size": [ 145, 20 ]
+  },
+
+  "betmc_main_content_button@betmc_button.betmc_light_content_button": {
+    "$default_button_texture": "betmc_res/betmc_button/betmc_black",
+    "$hover_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$pressed_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$locked_button_texture": "betmc_res/betmc_button/betmc_black",
+    "$default_text_color": "$chat_text_color",
+    "$border_visible": true,
+    "size": [ "100%", "100%" ]
+  },
+
+  "betmc_main_button_no_icon@betmc_button.betmc_light_text_button": {
+    "$default_button_texture": "betmc_res/betmc_button/betmc_black",
+    "$hover_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$pressed_button_texture": "betmc_res/betmc_button/betmc_gray",
+    "$locked_button_texture": "betmc_res/betmc_button/betmc_black",
+    "$default_text_color": "$chat_text_color",
+    "$border_visible": true,
+    "size": [ "100%", "100%" ]
+  },
+
+  "betmc_start_sw_toggle@betmc_toggle.light_text_toggle": {
+    "$default_texture": "betmc_res/betmc_button/betmc_black",
+    "$hover_texture": "betmc_res/betmc_button/betmc_gray",
+    "$pressed_texture": "betmc_res/betmc_button/betmc_gray",
+    "$pressed_no_hover_texture": "betmc_res/betmc_button/betmc_gray",
+    "$locked_texture": "betmc_res/betmc_button/betmc_black",
+    "$toggle_name": "betmc_paperdoll_toggle",
+    "$button_type_panel": "betmc_start.betmc_start_toggle_image",
+    "$radio_toggle_group": true,
+    "$border_visible": true,
+    "size": [ 13, 25 ]
+  },
+
+  "play_button@betmc_start.betmc_main_button": {
+    "$pressed_button_name": "$play_button_target",
+    "$betmc_button_icon_textures": "betmc_res/betmc_icon/betmc_play",
+    "$button_text": "menu.play"
+  },
+
+  "achievement_button@betmc_start.betmc_main_button": {
+    "$pressed_button_name": "button.menu_achievements",
+    "$betmc_button_icon_textures": "betmc_res/betmc_icon/betmc_achievement",
+    "$button_text": "menu.achievements"
+  },
+
+  "dressing_room_button@betmc_start.betmc_main_button": {
+    "$pressed_button_name": "button.to_profile_screen",
+    "$betmc_button_icon_textures": "betmc_res/betmc_icon/betmc_dressing_room",
+    "$button_text": "profileScreen.header"
+  },
+
+  "settings_button@betmc_start.betmc_main_button": {
+    "$pressed_button_name": "button.menu_settings",
+    "$betmc_button_icon_textures": "betmc_res/betmc_icon/betmc_setting",
+    "$button_text": "menu.settings"
+  },
+
+  "marketplace_button@betmc_start.betmc_main_button": {
+    "$pressed_button_name": "button.menu_store",
+    "$betmc_button_icon_textures": "betmc_res/betmc_icon/betmc_maketplace",
+    "$button_text": "menu.store"
+  },
+
+  "profile_button@betmc_start.betmc_main_button_no_icon": {
+    "$pressed_button_name": "button.menu_profile",
+    "$button_text": "menu.profile"
+  },
+
+  "sign_button@betmc_start.betmc_main_button_no_icon": {
+    "$pressed_button_name": "button.signin",
+    "$button_text": "xbox.signin"
+  },
+
+  "exit_button@betmc_start.betmc_main_button": {
+    "$pressed_button_name": "button.menu_exit",
+    "$betmc_button_icon_textures": "betmc_res/betmc_icon/betmc_exit",
+    "$button_text": "Exit Game"
+  },
+
+  "menu_button@betmc_start.betmc_main_button": {
+    "$pressed_button_name": "button.menu_buy_game",
+    "$betmc_button_icon_textures": "betmc_res/betmc_icon/betmc_menu",
+    "$button_text": "BetMC Menu"
+  },
+
+  "inbox_button@betmc_start.betmc_main_content_button": {
+    "$button_content": "betmc_start.inbox_icon",
+    "$pressed_button_name": "button.menu_inbox",
+    "$button_tts_header": "menu.inbox",
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "$pressed_button_name",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "$pressed_button_name",
+        "mapping_type": "pressed"
+      },
+      {
+        "to_button_id": "inbox_button.is_hovered",
+        "mapping_type": "pressed"
+      }
+    ]
+  },
+
+  "betmc_button_elments@betmc_common.betmc_stack_vertical_with_controls": {
+    "$betmc_stack_vertical_with_controls_size": [ 145, "100%c" ],
+    "$betmc_stack_vertical_controls": [
+      { "play_button@betmc_start.play_button": {} },
+      { "dressing_room_button@betmc_start.dressing_room_button": {} },
+      { "achievement_button@betmc_start.achievement_button": {} },
+      { "settings_button@betmc_start.settings_button": {} },
+      {
+        "marketplace_button@betmc_start.marketplace_button": {
+          "bindings": [
+            {
+              "binding_name": "(not #marketplace_disabled)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      { "menu_button@betmc_start.menu_button": {} },
+      { "exit_button@betmc_start.exit_button": {} }
+    ]
+  },
+
+  "betmc_button_main@betmc_common.empty_panel": {
+    "offset": [ 0, 0 ],
+    "size": [ "100%c + 8px", "100%c + 8px" ],
+    "anchor_from": "left_middle",
+    "anchor_to": "left_middle",
+    "animation_reset_name": "screen_animation_reset",
+    "anims": [ "@betmc_anim.betmc_start_out_anim_push", "@betmc_anim.betmc_start_out_anim_pop", "@betmc_anim.betmc_start_in_anim_push", "@betmc_anim.betmc_start_in_anim_pop" ],
+    "controls": [
+      { "betmc_button_elments@betmc_start.betmc_button_elments": {} }
+    ]
+  },
+
+  "betmc_pack_info@betmc_common.betmc_stack_vertical_with_controls": {
+    "$betmc_stack_vertical_with_controls_size": [ 145, "100%c" ],
+    "$betmc_stack_vertical_controls": [
+      { "betmc_minecraft_copyright@betmc_start.betmc_minecraft_copyright": {} },
+      { "betmc_pack_version@betmc_start.betmc_pack_version": {} },
+      { "betmc_mc_version@betmc_start.betmc_mc_version": {} }
+    ]
+  },
+
+  "betmc_pack_info_main@betmc_common.empty_panel": {
+    "offset": [ 0, 0 ],
+    "size": [ "100%c + 8px", "100%c + 8px" ],
+    "anchor_from": "bottom_left",
+    "anchor_to": "bottom_left",
+    "animation_reset_name": "screen_animation_reset",
+    "anims": [ "@betmc_anim.betmc_start_out_anim_push", "@betmc_anim.betmc_start_out_anim_pop", "@betmc_anim.betmc_start_in_anim_push", "@betmc_anim.betmc_start_in_anim_pop" ],
+    "controls": [
+      { "betmc_pack_info@betmc_start.betmc_pack_info": {} }
+    ]
+  },
+
+  "betmc_gamerpic_with_border@betmc_common.empty_panel": {
+    "size": [ "100%cm + 7px", "100%cm + 7px" ],
+    "controls": [
+      { "betmc_gamerpic@start.gamerpic": {} },
+      { "border_white@common.focus_border_white": { "layer": 10, "size": [ 16, 16 ] }}
+    ]
+  },
+
+  "betmc_gamertag_panel@betmc_common.empty_panel": {
+    "size": [ "100%c", "100% + 7px" ],
+    "controls": [
+      {
+        "betmc_gamertag_label@betmc_common.empty_label_font_custom": {
+          "color": "$main_header_text_color",
+          "text": "#tên_say_gex_69",
+          "font_type": "$betmc_start_label_font_type",
+          "font_scale_factor": 0.75,
+          "offset": [ 0, -1 ],
+          "layer": 2,
+          "bindings": [
+            {
+              "binding_name": "#playername",
+              "binding_name_override": "#tên_say_gex_69"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "betmc_button_action_panel@betmc_common.empty_panel": {
+    "controls": [
+      {
+        "betmc_inbox_and_profile_stack@betmc_common.betmc_stack_horizontal_with_controls": {
+          "$betmc_stack_horizontal_with_controls_size": [ "100% - 7px", 16 ],
+          "$betmc_stack_horizontal_controls": [
+            { "inbox_button@betmc_start.inbox_button": { "size": [ 16, 16 ] }},
+            { "betmc_padding@betmc_common.empty_panel": { "size": [ 2, 0 ] }},
+            { "profile_button@betmc_start.profile_button": { "size": [ "fill", 16 ] }}
+          ],
+          "bindings": [
+            {
+              "binding_name": "(not #sign_in_visible)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "sign_button@betmc_start.sign_button": {
+          "size": [ "100% - 7px", 16 ],
+          "bindings": [
+            {
+              "binding_name": "#sign_in_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "betmc_profile_bg@betmc_common.empty_image": {
+    "size": [ 125, 42 ],
+    "texture": "betmc_res/betmc_ui_textures/hud_tip_text_background",
+    "alpha": 0.4,
+    "controls": [
+      {
+        "betmc_gamepic_and_gametag_stack@betmc_common.betmc_stack_horizontal_with_controls": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "$betmc_stack_horizontal_with_controls_size": [ "100%c - 10px", 16 ],
+          "$betmc_stack_horizontal_controls": [
+            { "betmc_gamerpic_with_border@betmc_start.betmc_gamerpic_with_border": {} },
+            { "betmc_gamertag_panel@betmc_start.betmc_gamertag_panel": {} }
+          ]
+        }
+      },
+      {
+        "betmc_button_action_panel@betmc_start.betmc_button_action_panel": {
+          "size": [ "100%", 22 ],
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left"
+        }
+      }
+    ]
+  },
+
+  "betmc_profile_main@betmc_common.empty_panel": {
+    "offset": [ 0, 0 ],
+    "size": [ "100%c + 8px", "100%c + 8px" ],
+    "anchor_from": "bottom_right",
+    "anchor_to": "bottom_right",
+    "animation_reset_name": "screen_animation_reset",
+    "anims": [ "@betmc_anim.betmc_player_list_out_anim_push", "@betmc_anim.betmc_player_list_out_anim_pop", "@betmc_anim.betmc_player_list_in_anim_push", "@betmc_anim.betmc_player_list_in_anim_pop" ],
+    "controls": [
+      { "betmc_profile_bg@betmc_start.betmc_profile_bg": {} }
+    ]
+  },
+
+  "betmc_papperdoll_bg@betmc_common.empty_image": {
+    "size": [ 55, 95 ],
+    "texture": "betmc_res/betmc_ui_textures/hud_tip_text_background",
+    "alpha": 0.4,
+    "controls": [
+      {
+        "betmc_skin_viewer_panel@betmc_common.empty_input_panel": {
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "size": [ "100%", "100% - 10px" ],
+          "gesture_tracking_button": "button.turn_doll",
+          "tts_ignore_count": true,
+          "offset": [ 0, -15 ],
+          "button_mappings": [
+            {
+              "from_button_id": "button.menu_select",
+              "to_button_id": "button.turn_doll",
+              "mapping_type": "pressed",
+              "button_up_right_of_first_refusal": true
+            }
+          ],
+          "controls": [
+            {
+              "betmc_paper_doll_panel@betmc_common.empty_panel": {
+                "size": [ "100%", "100% - 10px" ],
+                "controls": [
+                  {
+                    "betmc_paper_doll_renderer@betmc_common.empty_custom": {
+                      "renderer": "paper_doll_renderer",
+                      "camera_tilt_degrees": -10,
+                      "starting_rotation": 30,
+                      "layer": 2,
+                      "anchor_from": "center",
+                      "anchor_to": "center",
+                      "rotation": "gesture_x",
+                      "size": [ "100%", "100%" ],
+                      "animation_reset_name": "screen_animation_reset",
+                      "anims": [
+                        "@betmc_anim.betmc_player_list_out_anim_push",
+                        "@betmc_anim.betmc_player_list_out_anim_pop",
+                        "@betmc_anim.betmc_player_list_in_anim_push",
+                        "@betmc_anim.betmc_player_list_in_anim_pop"
+                      ],
+                      "bindings": [
+                        {
+                          "binding_type": "view",
+                          "source_control_name": "viewer_panel",
+                          "source_property_name": "#gesture_delta_source",
+                          "target_property_name": "#gesture_delta_source"
+                        },
+                        {
+                          "binding_type": "view",
+                          "source_control_name": "viewer_panel",
+                          "source_property_name": "#gesture_mouse_delta_x",
+                          "target_property_name": "#gesture_mouse_delta_x"
+                        },
+                        {
+                          "binding_name": "#is_appearance_visible",
+                          "binding_name_override": "#visible",
+                          "binding_condition": "always"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "betmc_appearacne_loading_panel@common_store.progress_loading": {
+                      "anchor_from": "center",
+                      "anchor_to": "center",
+                      "offset": [0, 15],
+                      "$hide_failure_text": true,
+                      "$hide_progress_loading_outline": true,
+                      "$source_control_name": "paper_doll",
+                      "$source_property_name": "(not #visible)"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "betmc_paperdoll_content@betmc_common.empty_panel": {
+    "size": [ "100%cm", "100%cm" ],
+    "controls": [
+      { 
+        "show_paperdoll_toggle@betmc_start.betmc_start_sw_toggle": {
+          "$toggle_view_binding_name": "betmc_for_show_paperdoll",
+          "$toggle_group_forced_index": 10,
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "betmc_for_hide_paperdoll",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        } 
+      },
+      {
+        "betmc_hide_paperdoll_stack@betmc_common.betmc_stack_horizontal_with_controls": {
+          "$betmc_stack_horizontal_with_controls_size": [ "100%c", "100%cm" ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "betmc_for_show_paperdoll",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "$betmc_stack_horizontal_controls": [
+            {
+              "hide_paperdoll_bypass_offset_panel@betmc_common.empty_panel": {
+                "size": ["100%cm", "100%c"],
+                "controls": [
+                  {
+                    "hide_paperdoll_toggle@betmc_start.betmc_start_sw_toggle": {
+                      "$button_arrow_texture": "betmc_res/betmc_icon/betmc_right_chevron",
+                      "$toggle_view_binding_name": "betmc_for_hide_paperdoll",
+                      "$toggle_group_forced_index": 0,
+                      "offset": [ 0, "100% + 10px" ]
+                    }
+                  }
+                ]
+              }
+            },
+            { "betmc_padding@betmc_common.empty_panel": { "size": [ 2, 0 ] }},
+            { "betmc_papperdoll_bg@betmc_start.betmc_papperdoll_bg": {} }
+          ]
+        }
+      }
+    ]
+  },
+            
+
+  "betmc_papperdoll_main@betmc_common.empty_panel": {
+    "offset": [ 0, 0 ],
+    "size": [ "100%c + 8px", "100%c + 8px" ],
+    "anchor_from": "right_middle",
+    "anchor_to": "right_middle",
+    "animation_reset_name": "screen_animation_reset",
+    "anims": [ "@betmc_anim.betmc_player_list_out_anim_push", "@betmc_anim.betmc_player_list_out_anim_pop", "@betmc_anim.betmc_player_list_in_anim_push", "@betmc_anim.betmc_player_list_in_anim_pop" ],
+    "controls": [
+      { "betmc_paperdoll_content@betmc_start.betmc_paperdoll_content": {} }
+    ]
+  },
+
+  "betmc_start_root@betmc_common.empty_panel": {
+    "layer": 10,
+    "controls": [
+      { "betmc_button_main@betmc_start.betmc_button_main": {} },
+      { "betmc_pack_info_main@betmc_start.betmc_pack_info_main": {} },
+      { "betmc_profile_main@betmc_start.betmc_profile_main": {} },
+      { "betmc_papperdoll_main@betmc_start.betmc_papperdoll_main": {} }
+    ]
+  }
+}

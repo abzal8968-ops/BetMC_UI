@@ -1,0 +1,56 @@
+{
+  "namespace": "crafting",
+
+  "toolbar_panel/toolbar_background/toolbar_stack_panel/help_button_panel": {
+    "ignored": true
+  },
+
+  "crafting_panel_2x2": {
+    "modifications": [
+      {
+        "control_name": "crafting_arrow",
+        "operation": "replace",
+        "value": [
+          {
+            "betmc_quickcraft_button@betmc_inventory.betmc_quickcraft_button": {
+              "offset": [ 45, 26 ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "work_bench_panel_3x3": {
+    "modifications": [
+      {
+        "control_name": "crafting_arrow_large",
+        "operation": "replace",
+        "value": [
+          {
+            "betmc_quickcraft_button@betmc_inventory.betmc_quickcraft_button": {
+              "size": [ 26, 26 ],
+              "offset": [ 61, 30 ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "player_inventory": {
+    "$betmc_not_inv": false,
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          { "betmc_inv_mode_toggle_stack@betmc_inventory.betmc_inv_mode_toggle_stack": {} }
+        ]
+      }
+    ],
+    "$betmc_button_ref": [
+      { "betmc_inv_slot_button@betmc_inventory.betmc_inv_slot_button": {} }
+    ]
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "namespace": "common",
+
+  "base_screen/loading_bars_background": {
+    "ignored": true
+  },
+
+  "text_edit_box": {
+    "$text_edit_box_label_offset|default": [ 0, -1 ]
+  },
+
+  "text_edit_box/centering_panel/clipper_panel/$text_edit_text_control": {
+    "offset": "$text_edit_box_label_offset"
+  },
+
+  "inventory_screen_common": {
+    "$screen_animations": [
+      "@common.screen_exit_animation_push_fade",
+      "@common.screen_exit_animation_pop_fade",
+      "@common.screen_entrance_animation_push_fade",
+      "@common.screen_entrance_animation_pop_fade"
+    ]
+  },
+  
+  "text_edit_box_label@betmc_common.empty_label_font_custom": {
+    "localize": false,
+    "text": "#item_name",
+    "font_type": "$betmc_label_font_type",
+    "backup_font_type": "$betmc_label_font_type",
+    "$betmc_font_scale_factor|default": 0.75,
+    "font_scale_factor": "$betmc_font_scale_factor",
+    "color": "$text_box_text_color",
+    "locked_color": "$locked_color",
+    "alpha": "$text_alpha",
+    "locked_alpha": "$locked_text_alpha",
+    "$text_alpha|default": 1.0,
+    "$locked_color|default": [ 1.0, 1.0, 1.0, 1.0 ],
+    "$locked_text_alpha|default": 0.5,
+    "$text_color_binding_name|default": "#edit_box_text_color",
+    "$text_color_binding_type|default": "none",
+    "$text_edit_box_content_binding_type|default": "global",
+    "$text_edit_box_content_binding_name|default": "#text_box_item_name",
+    "$text_edit_box_binding_condition|default": "visible",
+    "property_bag": {
+      "#property_field": "#item_name"
+    },
+    "bindings": [
+      {
+        "binding_type": "$text_edit_box_content_binding_type",
+        "binding_condition": "$text_edit_box_binding_condition",
+        "binding_collection_name": "$text_edit_box_grid_collection_name",
+        "binding_name": "$text_edit_box_content_binding_name",
+        "binding_name_override": "#item_name"
+      },
+      {
+        "binding_type": "$text_color_binding_type",
+        "binding_name": "$text_color_binding_name",
+        "binding_name_override": "#color"
+      },
+      {
+        "binding_name": "#newline_refresh"
+      }
+    ]
+  },
+
+  "base_screen": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "ambatukam@betmc_common.betmc_check_content_screen_label": { //ONLY DEV
+              "ignored": true
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "container_item": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "replace",
+        "where": {
+          "item_button_ref@$button_ref": {
+            "tts_ignore_count": true,
+            "tts_skip_message": true,
+            "tts_inherit_siblings": true,
+            "layer": 5
+          }
+        },
+        "value": [
+          {
+            "button_panel@betmc_common.empty_panel": {
+              "$betmc_button_ref|default": [
+                {
+                  "item_button_ref@$button_ref": {
+                    "tts_ignore_count": true,
+                    "tts_skip_message": true,
+                    "tts_inherit_siblings": true,
+                    "layer": 5
+                  }
+                }
+              ],
+              "controls": "$betmc_button_ref"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "text_edit_box_place_holder_label@betmc_common.empty_label_font_custom": {
+    "localize": true,
+    "text": "$place_holder_text",
+    "$place_holder_text|default": "",
+    "font_type": "$betmc_label_font_type",
+    "backup_font_type": "$betmc_label_font_type",
+    "$betmc_font_scale_factor|default": 0.75,
+    "font_scale_factor": "$betmc_font_scale_factor",
+    "color": "$place_holder_text_color",
+    "locked_color": "$text_box_locked_text_color",
+    "alpha": "$text_alpha",
+    "locked_alpha": "$locked_text_alpha",
+    "$text_alpha|default": 1.0,
+    "$locked_text_alpha|default": 0.5,
+    "$text_edit_box_placeholder_content_binding_type|default": "global",
+    "$text_edit_box_placeholder_content_binding_name|default": "#text_box_item_name",
+    "$text_edit_box_placeholder_binding_condition|default": "visible",
+    "$text_edit_box_placeholder_binding_type": "global",
+    "$text_edit_box_placeholder_binding_collection_name": "",
+    "bindings": [
+      {
+        "binding_type": "$text_edit_box_placeholder_content_binding_type",
+        "binding_condition": "$text_edit_box_placeholder_binding_condition",
+        "binding_collection_name": "$text_edit_box_grid_collection_name",
+        "binding_name": "$text_edit_box_placeholder_content_binding_name"
+      }
+    ]
+  }
+}

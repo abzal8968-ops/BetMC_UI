@@ -1,0 +1,107 @@
+{
+  "namespace": "betmc_chest",
+
+  //BETMC CHEST STEAL [BASE CODE BY: ASAKI YUKI]
+  "betmc_chest_button_content_panel@betmc_common.empty_image": {
+    "$betmc_chest_place_texture|default": "betmc_res/betmc_button/betmc_transparent",
+    "size": [ 14, 14 ],
+    "texture": "$betmc_chest_place_texture",
+    "color": "$text_color",
+    "layer": 8
+  },
+
+  "betmc_chest_container_slot@betmc_common.empty_input_panel": {
+    "$betmc_chest_button_mapping|default": "button.container_auto_place",
+    "always_listen_to_input": true,
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ 18, 18 ],
+    "button_mappings": [
+      {
+        "mapping_type": "pressed",
+        "from_button_id": "button.menu_select",
+        "to_button_id": "$betmc_chest_button_mapping"
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "collection_details",
+        "binding_collection_name": "$item_collection_name",
+        "binding_condition": "once"
+      },
+      {
+        "binding_type": "collection",
+        "binding_collection_name": "$item_collection_name",
+        "binding_name": "(not (#item_id_aux = -1))",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "betmc_chest_stealer_button@betmc_common.empty_panel": {
+    "$betmc_hover_text|default": "ĂN CẮP LÀM ƠN GHI CREDIT CHO NGƯỜI DÙNG CÁI :))",
+    "$item_collection_name|default": "container_items",
+    "$betmc_grid_dimensions|default": [ 27, 1 ],
+    "size": [ 20, 20 ],
+    "controls": [
+      {
+        "betmc_chest_container_grid@betmc_common.empty_grid": {
+          "size": [ 0, 0 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "grid_dimensions": "$betmc_grid_dimensions",
+          "grid_item_template": "betmc_chest.betmc_chest_container_slot",
+          "collection_name": "$item_collection_name"
+        }
+      },
+      {
+        "betmc_main_button@betmc_button.betmc_light_content_button": {
+          "$button_content": "betmc_chest.betmc_chest_button_content_panel",
+          "$pressed_button_name": "button.menu_select",
+          "$border_visible": true,
+          "size": [ 20, 20 ]
+        }
+      }
+    ]
+  },
+
+  "betmc_chest_stealer_panel@betmc_common.empty_panel": {
+    "size": [ "100%cm", "100%cm" ],
+    "offset": [ 2.5, 0 ],
+    "anchor_from": "bottom_right",
+    "anchor_to": "bottom_left",
+    "controls": [
+      {
+        "betmc_chest_button_stack@betmc_common.vertical_stack_panel": {
+          "size": [ "100%cm", "100%c" ],
+          "controls": [
+            {
+              "betmc_chest_steal@betmc_chest.betmc_chest_stealer_button": {
+                "$betmc_hover_text": "Take all Items from Chest",
+                "$betmc_chest_place_texture": "betmc_res/betmc_icon/betmc_place_to_inv"
+              }
+            },
+            { "betmc_padding_0@betmc_common.empty_panel": { "size": [ 0, 1 ] }},
+            {
+              "pull_from_inv@betmc_chest.betmc_chest_stealer_button": {
+                "$betmc_grid_dimensions": [ 27, 1 ],
+                "$item_collection_name": "inventory_items",
+                "$betmc_hover_text": "Store all Items from Inventory",
+                "$betmc_chest_place_texture": "betmc_res/betmc_icon/betmc_place_inv_to_chest"
+              }
+            },
+            { "betmc_padding_1@betmc_common.empty_panel": { "size": [ 0, 1 ] }},
+            {
+              "pull_from_hotbar@betmc_chest.betmc_chest_stealer_button": {
+                "$betmc_grid_dimensions": [ 9, 1 ],
+                "$item_collection_name": "hotbar_items",
+                "$betmc_hover_text": "Store all Items from Hotbar",
+                "$betmc_chest_place_texture": "betmc_res/betmc_icon/betmc_place_hotbar_to_chest"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "TikTok: @betmc2411 [https://tiktok.com/@betmc2411]",
+    "name": "BetMC UI [v1-beta 4]",
+    "uuid": "7c4b2dc2-b499-4657-89ac-14389955a2ee",
+    "version": [ 0, 0, 4 ],
+    "min_engine_version": [ 1, 17, 0 ]
+  },
+  "modules": [
+    {
+      "description": "ĐẦU BUỒI",
+      "type": "resources",
+      "uuid": "12a95eb2-64b6-4a73-97d9-7b1ea19012a8",
+      "version": [ 0, 0, 4 ]
+    }
+  ],
+  "metadata": {
+    "authors": [ "BetSoi2411" ],
+    "license": "You can open LICENSE to read more.",
+    "url": "https://github.com/betmc2411"
+  },
+  "settings": [
+    {
+      "type": "label",
+      "text": "------------------------------"
+    },
+    {
+      "type": "label",
+      "text": "EN: §l§cAfter installing this resource pack, please restart the game."
+    },
+    {
+      "type": "label",
+      "text": "VI: §l§cSau khi kích hoạt gói tài nguyên này, vui lòng khởi động lại trò chơi."
+    },
+    {
+      "type": "label",
+      "text": "------------------------------"
+    }
+  ]
+}

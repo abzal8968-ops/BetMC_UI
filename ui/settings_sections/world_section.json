@@ -1,0 +1,187 @@
+{
+  "game_section/option_dropdown_0": {
+    "$selection_highlight_offset": [ 0, 0 ],
+    "$selection_highlight_size": [ "100% + 4px", "100% + 1px" ]
+  },
+
+  "game_section/respawn_radius": {
+    "$option_text_edit_control_size": [ "100%", "20px" ]
+  },
+
+  "export_world_button": {
+    "size": [ "50%", 20 ]
+  },
+
+  "delete_world_button": {
+    "size": [ "fill", 20 ]
+  },
+
+  "export_template_button": {
+    "size": [ "100%", 20 ]
+  },
+
+  "copy_world_button": {
+    "size": [ "100%", 20 ]
+  },
+
+  "edit_world_manipulation_buttons": {
+    "size": [ "100%", 20 ]
+  },
+
+  "game_section": {
+    "modifications": [
+      {
+        "control_name": "option_text_edit_1",
+        "operation": "insert_after",
+        "value": [
+          { "betmc_settings_section_divider_0@betmc_world_section.betmc_settings_section_divider": {} },  // SPACE LỒN
+          { "betmc_minimum_version_label@betmc_world_section.betmc_minimum_version_label": {} },  //  WORLD VERSION
+          { "betmc_world_seed_label@betmc_world_section.betmc_world_seed_label": {} },  // WOLRD SEED
+          { "betmc_respawn_radius_label@betmc_world_section.betmc_respawn_radius_label": {} },  // RESPAWN RADIUS
+          { "betmc_random_tick_speed_label@betmc_world_section.betmc_random_tick_speed_label": {} },  // RANDOM TICK SPEED
+          { "betmc_padding_0@betmc_common.empty_panel": { "size": [ 0, 2 ] }},
+          { "betmc_settings_section_divider_1@betmc_world_section.betmc_settings_section_divider": {} },  // SPACE LỒN
+          { "betmc_padding_1@betmc_common.empty_panel": { "size": [ 0, 2 ] }}
+        ]
+      },
+      {
+        "control_name": "option_dropdown_2",
+        "operation": "insert_after",
+        "value": [
+          { "betmc_export_button_stack_panel@betmc_world_section.betmc_export_button_stack_panel": { "ignored": "($win10_edition or $is_desktop or $is_win10_arm or (not $is_pregame))" }},
+          { "betmc_template_version@betmc_world_section.betmc_template_version": { "ignored": "(not $is_pregame)" }}
+        ]
+      },
+      {
+        "control_name": "world_options_label",
+        "operation": "replace",
+        "value": [
+          { "betmc_options_world_and_cheat_toggle_stack@betmc_world_section.betmc_options_world_and_cheat_toggle_stack": {} }
+        ]
+      },
+      {
+        "control_name": "server_sim_distance_slider",
+        "operation": "insert_after",
+        "value": [
+          { "betmc_world_preferences_panel@betmc_world_section.betmc_world_preferences_panel": {} }
+        ]
+      },
+      {
+        "control_name": "world_preferences_label",
+        "operation": "remove"
+      },
+      {
+        "control_name": "starting_map_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "bonus_chest_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "pvp_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "show_coordinates_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "show_days_played_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "fire_spreads_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "recipes_unlock_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "tnt_explodes_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "respawn_blocks_explode_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "mob_loot_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "natural_regeneration_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "tile_drops_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "immediate_respawn_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "world_cheats_label",
+        "operation": "remove"
+      },
+      {
+        "control_name": "allow_cheats_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "education_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "always_day_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "daylight_cycle_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "keep_inventory_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "mob_spawn_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "mob_griefing_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "entities_drop_loot_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "weather_cycle_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "command_blocks_enabled_toggle",
+        "operation": "remove"
+      },
+      {
+        "control_name": "experimental_toggles_label_info",
+        "operation": "remove"
+      }
+    ]
+  },
+
+  "multiplayer_section": {
+    "modifications": [
+      {
+        "control_name": "multiplayer_game_toggle",
+        "operation": "insert_after",
+        "value": [
+          { "betmc_pvp_toggle@betmc_world_section.pvp_toggle": {} }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,246 @@
+{
+  "namespace": "storage_management",
+
+  "resource_toggle/item_button_panel/y_sizing_panel/border/button_panel/generate_texture_list_panel/generate_texture_list_button": {
+    "$button_texture": "textures/ui/UpdateGlyph",
+    "ignored": "(not ($panel_prefix = resource))"
+  },
+
+  "storage_header_panel/header_panel/panel": {
+    "size": [ "100% - 2px", 20 ]
+  },
+
+  "storage_header_panel/header_panel/panel/multiselect_button": {
+    "$default_texture": "betmc_res/betmc_button/betmc_black",
+    "$hover_texture": "betmc_res/betmc_button/betmc_gray",
+    "$pressed_texture": "betmc_res/betmc_button/betmc_gray",
+    "$pressed_no_hover_texture": "betmc_res/betmc_button/betmc_gray",
+    "$locked_texture": "betmc_res/betmc_button/betmc_black",
+
+    "$button_texture": "betmc_res/betmc_icon/betmc_radio_button_checked",
+    "offset": [ 0, 0 ]
+  },
+
+  "storage_main_item_toggle/main_item_toggle": {
+    "$default_texture": "betmc_res/betmc_button/betmc_black",
+    "$hover_texture": "betmc_res/betmc_button/betmc_gray",
+    "$pressed_texture": "betmc_res/betmc_button/betmc_gray",
+    "$pressed_no_hover_texture": "betmc_res/betmc_button/betmc_gray",
+    "$locked_texture": "betmc_res/betmc_button/betmc_black"
+  },
+
+  "common_main_button/background": {
+    "alpha": 0.4
+  },
+
+  "common_main_button/border": {
+    "$betmc_common_main_button_broder|default": 1.0,
+    "alpha": "$betmc_common_main_button_broder",
+    "variables": [
+      {
+        "requires": "($button_state = default)",
+        "$betmc_common_main_button_broder": 0.4,
+        "$border_texture": "textures/ui/Black"
+      },
+      {
+        "requires": "($button_state = hover)",
+        "$border_texture": "textures/ui/focus_border_white"
+      }
+    ]
+  },
+
+  "generic_button/picture": {
+    "size": [ 20, "100% - 2px" ],
+    "variables": [
+      {
+        "requires": "($toggle_checked or $toggle_checked_hover)",
+        "$button_texture": "betmc_res/betmc_icon/betmc_radio_button_checked"
+      }
+    ]
+  },
+
+  "generic_button/text": {
+    "color": "$chat_text_color",
+    "offset": [ 22, 0 ]
+  },
+
+  "main_item_text@storage_management.main_content_panel": {
+    "$image_visible": false,
+
+    "$text_controls": [
+      {
+        "glyph_and_name": {
+          "type": "stack_panel",
+          "size": [ "65%", "default" ],
+          "orientation": "horizontal",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 4, 5 ],
+
+          "$glyph_binding": [
+            {
+              "binding_type": "global",
+              "binding_name": "('#' + $panel_prefix + _ + $binding_name)",
+              "binding_name_override": "#visible"
+            }
+          ],
+
+          "controls": [
+            {
+              "main_label@storage_management.common_label": {
+                "size": [ "default", "default" ],
+                "text": "$name_text",
+                "color": "$chat_text_color",
+                "bindings": "$name_bindings"
+              }
+            },
+            {
+              "padding": {
+                "type": "panel",
+                "size": [ 2, "100%" ]
+              }
+            },
+            {
+              "glyph_warning@storage_management.base_glyph": {
+                "size": [ 9, 9 ],
+                "$binding_name": "warning",
+                "$glyph_texture": "textures/ui/WarningGlyph",
+                "bindings": "$glyph_binding"
+              }
+            },
+            {
+              "glyph_error@storage_management.base_glyph": {
+                "size": [ 9, 9 ],
+                "$binding_name": "error",
+                "$glyph_texture": "textures/ui/ErrorGlyph",
+                "bindings": "$glyph_binding"
+              }
+            },
+            {
+              "glyph_update@storage_management.base_glyph": {
+                "size": [ 9, 9 ],
+                "$binding_name": "update",
+                "$glyph_texture": "textures/ui/UpdateGlyph",
+                "bindings": "$glyph_binding"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "size_label@storage_management.common_label": {
+          "size": "$right_label_size",
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "offset": [ 4, -5 ],
+          "color": "$chat_text_color",
+          "text": "$size_text",
+          "bindings": "$size_bindings"
+        }
+      },
+      {
+        "arrow_down": {
+          "type": "image",
+          "layer": 2,
+          "offset": [ -10, 0 ],
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "size": [ 8, 8 ],
+          "texture": "textures/ui/arrowDown",
+          "visible": true,
+          "bindings": [
+            {
+              "binding_name": "#storage_dropdown",
+              "binding_name_override": "#visible",
+              "binding_type": "collection",
+              "binding_collection_name": "storage_panel"
+            }
+          ]
+        }
+      },
+      {
+        "arrow_right": {
+          "type": "image",
+          "layer": 2,
+          "offset": [ -10, 0 ],
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "size": [ 8, 8 ],
+          "texture": "textures/ui/arrowRight",
+          "bindings": [
+            {
+              "binding_name": "(not #storage_dropdown)",
+              "binding_name_override": "#visible",
+              "binding_type": "collection",
+              "binding_collection_name": "storage_panel"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "storage_footer_panel/visibleContent": {
+    "size": ["100% - 6px", 22],
+    "modifications": [
+      {
+        "control_name": "delete_button",
+        "operation": "replace",
+        "value": [
+          {
+            "betmc_delete_button@betmc_storage_management.betmc_delete_button": {
+              "anchor_from": "top_left",
+              "anchor_to": "top_left",
+              "size": [ "fill", "100% - 2px" ]
+            }
+          }
+        ]
+      },
+      {
+        "control_name": "share_button",
+        "operation": "replace",
+        "value": [
+          {
+            "betmc_share_button@betmc_storage_management.betmc_share_button": {
+              "anchor_from": "top_right",
+              "anchor_to": "top_right",
+              "size": [ "50%", "100% - 2px" ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "storage_header_panel/header_panel": {
+    "modifications": [
+      {
+        "control_name": "file_storage_dropdown",
+        "operation": "replace",
+        "value": [
+          { "betmc_files_location_and_clear_cache_stacks@betmc_storage_management.betmc_files_location_and_clear_cache_stacks": {} }
+        ]
+      },
+      {
+        "control_name": "file_storage_dropdown_edu",
+        "operation": "remove"
+      },
+      {
+        "control_name": "clear_download_cache_button_panel",
+        "operation": "remove"
+      },
+      {
+        "control_name": "clear_cache_button_panel",
+        "operation": "remove"
+      },
+      {
+        "control_name": "clear_screenshots_cache_button_panel",
+        "operation": "remove"
+      },
+      {
+        "control_name": "delete_local_screenshots_button_panel",
+        "operation": "remove"
+      }
+    ]
+  }
+}

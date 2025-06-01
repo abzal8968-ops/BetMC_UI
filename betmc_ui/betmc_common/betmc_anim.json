@@ -1,0 +1,299 @@
+{
+  "namespace": "betmc_anim",
+
+  /*-- START ANIMATED UI [LEFT TO RIGHT] --*/
+  "betmc_start_out_anim_push": {
+    "anim_type": "offset",
+    "easing": "in_cubic",
+    "duration": "$transition_time_push",
+    "from": [ 2, 0 ],
+    "to": [ "-25%", 0 ],
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+  
+  "betmc_start_out_anim_pop": {
+    "anim_type": "offset",
+    "easing": "in_cubic",
+    "duration": "$transition_time_pop",
+    "from": [ 2, 0 ],
+    "to": [ "-25%", 0 ],
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+  
+  "betmc_start_in_anim_push": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": "$transition_time_push",
+    "from": [ "-25%", 0 ],
+    "to": [ 2, 0 ],
+    "play_event": "screen.entrance_push",
+    "end_event": "screen.entrance_end"
+  },
+  
+  "betmc_start_in_anim_pop": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": "$transition_time_pop",
+    "from": [ "-25%", 0 ],
+    "to": [ 2, 0 ],
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  /*-- PAUSE PLAYER LIST ANIMATED UI [RIGHT TO LEFT] --*/
+  "betmc_player_list_out_anim_push": {
+    "anim_type": "offset",
+    "easing": "in_cubic",
+    "duration": "$transition_time_push",
+    "from": [ 0, 0 ],
+    "to": [ "25%", 0 ],
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+  
+  "betmc_player_list_out_anim_pop": {
+    "anim_type": "offset",
+    "easing": "in_cubic",
+    "duration": "$transition_time_pop",
+    "from": [ 0, 0 ],
+    "to": [ "25%", 0 ],
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+  
+  "betmc_player_list_in_anim_push": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": "$transition_time_push",
+    "from": [ "25%", 0 ],
+    "to": [ 0, 0 ],
+    "play_event": "screen.entrance_push",
+    "end_event": "screen.entrance_end"
+  },
+  
+  "betmc_player_list_in_anim_pop": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": "$transition_time_pop",
+    "from": [ "25%", 0 ],
+    "to": [ 0, 0 ],
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  //BETMC_BACKGROUND_ANIMATION
+  "screen_exit_animation_push_alpha": {
+    "ignored": true
+  },
+
+  "screen_entrance_animation_push_alpha": {
+    "ignored": true
+  },
+
+  "screen_exit_animation_pop_alpha": {
+    "ignored": true
+  },
+
+  "screen_entrance_animation_pop_alpha": {
+    "ignored": true
+  },
+
+  //BETMC_CHAT_ANIMATION_GRID
+  "betmc_chat_grid_anim_stack": { //SIZE
+    "anim_type": "size",
+    "easing": "out_expo",
+    "duration": 0.5,
+    "from": [ "100%", 0 ],
+    "to": [ "100%", "100%c + 1px" ]
+  },
+
+  "betmc_chat_grid_anim_stack_start": {
+    "anim_type": "wait",
+    "duration": "$chat_item_lifetime",
+    "next": "@betmc_anim.betmc_chat_grid_anim_stack_wait"
+  },
+  
+  "betmc_chat_grid_anim_stack_wait": {
+    "anim_type": "wait",
+    "duration": 1,
+    "next": "@betmc_anim.betmc_chat_grid_anim_stack_end"
+  },
+  
+  "betmc_chat_grid_anim_stack_end": {
+    "anim_type": "size",
+    "easing": "out_expo",
+    "duration": 0.5,
+    "from": [ "100%", "100%c + 1px" ],
+    "to": [ "100%", 0 ]
+  },
+
+  //BETMC_CHAT_ANIMATION_BACKGROUND
+  "betmc_chat_bg_alpha_in": { //ALPHA
+    "anim_type": "alpha",
+    "easing": "in_cubic",
+    "duration": 0.4,
+    "from": 0,
+    "to": 0.4,
+    "next": "@betmc_anim.betmc_chat_bg_alpha_wait"
+  },
+  
+  "betmc_chat_bg_alpha_wait": {
+    "anim_type": "wait",
+    "duration": "$chat_item_lifetime",
+    "next": "@betmc_anim.betmc_chat_bg_alpha_out"
+  },
+  
+  "betmc_chat_bg_alpha_out": {
+    "anim_type": "alpha",
+    "easing": "in_cubic",
+    "duration": 0.6,
+    "from": 0.4,
+    "to": 0,
+    "next": "@betmc_anim.betmc_chat_bg_alpha_end"
+  },
+  
+  "betmc_chat_bg_alpha_end": {
+    "anim_type": "wait",
+    "duration": 0.4,
+    "destroy_at_end": "chat_grid_item"
+  },
+
+  "betmc_chat_bg_anim_start": { //OFFSET
+    "anim_type": "offset",
+    "easing": "out_expo",
+    "duration": 0.4,
+    "from": [ "-100%", 0 ],
+    "to": [ 0, 0 ],
+    "next": "@betmc_anim.betmc_chat_bg_anim_wait"
+  },
+
+  "betmc_chat_bg_anim_wait": {
+    "anim_type": "wait",
+    "duration": "$chat_item_lifetime",
+    "next": "@betmc_anim.betmc_chat_bg_anim_end"
+  },
+
+  "betmc_chat_bg_anim_end": {
+    "anim_type": "offset",
+    "easing": "in_expo",
+    "duration": 0.4,
+    "from": [ 0, 0 ],
+    "to": [ "-100%", 0 ],
+    "destroy_at_end": "chat_grid_item"
+  },
+
+  //BETMC_CHAT_TIME_OUT_BACKGROUND
+  "betmc_chat_timeout_bg_anim_wait": {
+    "anim_type": "wait",
+    "duration": 0.45,
+    "next": "@betmc_anim.betmc_chat_timeout_bg_anim_start"
+  },
+
+  "betmc_chat_timeout_bg_anim_start": {
+    "anim_type": "size",
+    "duration": "($chat_item_lifetime + 0.8)",
+    "easing": "linear",
+    "from": [ "100%", "100%" ],
+    "to": [ 0, "100%" ],
+    "next": "@betmc_anim.betmc_chat_timeout_bg_anim_out"
+  },
+
+  "betmc_chat_timeout_bg_anim_out": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": "$chat_item_lifetime",
+    "from": 1,
+    "to": 0,
+    "destroy_at_end": "chat_grid_item"
+  },
+
+  //BETMC_HIDE_HUD_ANIMATION
+  "betmc_start_tooltip_offset": { //For offset
+    "anim_type": "offset",
+    "easing": "in_expo",
+    "duration": 0.4,
+    "from": [ 0, 0 ],
+    "to": [ 0, 0 ],
+    "reset_event": "button.hide_gui_all",
+    "next": "@betmc_anim.betmc_wait_tooltip_offset"
+  },
+  
+  "betmc_wait_tooltip_offset": {
+    "anim_type": "wait",
+    "duration": "$betmc_duration_offset",
+    "$betmc_duration_offset|default": 3,
+    "next": "@betmc_anim.betmc_end_tooltip_offset"
+  },
+  
+  "betmc_end_tooltip_offset": {
+    "anim_type": "offset",
+    "easing": "in_out_back",
+    "duration": 1,
+    "from": [ 0, 0 ],
+    "to": [ 0, 50 ]
+  },
+
+  "betmc_start_tooltip_alpha": { //For alpha
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 0,
+    "from": 0,
+    "to": 1,
+    "reset_event": "button.hide_gui_all",
+    "next": "@betmc_anim.betmc_wait_tooltip_alpha"
+  },
+  
+  "betmc_wait_tooltip_alpha": {
+    "anim_type": "wait",
+    "duration": "$betmc_duration_alpha",
+    "$betmc_duration_alpha|default": 3,
+    "next": "@betmc_anim.betmc_end_tooltip_alpha"
+  },
+  
+  "betmc_end_tooltip_alpha": {
+    "anim_type": "alpha",
+    "easing": "in_expo",
+    "duration": 0.8,
+    "from": 1,
+    "to": 0
+  },
+
+  //BETMC_LOADING_BAR_ANIMATION
+  "betmc_loading_bar_anim_size_0": {
+    "anim_type": "size",
+    "easing": "in_sine",
+    "duration": 1.5,
+    "from": [ "10%", "100%" ],
+    "to": [ "120%", "100%" ],
+    "next": "@betmc_anim.betmc_loading_bar_anim_size_1"
+  },
+
+  "betmc_loading_bar_anim_offset_0": {
+    "anim_type": "offset",
+    "easing": "in_sine",
+    "duration": 1.5,
+    "from": [ "-10%", 0 ],
+    "to": [ "100%", 0 ],
+    "next": "@betmc_anim.betmc_loading_bar_anim_offset_1"
+  },
+
+  "betmc_loading_bar_anim_size_1": {
+    "anim_type": "size",
+    "easing": "linear",
+    "duration": 1.0,
+    "from": [ "75%", "100%" ],
+    "to": [ "5%", "100%" ],
+    "next": "@betmc_anim.betmc_loading_bar_anim_size_0"
+  },
+
+  "betmc_loading_bar_anim_offset_1": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 1.0,
+    "from": [ "-75%", 0 ],
+    "to": [ "100%", 0 ],
+    "next": "@betmc_anim.betmc_loading_bar_anim_offset_0"
+  }
+}
