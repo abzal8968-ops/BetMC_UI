@@ -13,6 +13,10 @@
     "offset": "$text_edit_box_label_offset"
   },
 
+  "stack_count_label": {
+    "font_type": "smooth"
+  },
+  
   "inventory_screen_common": {
     "$screen_animations": [
       "@common.screen_exit_animation_push_fade",

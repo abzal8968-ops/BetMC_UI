@@ -3,5 +3,6 @@
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorBlinking": "smooth",
   "terminal.integrated.smoothScrolling": true,
-  "editor.smoothScrolling": true
+  "editor.smoothScrolling": true,
+  "window.zoomLevel": -0.7
 }

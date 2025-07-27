@@ -30,8 +30,7 @@
     "$border_visible": true
   },
 
-  "betmc_pause_label@betmc_config.betmc_main_config": {
-    "type": "label",
+  "betmc_pause_label@betmc_common.empty_label_font_custom": {
     "font_type": "$betmc_label_font_type",
     "backup_font_type": "$betmc_label_font_type",
     "$betmc_font_scale_factor|default": 1.0,
@@ -43,8 +42,7 @@
     "shadow": false
   },
 
-  "betmc_pause_background@betmc_config.betmc_main_config": {
-    "type": "panel",
+  "betmc_pause_background@betmc_common.custom_empty_panel": {
     "controls": [
       {
         "use_gradient@betmc_common.betmc_gradient_renderer": {
@@ -103,6 +101,24 @@
     ]
   },
 
+  "betmc_paused_label@betmc_common.empty_image": {
+    "size": [ "100%c + 8px", "100%c + 8px" ],
+    "texture": "betmc_res/betmc_ui_textures/hud_tip_text_background",
+    "alpha": 0.4,
+    "controls": [
+      {
+        "label_mot_lan_nua@betmc_pause.betmc_pause_label": {
+          "$betmc_chat_text_offset": [ 0, -2 ],
+          "$betmc_font_scale_factor": 0.85,
+          "text": "pauseScreen.gameIsPaused",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "layer": 1
+        }
+      }
+    ]
+  },
+  
   "continue_button@betmc_pause.betmc_pause_main_button": {
     "$pressed_button_name": "button.menu_continue",
     "$button_text": "menu.returnToGame",
@@ -333,6 +349,22 @@
     ]
   },
 
+  "betmc_paused_label_panel@betmc_common.empty_panel": {
+    "size": [ "100%", "100%c + 14px" ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "bindings": [
+      {
+        "binding_name": "#pause_annoucement_visible",
+        "binding_name_override": "#visible",
+        "binding_type": "global"
+      }
+    ],
+    "controls": [
+      { "betmc_paused_label@betmc_pause.betmc_paused_label": {} }
+    ]
+  },
+
   "betmc_grid_banner_no_focus@betmc_common.empty_image": {
     "texture": "betmc_res/betmc_button/betmc_green",
     "alpha": 0.65,
@@ -530,7 +562,8 @@
     "layer": 10,
     "controls": [
       { "betmc_pause_button_main@betmc_pause.betmc_pause_button_main": {} },
-      { "betmc_player_list_panel@betmc_pause.betmc_player_list_panel": {} }
+      { "betmc_player_list_panel@betmc_pause.betmc_player_list_panel": {} },
+      { "betmc_paused_label_panel@betmc_pause.betmc_paused_label_panel": {} }
     ]
   }
 }

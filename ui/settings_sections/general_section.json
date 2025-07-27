@@ -1,6 +1,7 @@
 {
   "namespace": "general_section",
-
+  
+/* Only 1.20.80 or below
   "accessibility_section/darkness_slider_label_spacer_pre": {
     "ignored": true
   },
@@ -36,6 +37,7 @@
   "accessibility_section/glint_speed_slider_label_spacer_post": {
     "ignored": true
   },
+*/
 
   "accessibility_section/chat_message_duration_options_panel/chat_message_duration_label_wrapper": {
     "ignored": true
@@ -418,15 +420,11 @@
   },
   
   "msaa_slider@settings_common.option_slider": {
-    "$option_label": "#msaa_slider_label",
-    "$slider_name": "msaa",
-    "$slider_value_binding_name": "#msaa",
-    "$slider_tts_text_value": "#msaa_text_value",
-    "$option_enabled_binding_name": "#msaa_enabled",
-    "$slider_steps_binding_name": "#msaa_steps",
-    "$label_bindings": [
+    "ignored": false,
+    "bindings": [
       {
-        "binding_name": "$option_label"
+        "binding_name": "#show_msaa",
+        "binding_name_override": "(not #visible)"
       }
     ]
   },
