@@ -1,10 +1,154 @@
 {
    "content" : [
       {
+         "path" : ".git/COMMIT_EDITMSG"
+      },
+      {
+         "path" : ".git/HEAD"
+      },
+      {
+         "path" : ".git/config"
+      },
+      {
+         "path" : ".git/description"
+      },
+      {
+         "path" : ".git/hooks/applypatch-msg.sample"
+      },
+      {
+         "path" : ".git/hooks/commit-msg.sample"
+      },
+      {
+         "path" : ".git/hooks/fsmonitor-watchman.sample"
+      },
+      {
+         "path" : ".git/hooks/post-update.sample"
+      },
+      {
+         "path" : ".git/hooks/pre-applypatch.sample"
+      },
+      {
+         "path" : ".git/hooks/pre-commit.sample"
+      },
+      {
+         "path" : ".git/hooks/pre-merge-commit.sample"
+      },
+      {
+         "path" : ".git/hooks/pre-push.sample"
+      },
+      {
+         "path" : ".git/hooks/pre-rebase.sample"
+      },
+      {
+         "path" : ".git/hooks/pre-receive.sample"
+      },
+      {
+         "path" : ".git/hooks/prepare-commit-msg.sample"
+      },
+      {
+         "path" : ".git/hooks/push-to-checkout.sample"
+      },
+      {
+         "path" : ".git/hooks/sendemail-validate.sample"
+      },
+      {
+         "path" : ".git/hooks/update.sample"
+      },
+      {
+         "path" : ".git/index"
+      },
+      {
+         "path" : ".git/info/exclude"
+      },
+      {
+         "path" : ".git/logs/HEAD"
+      },
+      {
+         "path" : ".git/logs/refs/heads/main"
+      },
+      {
+         "path" : ".git/logs/refs/remotes/origin/HEAD"
+      },
+      {
+         "path" : ".git/logs/refs/remotes/origin/main"
+      },
+      {
+         "path" : ".git/objects/20/39de0b67536eed0961737c85572cc7486e712f"
+      },
+      {
+         "path" : ".git/objects/37/6cb1a227d21be37ded03519aa6044d798d8059"
+      },
+      {
+         "path" : ".git/objects/42/c60e5563a9020402419e6364b4633e807c72c1"
+      },
+      {
+         "path" : ".git/objects/49/0870f811c7c3160142921ccd89a780888ace0a"
+      },
+      {
+         "path" : ".git/objects/50/a51ccb3fc5997eacdc6d81114d8c10877665d3"
+      },
+      {
+         "path" : ".git/objects/50/ef7e99839b52d4dcebd60906e113c09146e924"
+      },
+      {
+         "path" : ".git/objects/55/e42ccd0a07ae39647953a7f05231ec3ad35dd0"
+      },
+      {
+         "path" : ".git/objects/6b/189ba847725ef086479a7909610045114e1856"
+      },
+      {
+         "path" : ".git/objects/87/152cbce8e64d0adf5c8f0bffd0e2b94becb5f3"
+      },
+      {
+         "path" : ".git/objects/89/c37a8506b0818b5f861e712789f910f921ac7d"
+      },
+      {
+         "path" : ".git/objects/b4/d5baac9abd6c0743f798cd50669d85e4d43a64"
+      },
+      {
+         "path" : ".git/objects/b5/86396e2459bf9ba7befe4545a10f7c150aa8e1"
+      },
+      {
+         "path" : ".git/objects/bf/aee3353c9de6f82b326ec182631df89f79cd2f"
+      },
+      {
+         "path" : ".git/objects/ce/a69739e26771fccada897f9a6b425a5bf6108c"
+      },
+      {
+         "path" : ".git/objects/ce/b0b385fd45473f54ecabce3a2a8ab23d902fab"
+      },
+      {
+         "path" : ".git/objects/f9/cb82426e1dda4b6a35a189a72a8c304b780617"
+      },
+      {
+         "path" : ".git/objects/pack/pack-f249f021b43017e876a6c1d4df0721ad8108318f.idx"
+      },
+      {
+         "path" : ".git/objects/pack/pack-f249f021b43017e876a6c1d4df0721ad8108318f.pack"
+      },
+      {
+         "path" : ".git/objects/pack/pack-f249f021b43017e876a6c1d4df0721ad8108318f.rev"
+      },
+      {
+         "path" : ".git/packed-refs"
+      },
+      {
+         "path" : ".git/refs/heads/main"
+      },
+      {
+         "path" : ".git/refs/remotes/origin/HEAD"
+      },
+      {
+         "path" : ".git/refs/remotes/origin/main"
+      },
+      {
          "path" : ".vscode/settings.json"
       },
       {
          "path" : "LICENSE"
+      },
+      {
+         "path" : "README.md"
       },
       {
          "path" : "betmc_background/betmc_background_static.png"
@@ -65,6 +209,9 @@
       },
       {
          "path" : "betmc_res/betmc_font/Nunito-Bold.ttf"
+      },
+      {
+         "path" : "betmc_res/betmc_font/SamsungOne-700.ttf"
       },
       {
          "path" : "betmc_res/betmc_icon/betmc_achievement.png"

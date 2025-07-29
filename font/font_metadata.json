@@ -30,6 +30,13 @@
       "lowPerformanceCompatible": false
     },
     {
+      "font_format": "ttf",
+      "font_name": "SamsungOne700",
+      "version": 1,
+      "font_file": "betmc_res/betmc_font/SamsungOne-700",
+      "lowPerformanceCompatible": false
+    },
+    {
       "font_format": "msdf",
       "font_name": "OldSmoothFont",
       "font_file": "betmc_res/betmc_font/smooth/smooth_"
